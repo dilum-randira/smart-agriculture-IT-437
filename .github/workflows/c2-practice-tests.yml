@@ -1,0 +1,35 @@
+name: C2 Practice Unit Tests
+
+on:
+  push:
+    branches:
+      - feature/c2-ml-foundation
+    paths:
+      - 'c2/**'
+      - '.github/workflows/c2-practice-tests.yml'
+  pull_request:
+    branches:
+      - dev
+    paths:
+      - 'c2/**'
+      - '.github/workflows/c2-practice-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install lightweight practice test dependencies
+        run: python -m pip install -r c2/requirements.txt matplotlib
+      - name: Run regression unit tests (no TensorFlow training)
+        run: python -m unittest discover -s c2/tests -v
+      - name: Exercise synthetic C1-to-C2 status scenarios
+        run: python c2/practice/iot_replay/scenarios.py
