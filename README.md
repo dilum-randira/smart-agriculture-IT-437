@@ -21,7 +21,7 @@ The proposed system connects four individual research components:
 
 ### Proposed data flow
 
-\`\`\`text
+```text
 IoT sensors and field records
              |
              v
@@ -40,7 +40,7 @@ IoT sensors and field records
              |
              v
     Farmer-facing web dashboard
-\`\`\`
+```
 
 This is a **conceptual flow**, not a claim that the complete pipeline is deployed. C3 also uses C1 observations, while C4 may combine outputs from C1, C2 and C3 with independently sourced market information.
 
@@ -59,9 +59,9 @@ This is a **conceptual flow**, not a claim that the complete pipeline is deploye
 
 ## Repository structure
 
-The following reflects the **tracked shared scaffold** currently on \`main\`:
+The following reflects the **tracked shared scaffold** currently on `main`:
 
-\`\`\`text
+```text
 smart-agriculture-IT-437/
 ├── backend/
 │   ├── app/
@@ -91,7 +91,7 @@ smart-agriculture-IT-437/
 ├── .github/workflows/
 │   └── application-scaffold.yml
 └── README.md
-\`\`\`
+```
 
 ### Component folder ownership
 
@@ -99,14 +99,14 @@ As members start development, they can create their own component folders using 
 
 | Area | Member-owned folders (create when needed) |
 | --- | --- |
-| Backend component modules | \`backend/app/c1/\`, \`c2/\`, \`c3/\`, \`c4/\` |
-| Frontend component pages | \`frontend/src/pages/c1/\`, \`c2/\`, \`c3/\`, \`c4/\` |
-| Device firmware | \`firmware/\`, with layout chosen by the IoT member |
-| Shared documentation | \`docs/\`, when team decisions are agreed |
+| Backend component modules | `backend/app/c1/`, `c2/`, `c3/`, `c4/` |
+| Frontend component pages | `frontend/src/pages/c1/`, `c2/`, `c3/`, `c4/` |
+| Device firmware | `firmware/`, with layout chosen by the IoT member |
+| Shared documentation | `docs/`, when team decisions are agreed |
 
 **Important:** Component directories are intentionally **not populated with placeholder source files**. Their owners choose the appropriate files and internal structure. Git does not track empty directories, so these paths appear on GitHub once real files are committed.
 
-There is currently **no shared \`experiments/\` folder**. Members should agree on a research-experiment location before moving existing work.
+There is currently **no shared `experiments/` folder**. Members should agree on a research-experiment location before moving existing work.
 
 ## Getting started
 
@@ -118,51 +118,51 @@ There is currently **no shared \`experiments/\` folder**. Members should agree o
 
 Clone the repository:
 
-\`\`\`bash
+```bash
 git clone https://github.com/dilum-randira/smart-agriculture-IT-437.git
 cd smart-agriculture-IT-437
-\`\`\`
+```
 
 ### Start the frontend
 
 From the repository root:
 
-\`\`\`bash
+```bash
 cd frontend
 npm install
 npm run dev
-\`\`\`
+```
 
 Vite usually serves the React application at **http://localhost:5173**.
 
 To make a production bundle:
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
-The build output is written to \`frontend/dist/\`.
+The build output is written to `frontend/dist/`.
 
 ### Start the backend
 
 In a separate terminal, from the repository root:
 
-\`\`\`bash
+```bash
 cd backend
 python -m venv .venv
-\`\`\`
+```
 
 Activate the virtual environment:
 
-- Windows PowerShell: \`.\.venv\Scripts\Activate.ps1\`
-- macOS / Linux: \`source .venv/bin/activate\`
+- Windows PowerShell: `.\.venv\Scripts\Activate.ps1`
+- macOS / Linux: `source .venv/bin/activate`
 
 Then install the dependencies and start FastAPI:
 
-\`\`\`bash
+```bash
 python -m pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --port 8000
-\`\`\`
+```
 
 Available shared endpoints:
 
@@ -175,17 +175,17 @@ Available shared endpoints:
 
 The earlier C4 HTML/CSS/JS demonstration has been preserved as:
 
-- \`frontend/index.html\`
-- \`frontend/app.js\`
-- \`frontend/style.css\`
+- `frontend/index.html`
+- `frontend/app.js`
+- `frontend/style.css`
 
-The **React app runs from \`frontend/src/index.html\`**, because \`frontend/vite.config.js\` sets \`src/\` as the Vite root. The C4 demonstration is **not automatically included** in React and has not yet been migrated. Keep those existing files intact until the C4 owner reviews the migration.
+The **React app runs from `frontend/src/index.html`**, because `frontend/vite.config.js` sets `src/` as the Vite root. The C4 demonstration is **not automatically included** in React and has not yet been migrated. Keep those existing files intact until the C4 owner reviews the migration.
 
 ## Team collaboration guidelines
 
 1. **Own your component.** Members write their own component pages, backend routes, algorithms and tests; do not populate another member's folder without agreement.
-2. **Keep shared files coordinated.** Changes to \`backend/app/main.py\`, \`frontend/src/App.jsx\`, navigation, common configuration and API interfaces should be reviewed as integration work.
-3. **Use focused branches and pull requests.** Develop features on a branch, review changes, and coordinate integration through \`dev\` before promoting approved work to \`main\`. Existing branch history must be preserved.
+2. **Keep shared files coordinated.** Changes to `backend/app/main.py`, `frontend/src/App.jsx`, navigation, common configuration and API interfaces should be reviewed as integration work.
+3. **Use focused branches and pull requests.** Develop features on a branch, review changes, and coordinate integration through `dev` before promoting approved work to `main`. Existing branch history must be preserved.
 4. **Write meaningful commits.** Each commit should describe real functionality, documentation, a reproducible experiment or a validated fix.
 5. **Protect research integrity.** Label synthetic and practice data clearly, keep original source and unit information, avoid data leakage, and never report unverified model accuracy as a field result.
 6. **Do not commit sensitive data.** Keep secrets, credentials, private farmer records, restricted datasets and large generated model artifacts out of Git.
@@ -201,7 +201,7 @@ The **React app runs from \`frontend/src/index.html\`**, because \`frontend/vite
 
 | Item | Status |
 | --- | --- |
-| Shared FastAPI application and \`/health\` route | **Present** |
+| Shared FastAPI application and `/health` route | **Present** |
 | React + Vite + JSX + Tailwind scaffold | **Present** |
 | Earlier C4 HTML demonstration | **Preserved**, not migrated |
 | C1–C4 page modules and backend routes | **Member-owned; pending integration** |
