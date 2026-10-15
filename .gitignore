@@ -8,7 +8,6 @@ __pycache__/
 node_modules/
 frontend/dist/
 frontend/.vite/
-*.tsbuildinfo
 
 # Local tooling and editor artifacts
 .DS_Store

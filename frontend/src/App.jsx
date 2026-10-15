@@ -3,7 +3,7 @@ const areas = [
   { key: "C2", label: "Predictive Intelligence" },
   { key: "C3", label: "Irrigation Optimisation" },
   { key: "C4", label: "Harvest Decision Support" },
-] as const;
+];
 
 export default function App() {
   return (

@@ -6,8 +6,7 @@ on:
     paths:
       - "frontend/src/**"
       - "frontend/package.json"
-      - "frontend/vite.config.ts"
-      - "frontend/tsconfig.json"
+      - "frontend/vite.config.js"
       - "backend/app/**"
       - ".github/workflows/application-scaffold.yml"
   pull_request:
@@ -15,8 +14,7 @@ on:
     paths:
       - "frontend/src/**"
       - "frontend/package.json"
-      - "frontend/vite.config.ts"
-      - "frontend/tsconfig.json"
+      - "frontend/vite.config.js"
       - "backend/app/**"
       - ".github/workflows/application-scaffold.yml"
 
@@ -37,7 +35,7 @@ jobs:
           node-version: "22"
       - name: Install React frontend dependencies
         run: npm install --no-audit --no-fund
-      - name: Type-check and build Vite application
+      - name: Build React Vite application
         run: npm run build
 
   backend-syntax:

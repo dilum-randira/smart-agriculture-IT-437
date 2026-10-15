@@ -19,13 +19,12 @@ An AI and IoT-based smart agriculture research project focused on smart irrigati
 ## Repository layout
 
 - `backend/` — shared FastAPI application; member-owned component routers will be added later.
-- `frontend/` — React + Vite + TypeScript + Tailwind setup in `frontend/src/`.
-- `experiments/` — member-owned individual research work.
+- `frontend/` — React + Vite + JavaScript (JSX) + Tailwind setup in `frontend/src/`.
 - `firmware/` — IoT device code owned by the hardware component.
 - `docs/` — shared architecture, contracts and project evidence.
 
 Each of the four components is planned to have its own backend module, frontend
-page and experiment area. **No empty placeholder files are committed inside
+page. **No empty placeholder files are committed inside
 component directories**: Git displays those directories once members add
 real implementation. The existing C4 HTML/CSS/JS demo remains untouched at
 `frontend/index.html`, `frontend/app.js`, and `frontend/style.css`.

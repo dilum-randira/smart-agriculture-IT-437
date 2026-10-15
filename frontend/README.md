@@ -1,6 +1,6 @@
-# React + Vite + TypeScript frontend
+# React + Vite + JavaScript (JSX) frontend
 
-The **new shared application** is React, Vite and Tailwind CSS.
+The **new shared application** uses React, Vite, JavaScript (JSX) and Tailwind CSS. No TypeScript setup is required.
 
 ```bash
 cd frontend
