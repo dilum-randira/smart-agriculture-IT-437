@@ -20,13 +20,13 @@ export default function Navbar({ navigation }) {
           to="/"
           onClick={() => setIsOpen(false)}
           className="flex items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700"
-          aria-label="Smart Agriculture, go to Overview"
+          aria-label="Nai Miris, go to Overview"
         >
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-800 text-lg font-bold text-white" aria-hidden="true">
             N
           </span>
           <span className="leading-tight">
-            <span className="block text-base font-bold tracking-tight text-slate-900">Smart Agriculture</span>
+            <span className="block text-base font-bold tracking-tight text-slate-900">Nai Miris</span>
             <span className="block text-xs text-slate-500">Smart Agriculture</span>
           </span>
         </Link>
