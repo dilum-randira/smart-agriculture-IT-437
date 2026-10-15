@@ -1,0 +1,52 @@
+name: Shared application scaffold
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/src/**"
+      - "frontend/package.json"
+      - "frontend/vite.config.ts"
+      - "frontend/tsconfig.json"
+      - "backend/app/**"
+      - ".github/workflows/application-scaffold.yml"
+  pull_request:
+    branches: [main, dev]
+    paths:
+      - "frontend/src/**"
+      - "frontend/package.json"
+      - "frontend/vite.config.ts"
+      - "frontend/tsconfig.json"
+      - "backend/app/**"
+      - ".github/workflows/application-scaffold.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  frontend-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install React frontend dependencies
+        run: npm install --no-audit --no-fund
+      - name: Type-check and build Vite application
+        run: npm run build
+
+  backend-syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate shared Python scaffold syntax
+        run: python -m compileall -q backend/app
