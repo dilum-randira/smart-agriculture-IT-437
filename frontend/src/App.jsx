@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 const sections = [
   {
@@ -34,39 +35,6 @@ const sections = [
 
 const navigation = [{ path: "/", shortName: "Overview" }, ...sections];
 const apiBase = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/+$/, "");
-
-function Header() {
-  return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-3 sm:px-6">
-        <Link to="/" className="flex items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700" aria-label="Nai Miris, go to Overview">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-800 text-lg font-bold text-white" aria-hidden="true">N</span>
-          <span className="leading-tight">
-            <span className="block text-base font-bold tracking-tight text-slate-900">Nai Miris</span>
-            <span className="block text-xs text-slate-500">Smart Agriculture</span>
-          </span>
-        </Link>
-        <nav aria-label="Main navigation" className="flex w-full items-center gap-1 overflow-x-auto pb-1 sm:w-auto sm:pb-0">
-          {navigation.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={({ isActive }) =>
-                "shrink-0 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700" +
-                (isActive
-                  ? " bg-emerald-50 text-emerald-900"
-                  : " text-slate-600 hover:bg-slate-100 hover:text-slate-900")
-              }
-            >
-              {item.shortName}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
-    </header>
-  );
-}
 
 function ApiConnection() {
   const [status, setStatus] = useState("checking");
@@ -211,7 +179,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
-        <Header />
+        <Navbar navigation={navigation} />
         <Routes>
           <Route path="/" element={<Overview />} />
           {sections.map((section) => (

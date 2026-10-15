@@ -53,3 +53,13 @@ The default frontend base URL is `http://localhost:8000`, or set
 `VITE_API_BASE_URL` in a local Vite environment file if needed.
 The health check only confirms that the shared API is responding; it does
 not verify model or sensor availability.
+
+## Shared Navbar implementation
+
+The common responsive top navigation is implemented in `src/components/Navbar.jsx`.
+It uses the existing React Router routes in `src/App.jsx`. On narrow screens,
+a Menu button exposes the links; the active route is highlighted, and the menu
+closes after navigation. The button exposes its expanded state to assistive technology.
+
+Members can develop their own pages later without editing the shared Navbar.
+The current route workspaces are honest integration-status views, not real field-data results.

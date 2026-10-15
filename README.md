@@ -73,7 +73,9 @@ smart-agriculture-IT-437/
 │   ├── src/
 │   │   ├── pages/
 │   │   │   └── README.md      # Page ownership guidance
-│   │   ├── App.jsx
+│   │   ├── components/
+│   │   └── Navbar.jsx      # Shared responsive navigation
+│   ├── App.jsx
 │   │   ├── main.jsx
 │   │   ├── index.html         # React/Vite entry
 │   │   └── styles.css
