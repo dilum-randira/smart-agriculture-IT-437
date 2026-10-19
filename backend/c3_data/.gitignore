@@ -1,0 +1,5 @@
+# Keep real and generated data out of Git (it can be large or private).
+# Only the sample/ folder and this README are shared.
+raw/
+processed/
+outputs/

@@ -73,7 +73,9 @@ smart-agriculture-IT-437/
 │   ├── src/
 │   │   ├── pages/
 │   │   │   └── README.md      # Page ownership guidance
-│   │   ├── App.jsx
+│   │   ├── components/
+│   │   └── Navbar.jsx      # Shared responsive navigation
+│   ├── App.jsx
 │   │   ├── main.jsx
 │   │   ├── index.html         # React/Vite entry
 │   │   └── styles.css
@@ -202,7 +204,7 @@ The **React app runs from `frontend/src/index.html`**, because `frontend/vite.co
 | Item | Status |
 | --- | --- |
 | Shared FastAPI application and `/health` route | **Present** |
-| React + Vite + JSX + Tailwind scaffold | **Present** |
+| React + Vite + JSX + Tailwind scaffold, top navigation and working routes | **Present** |
 | Earlier C4 HTML demonstration | **Preserved**, not migrated |
 | C1–C4 page modules and backend routes | **Member-owned; pending integration** |
 | Live field-device data acquisition | **Not verified here** |
