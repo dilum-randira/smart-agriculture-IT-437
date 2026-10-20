@@ -12,4 +12,6 @@
 - Never invent data, results or accuracy claims. Synthetic data must have
   "synthetic" in its file name and be described as synthetic.
 - Put units in variable names or docstrings (mm/day, m3/m3, degC, MJ/m2/day).
+- Always run Python with backend/.venv (.venv\Scripts\python on Windows),
+  never the global Python.
 - Do not commit or push unless I say so.
