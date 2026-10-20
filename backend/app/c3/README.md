@@ -19,8 +19,10 @@ python -m pytest tests/c3
 These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
 
 1. Setup and folder structure  ✅ done
-2. Input data: synthetic sample data ✅ done; loading and validation ← current
-3. Reference evapotranspiration (FAO-56 Penman–Monteith)
+2. Input data: synthetic sample data ✅ done; loading and validation ✅ done
+   (soil moisture sensor limit still waits for C1's sensor model)
+3. Reference evapotranspiration (FAO-56 Penman–Monteith) ✅ done, tested
+   against FAO-56 Examples 2, 3, 8 and 18
 4. Crop water need (Capsicum Kc) and 7-day soil water balance
 5. Stage-aware irrigation rules (deficit irrigation at flowering,
    normal at vegetative and fruiting stages)
