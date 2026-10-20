@@ -25,3 +25,29 @@ ALL_DATA_FOLDERS = [RAW_DATA_DIR, PROCESSED_DATA_DIR, SAMPLE_DATA_DIR, OUTPUT_DI
 # Scheduling settings
 # ---------------------------------------------------------------------------
 SCHEDULE_DAYS = 7  # the irrigation plan always covers the next 7 days
+
+# ---------------------------------------------------------------------------
+# Crop: Nai Miris (Capsicum chinense, Sri Lankan "Scotch bonnet" type)
+# ---------------------------------------------------------------------------
+# PROXY: FAO-56 bell pepper, no Nai Miris data.
+# FAO-56 (Allen et al., 1998) has no row for Nai Miris. Every value below is
+# copied from the "Sweet peppers (bell)" row (Capsicum annuum, a different
+# species). Replace each one when a Sri Lankan / Nai Miris source is found.
+# This limitation must be stated in the thesis.
+CROP_NAME = "Nai Miris (Capsicum chinense)"
+
+# PROXY: FAO-56 bell pepper, no Nai Miris data. FAO-56 Table 12.
+KC_MID = 1.05   # dimensionless, mid-season crop coefficient
+KC_END = 0.90   # dimensionless, end-of-season crop coefficient
+# KC_INI is not set yet: the online FAO-56 Table 12 shows it only as an
+# image, so the value has not been checked. Fill it in from the printed table.
+KC_INI = None
+
+# PROXY: FAO-56 bell pepper, no Nai Miris data. FAO-56 Table 22.
+ROOT_DEPTH_MIN_M = 0.5   # m, smallest maximum effective rooting depth
+ROOT_DEPTH_MAX_M = 1.0   # m, largest maximum effective rooting depth
+DEPLETION_FRACTION_P = 0.30  # dimensionless, soil water depletion for no stress
+
+# Crop stage lengths (FAO-56 Table 11) are not set yet: the bell pepper rows
+# are for Europe/Mediterranean (125 days) and an arid region (210 days),
+# neither of which fits Sri Lanka. A local source is needed.

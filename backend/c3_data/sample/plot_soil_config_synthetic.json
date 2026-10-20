@@ -1,0 +1,23 @@
+{
+  "_status": "SYNTHETIC PLACEHOLDERS - replace every value with real plot data",
+  "plot": {
+    "latitude_deg": 7.9,
+    "elevation_m": 150.0,
+    "area_m2": 50.0,
+    "transplant_date": "2025-05-01",
+    "irrigation_efficiency": 0.85,
+    "water_cost_lkr_per_m3": null
+  },
+  "soil": {
+    "texture": "sandy loam (assumed)",
+    "field_capacity_m3m3": 0.22,
+    "wilting_point_m3m3": 0.1,
+    "root_depth_m": 0.5
+  },
+  "_notes": {
+    "latitude_deg / elevation_m": "Placeholder. Use the real test plot.",
+    "irrigation_efficiency": "Assumed drip system. Confirm the real method.",
+    "water_cost_lkr_per_m3": "Unknown - left empty on purpose. Find the real cost.",
+    "soil": "Typical textbook-range sandy loam values. Replace with a soil test or published values for the plot's soil."
+  }
+}
