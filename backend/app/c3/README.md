@@ -23,7 +23,9 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
    (soil moisture sensor limit still waits for C1's sensor model)
 3. Reference evapotranspiration (FAO-56 Penman–Monteith) ✅ done, tested
    against FAO-56 Examples 2, 3, 8 and 18
-4. Crop water need (Capsicum Kc) and 7-day soil water balance
+4. Crop water need (Capsicum Kc) and 7-day soil water balance ✅ code done,
+   tested against FAO-56 Examples 28, 36 and 37 (real Kc ini, stage
+   lengths and soil values still needed)
 5. Stage-aware irrigation rules (deficit irrigation at flowering,
    normal at vegetative and fruiting stages)
 6. Water stress probability classifier (XGBoost / Random Forest)
