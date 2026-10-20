@@ -30,8 +30,8 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
    normal at vegetative and fruiting stages)
 6. Water stress probability classifier (XGBoost / Random Forest)
 7. Climate risk assessment (heatwave, drought, waterlogging, root rot)
-8. Baseline schedules: fixed threshold, reactive ML ("Paper 8"
-   methodology), DoA Sri Lanka recommended chilli schedule
+8. Baseline schedules: fixed threshold ✅ and DoA Sri Lanka interval
+   schedule ✅ (code done); reactive ML ("Paper 8" methodology) still to do
 9. NSGA-II optimisation with pymoo (yield, water-use efficiency,
    water volume, cost, climate risk)
 10. Adaptive 7-day schedule that updates when new sensor data or C2
@@ -52,7 +52,10 @@ availability. For C3 these are still open:
 - Yield response to water, needed for the yield objective.
 - A citation showing deficit irrigation at flowering raises capsaicin.
 - Labels ("stressed" / "not stressed") to train the water stress classifier.
-- The DoA chilli irrigation schedule used as a baseline.
+- DoA chilli schedule: HORDI gives intervals (4-5 days early, weekly later)
+  but not the day "early" ends or the amount per irrigation. The code
+  currently assumes each irrigation refills the root zone; both points
+  need a source or must be stated as assumptions in the thesis.
 - Water cost (LKR/m3) for the test plot.
 - Which paper "Paper 8" is, for the reactive ML baseline.
 - The model of C1's soil moisture sensor, so its datasheet measuring range
