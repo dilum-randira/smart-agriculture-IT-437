@@ -1,5 +1,16 @@
 # React + Vite + JavaScript (JSX) frontend
 
+## C2 integration update
+
+`/predictions` now opens the C2 Yield Prediction workspace connected to the
+existing FastAPI endpoint. Other research routes and the earlier C4 demo remain
+as described below. See [C2 setup and file inventory](src/pages/c2/README.md)
+and [verification results](tests/c2/VERIFICATION.md). Run `npm run test:c2`
+for API service tests. No new application dependencies were added.
+
+The scaffold notes below describe the original shared shell; C2 now has its
+own implementation under the functional `src/*/c2/` folders.
+
 The **new shared application** uses React, Vite, JavaScript (JSX) and Tailwind CSS. No TypeScript setup is required.
 
 ```bash

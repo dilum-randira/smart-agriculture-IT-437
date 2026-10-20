@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" fill="none">
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A2BB67"/><stop offset=".45" stop-color="#6A954B"/><stop offset="1" stop-color="#214E36"/></linearGradient>
+    <linearGradient id="darkLeaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#648D4A"/><stop offset=".55" stop-color="#356E40"/><stop offset="1" stop-color="#163E2B"/></linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#FC9953"/><stop offset=".28" stop-color="#E65D31"/><stop offset=".7" stop-color="#BD3627"/><stop offset="1" stop-color="#7D2521"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#F6C16A"/><stop offset=".4" stop-color="#EE943D"/><stop offset=".8" stop-color="#CA5C25"/><stop offset="1" stop-color="#9C4121"/></linearGradient>
+    <linearGradient id="stem" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#365D32"/><stop offset=".5" stop-color="#8A9E58"/><stop offset="1" stop-color="#456C39"/></linearGradient>
+    <radialGradient id="earth"><stop stop-color="#D2BC8F"/><stop offset="1" stop-color="#756B4D"/></radialGradient>
+    <g id="blade">
+      <path d="M0 0C-8-34 7-75 28-105 52-66 51-23 0 0Z" fill="url(#leaf)"/>
+      <path d="M0 0Q19-44 28-105M10-27 0-48m16 2 21-19M21-65 13-79" stroke="#BED18A" stroke-opacity=".42" stroke-width="1.3"/>
+      <path d="M0 0C18-40 24-71 28-105" stroke="#284E2F" stroke-opacity=".45" stroke-width="1"/>
+    </g>
+    <g id="backBlade">
+      <path d="M0 0C-13-37 0-79 26-105 51-61 48-22 0 0Z" fill="url(#darkLeaf)"/>
+      <path d="M0 0Q19-45 26-105M11-32-2-55m20 6 18-18" stroke="#9EBB79" stroke-opacity=".35" stroke-width="1"/>
+    </g>
+    <g id="pepper">
+      <path d="M-5-7C-24-20-42-8-37 14-39 28-27 32-23 44-19 56-8 52-1 58 8 53 18 57 24 43 27 33 36 28 34 13 40-8 20-18 5-8Z" fill="url(#red)"/>
+      <path d="M-12-7C-23 9-15 23-17 38M5-8C-2 6 12 27 5 49M22-4C17 13 28 22 19 39" stroke="#842B23" stroke-opacity=".28" stroke-width="2"/>
+      <path d="M-25 0Q-31 9-26 19M-10 2Q-12 12-9 21" stroke="#FFBE82" stroke-opacity=".65" stroke-width="3" stroke-linecap="round"/>
+      <path d="m0-13-16 3 9 7 8-4 9 5 12-7-13-4Z" fill="#496C35"/>
+      <path d="M1-9Q-2-22 5-30" stroke="#7B8B43" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <g id="goldPepper">
+      <path d="M-4-7C-24-18-37-7-33 13-36 24-25 31-21 40-18 51-7 48-1 54 7 48 18 52 23 39 27 30 33 24 30 12 36-8 18-17 5-7Z" fill="url(#gold)"/>
+      <path d="M-12-7Q-23 13-15 36M3-7C-5 9 10 27 4 45M21-4Q14 15 20 31" stroke="#AD5828" stroke-opacity=".4" stroke-width="1.8"/>
+      <path d="M-23 0Q-27 8-22 19" stroke="#FFE2A0" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+      <path d="m0-12-15 3 9 6 7-4 8 5 11-7-13-4Z" fill="#65813A"/>
+      <path d="M1-9Q-2-22 4-29" stroke="#809045" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <ellipse cx="249" cy="429" rx="115" ry="15" fill="#102E24" opacity=".3"/>
+  <ellipse cx="245" cy="419" rx="76" ry="13" fill="url(#earth)" opacity=".8"/>
+  <path d="M243 419C240 355 252 304 244 259 235 213 249 164 250 117" stroke="#294A2D" stroke-width="11" stroke-linecap="round"/>
+  <path d="M242 417C240 355 251 304 243 259 235 213 248 164 249 117" stroke="url(#stem)" stroke-width="7" stroke-linecap="round"/>
+  <g stroke="url(#stem)" stroke-linecap="round">
+    <path d="M245 349Q202 301 153 272M246 302Q305 263 331 217M241 257Q203 215 167 177M246 205Q282 176 311 145M248 162Q225 134 212 113" stroke-width="5"/>
+    <path d="M185 295Q165 270 125 255M276 280Q314 282 355 255M215 231Q186 230 143 215M271 185Q304 192 336 175M248 142Q273 122 288 97" stroke-width="3"/>
+  </g>
+  <use href="#backBlade" transform="translate(207 315) rotate(-75) scale(1.02)"/>
+  <use href="#backBlade" transform="translate(270 306) rotate(62) scale(.97)"/>
+  <use href="#backBlade" transform="translate(241 228) rotate(-10) scale(.82)"/>
+  <use href="#backBlade" transform="translate(169 180) rotate(-72) scale(.88)"/>
+  <use href="#backBlade" transform="translate(310 146) rotate(32) scale(.75)"/>
+  <use href="#backBlade" transform="translate(212 115) rotate(-64) scale(.65)"/>
+  <use href="#blade" transform="translate(248 127) rotate(-19) scale(.74)"/>
+  <use href="#blade" transform="translate(246 170) rotate(56) scale(.78)"/>
+  <use href="#blade" transform="translate(215 230) rotate(-77) scale(1.03)"/>
+  <use href="#blade" transform="translate(170 183) rotate(-22) scale(.78)"/>
+  <use href="#blade" transform="translate(279 211) rotate(69) scale(.87)"/>
+  <use href="#blade" transform="translate(332 218) rotate(24) scale(.91)"/>
+  <use href="#blade" transform="translate(181 293) rotate(-63) scale(1.04)"/>
+  <use href="#blade" transform="translate(280 281) rotate(70) scale(.98)"/>
+  <use href="#blade" transform="translate(241 344) rotate(-41) scale(.78)"/>
+  <use href="#backBlade" transform="translate(244 365) rotate(70) scale(.68)"/>
+  <g stroke="#7E944E" stroke-width="3" stroke-linecap="round">
+    <path d="M163 178Q151 192 159 207M305 176Q319 191 308 210M184 287Q171 304 178 318M283 278Q296 296 288 310"/>
+  </g>
+  <use href="#goldPepper" transform="translate(157 227) rotate(15) scale(.68)"/>
+  <use href="#goldPepper" transform="translate(309 230) rotate(-12) scale(.82)"/>
+  <use href="#pepper" transform="translate(179 341) rotate(12) scale(.94)"/>
+  <use href="#pepper" transform="translate(287 332) rotate(-9) scale(1.04)"/>
+  <use href="#blade" transform="translate(243 263) rotate(-50) scale(.68)"/>
+  <use href="#blade" transform="translate(267 301) rotate(23) scale(.56)"/>
+  <g transform="translate(342 174)">
+    <path d="m0 0-9-7 8-2 3-9 5 8 9 1-5 7 3 9-9-3-7 5Z" fill="#EBE8C8"/>
+    <circle cx="2" cy="0" r="3.8" fill="#C8AF55"/>
+  </g>
+  <g fill="#C8B586" opacity=".6"><ellipse cx="210" cy="416" rx="4" ry="2"/><ellipse cx="274" cy="422" rx="6" ry="2"/><ellipse cx="239" cy="425" rx="3" ry="1"/><ellipse cx="293" cy="416" rx="3" ry="1"/></g>
+</svg>

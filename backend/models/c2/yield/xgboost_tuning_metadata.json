@@ -1,0 +1,25 @@
+{
+  "model": "XGBoost",
+  "dataset": "PeerJ genotype-year aggregates",
+  "target": "fruit_yield_g_per_plant",
+  "features": [
+    "plant_height_cm",
+    "main_branches",
+    "leaf_length_cm",
+    "leaf_breadth_cm",
+    "days_to_50pct_flowering"
+  ],
+  "selection_metric": "CV MAE",
+  "best_cv_mae": 92.90119578588094,
+  "best_parameters": {
+    "model__subsample": 1.0,
+    "model__reg_lambda": 5,
+    "model__n_estimators": 100,
+    "model__min_child_weight": 1,
+    "model__max_depth": 2,
+    "model__learning_rate": 0.1,
+    "model__colsample_bytree": 1.0
+  },
+  "cv_method": "Predefined genotype-grouped 5-fold",
+  "test_evaluated": false
+}

@@ -1,0 +1,18 @@
+{
+  "model": "XGBoost",
+  "experiment": "PeerJ genotype-year yield regression",
+  "features": [
+    "plant_height_cm",
+    "main_branches",
+    "leaf_length_cm",
+    "leaf_breadth_cm",
+    "days_to_50pct_flowering"
+  ],
+  "target": "fruit_yield_g_per_plant",
+  "target_unit": "g/plant",
+  "fresh_or_dry": "not explicitly verified",
+  "cv_method": "5-fold genotype-grouped",
+  "development_rows": 306,
+  "test_evaluated": false,
+  "random_state": 42
+}

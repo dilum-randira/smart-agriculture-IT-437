@@ -7,3 +7,10 @@ No C1–C4 placeholder files are provided. Git does not track empty directories,
 so component folders will first appear after their owners commit real work.
 
 Shared layouts and UI utilities can be added later by team agreement.
+
+## C2 yield prediction
+
+`c2/YieldPrediction.jsx` now owns `/predictions`. Its UI components, API service,
+public aggregate assets, and scoped styles live in the matching functional
+`components/c2`, `services/c2`, `assets/c2`, and `styles/c2` directories.
+See `c2/README.md` for setup, research provenance, and verification commands.

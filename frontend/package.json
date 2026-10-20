@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:c2": "node --test tests/c2/yieldApi.test.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
