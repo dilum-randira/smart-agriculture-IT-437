@@ -25,6 +25,7 @@ from app.c3 import baselines as bl
 from app.c3 import config
 from app.c3 import data_loading as dl
 from app.c3 import evaluation as ev
+from app.c3 import optimiser as opt
 from app.c3 import water_balance as wb
 
 SEASON_DAYS = 90                 # TAF: 75-90 day chilli growth cycle (upper end)
@@ -32,9 +33,11 @@ DOA_EARLY_INTERVALS = [4, 5]     # days, HORDI: "4-5 day intervals at early stag
 DOA_LATE_INTERVAL = 7            # days, HORDI: "1 week interval at latter stages"
 DOA_EARLY_END_DAYS = [21, 30, 45]  # sensitivity test, NOT from a source
 ALLOWED_DEFICITS = [0.0, 0.05, 0.10]  # sensitivity test, NOT agronomic constants
+MIN_IRRIGATION_MM = 0.0          # off: needs a sourced value for the irrigation method
 
 
-def main(season_days: int = SEASON_DAYS, pop_size: int = 60, n_generations: int = 100,
+def main(season_days: int = SEASON_DAYS, pop_size: int = opt.DEFAULT_POP_SIZE,
+         n_generations: int = opt.DEFAULT_N_GENERATIONS,
          output_dir: Path = config.OUTPUT_DIR) -> pd.DataFrame:
     sample = config.SAMPLE_DATA_DIR
     plot = dl.load_plot_config(sample / "plot_soil_config_synthetic.json")
@@ -61,7 +64,8 @@ def main(season_days: int = SEASON_DAYS, pop_size: int = 60, n_generations: int 
             rules[f"DoA every {early}d, weekly after day {end_day}"] = bl.doa_schedule_rule(days)
     for deficit in ALLOWED_DEFICITS:
         rules[f"NSGA-II, allowed deficit {deficit:.2f}"] = ev.optimiser_rule(
-            forecasts, dates, kc, taw, raw, lat, elev, deficit, pop_size, n_generations)
+            forecasts, dates, kc, taw, raw, lat, elev, deficit,
+            min_irrigation_mm=MIN_IRRIGATION_MM, pop_size=pop_size, n_generations=n_generations)
 
     results = {name: ev.run_season(rule, truth, kc, taw, raw) for name, rule in rules.items()}
     table = ev.compare_schedules(results, truth, kc)
