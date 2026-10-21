@@ -3,6 +3,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.c3.api import router as c3_router
+
 app = FastAPI(
     title="Nai Miris Smart Agriculture API",
     version="0.1.0",
@@ -16,6 +18,9 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+
+app.include_router(c3_router)  # C3 irrigation endpoints under /c3
 
 
 @app.get("/health", tags=["system"])
