@@ -93,6 +93,21 @@ def blank_out_of_range(df: pd.DataFrame, limits: dict) -> tuple[pd.DataFrame, di
     return cleaned, counts
 
 
+def find_spikes(values: pd.Series, max_jump: float) -> pd.Series:
+    """True where a reading jumps more than max_jump away from BOTH neighbours
+    in opposite directions (up then straight back down, or the reverse).
+
+    A real change (irrigation, rain) stays at its new level, so it is not
+    flagged. max_jump (same unit as values) has NO default: it needs a source,
+    e.g. the soil moisture sensor's datasheet or C1's calibration notes.
+    Blank readings and the first/last reading are never flagged.
+    """
+    step_in = values.diff()                 # change from the previous reading
+    step_out = values.shift(-1) - values    # change to the next reading
+    spike = (step_in.abs() > max_jump) & (step_out.abs() > max_jump) & (step_in * step_out < 0)
+    return spike.fillna(False).astype(bool)
+
+
 # ---------------------------------------------------------------------------
 # Loaders (one per file)
 # ---------------------------------------------------------------------------

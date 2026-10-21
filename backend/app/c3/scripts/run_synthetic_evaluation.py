@@ -24,8 +24,10 @@ import pandas as pd
 from app.c3 import baselines as bl
 from app.c3 import config
 from app.c3 import data_loading as dl
+from app.c3 import et0
 from app.c3 import evaluation as ev
 from app.c3 import optimiser as opt
+from app.c3 import stress_classifier as sc
 from app.c3 import water_balance as wb
 
 SEASON_DAYS = 90                 # TAF: 75-90 day chilli growth cycle (upper end)
@@ -62,6 +64,17 @@ def main(season_days: int = SEASON_DAYS, pop_size: int = opt.DEFAULT_POP_SIZE,
         for end_day in DOA_EARLY_END_DAYS:
             days = bl.doa_irrigation_days(season_days, early, DOA_LATE_INTERVAL, end_day)
             rules[f"DoA every {early}d, weekly after day {end_day}"] = bl.doa_schedule_rule(days)
+
+    # Reactive ML baseline: Random Forest trained on the 2024 synthetic
+    # weather only (the season is in 2025, so it never sees the test days).
+    history = et0.add_et0_column(weather[weather["date"].dt.year == 2024], lat, elev)
+    training_rule = bl.doa_schedule_rule(bl.doa_irrigation_days(len(history), 5, 7, 1))
+    training_days = sc.build_training_days(history, training_rule, [config.KC_MID] * len(history),
+                                           taw, raw, soil["field_capacity_m3m3"],
+                                           soil["root_depth_m"])
+    model = sc.train_stress_classifier(training_days)
+    rules["reactive ML (Random Forest)"] = sc.reactive_ml_rule(
+        model, truth, soil["field_capacity_m3m3"], soil["root_depth_m"])
     for deficit in ALLOWED_DEFICITS:
         rules[f"NSGA-II, allowed deficit {deficit:.2f}"] = ev.optimiser_rule(
             forecasts, dates, kc, taw, raw, lat, elev, deficit,

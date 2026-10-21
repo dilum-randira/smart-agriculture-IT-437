@@ -1,9 +1,11 @@
 # Rules for C3 work
 - I am Gayantha, a beginner Python developer, owner of C3 only
   (Adaptive Multi-Objective Irrigation Optimisation Engine).
-- Only edit backend/app/c3/, backend/tests/c3/, backend/c3_data/ and
-  backend/requirements-c3.txt. Never edit shared files or other
-  members' folders.
+- Only edit backend/app/c3/, backend/tests/c3/, backend/c3_data/,
+  backend/requirements-c3.txt and frontend/src/pages/c3/. Never edit
+  shared files or other members' folders. Exception: the one-line hooks
+  that connect C3 to the shared app (backend/app/main.py router include,
+  frontend/src/App.jsx route) go in their own commit for team review.
 - Simple, readable Python with comments and type hints. Small functions.
 - Every function gets a pytest test. Run "python -m pytest tests/c3"
   from backend/ before saying a task is done.

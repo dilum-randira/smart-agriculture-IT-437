@@ -27,6 +27,20 @@ ALL_DATA_FOLDERS = [RAW_DATA_DIR, PROCESSED_DATA_DIR, SAMPLE_DATA_DIR, OUTPUT_DI
 SCHEDULE_DAYS = 7  # the irrigation plan always covers the next 7 days
 
 # ---------------------------------------------------------------------------
+# Demo location (until the real test plot is known)
+# ---------------------------------------------------------------------------
+# Mahailuppallama, Anuradhapura District (dry zone): DoA field crops research
+# station; the 2002 DoA chilli drip-irrigation study was done here. Chosen by
+# the student for the panel demo. Coordinates and elevation from the
+# Open-Meteo geocoding API (checked 2026-10-21). This is NOT the test plot.
+DEMO_LOCATION = {
+    "name": "Mahailuppallama (demo location)",
+    "latitude_deg": 8.0974,
+    "longitude_deg": 80.4465,
+    "elevation_m": 117.0,
+}
+
+# ---------------------------------------------------------------------------
 # Crop: Nai Miris (Capsicum chinense, Sri Lankan "Scotch bonnet" type)
 # ---------------------------------------------------------------------------
 # PROXY: FAO-56 bell pepper, no Nai Miris data.

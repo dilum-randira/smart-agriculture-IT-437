@@ -132,3 +132,24 @@ def test_pipeline_removes_the_impossible_spikes():
     assert (cleaned["soil_moisture_pct"].dropna() <= 100).all()
     daily = dl.daily_sensor_summary(cleaned)
     assert len(daily) == 90
+
+
+# --- find_spikes ------------------------------------------------------------
+def test_find_spikes_flags_up_and_down_spikes():
+    values = pd.Series([20.0, 20.5, 150.0, 20.4, 20.3, 0.0, 20.2])
+    assert dl.find_spikes(values, max_jump=10.0).tolist() == \
+        [False, False, True, False, False, True, False]
+
+
+def test_find_spikes_ignores_real_step_changes_and_blanks():
+    irrigation_step = pd.Series([15.0, 15.1, 25.0, 25.2, 25.1])   # rises and stays
+    assert not dl.find_spikes(irrigation_step, max_jump=5.0).any()
+    with_blank = pd.Series([20.0, np.nan, 20.0])
+    assert not dl.find_spikes(with_blank, max_jump=5.0).any()
+
+
+def test_find_spikes_catches_synthetic_99_9_and_0_spikes():
+    sensors = dl.load_sensors(SAMPLE / "c1_sensor_synthetic_15min.csv")
+    spikes = dl.find_spikes(sensors["soil_moisture_pct"], max_jump=10.0)   # test value only
+    flagged = sensors.loc[spikes, "soil_moisture_pct"].tolist()
+    assert 99.9 in flagged and 0.0 in flagged

@@ -2,9 +2,10 @@
 
 Owner: Gayantha W.M.K (IT23317826)
 
-**Status: Stage 2 in progress. All data in c3_data/sample is synthetic.
-No model, calculation or schedule in this folder has been validated.
-Nothing here is a research result.**
+**Status: all 12 stages have working, tested code. Everything runs on
+SYNTHETIC data and placeholder/proxy crop and soil values until field data
+and the open questions below are resolved. Nothing here is a research
+result.**
 
 ## Run (from the `backend/` folder, with the virtual environment active)
 
@@ -12,7 +13,33 @@ Nothing here is a research result.**
 python -m pip install -r requirements-c3.txt
 python -m app.c3.check_setup
 python -m pytest tests/c3
+python -m app.c3.scripts.run_synthetic_evaluation   # season comparison (synthetic)
+python -m app.c3.scripts.tune_nsga2                 # NSGA-II tuning (synthetic)
+python -m app.c3.scripts.run_real_weather_evaluation  # real weather + past forecasts (demo location)
+fastapi dev app/main.py                             # API; C3 endpoints under /c3
 ```
+
+Dashboard: `cd frontend && npm install && npm run dev`, then open
+http://localhost:5173/irrigation (needs the API running).
+
+## Code map
+
+| File | Stage | What it does |
+| --- | --- | --- |
+| data_loading.py | 2 | Load and check input files; spike check |
+| et0.py | 3 | FAO-56 Penman-Monteith ET0 (Eq. 17 or 19), wind height (Eq. 47) |
+| water_balance.py | 4 | Kc curve, ETc, TAW/RAW, Ks, daily root-zone balance |
+| growth_stages.py | 5 | FAO-56 growth stages; per-stage settings |
+| stress_classifier.py | 6, 8 | Random Forest stress classifier; reactive ML baseline |
+| climate_risk.py | 7 | Heat, drought, waterlogging, root-rot flags |
+| baselines.py | 5, 8 | Fixed threshold, DoA, stage-aware rules; season simulator |
+| optimiser.py | 9 | NSGA-II plan (4 objectives), partial refills |
+| cost.py | 9 | Irrigation cost (LKR) from water and events |
+| weather_sources.py | 10 | Open-Meteo forecast / ERA5 history; C2 prediction format |
+| planner.py | 10 | Today's recommendation from soil reading + forecast |
+| evaluation.py | 11 | Season comparison of all schedules |
+| api.py | 12 | FastAPI router (/c3/status, /c3/et0, /c3/plan, /c3/demo/...) |
+| frontend/src/pages/c3/IrrigationPlanning.jsx | 12 | Irrigation Operations Dashboard |
 
 ## Stages
 
@@ -27,15 +54,24 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
    tested against FAO-56 Examples 28, 36 and 37 (real Kc ini, stage
    lengths and soil values still needed)
 5. Stage-aware irrigation rules (deficit irrigation at flowering,
-   normal at vegetative and fruiting stages)
-6. Water stress probability classifier (XGBoost / Random Forest)
+   normal at vegetative and fruiting stages) — code ✅: per-stage trigger
+   and partial-refill settings (baselines.stage_aware_rule, optimiser
+   refill_fraction). Evidence: Jeeatid et al. (2018) Food Chemistry
+   245:792-797 — water stress after anthesis raised capsaicinoid
+   concentration but reduced yield; capsaicinoid yield rose only in some
+   C. chinense cultivars. Stage lengths and deficit levels still needed.
+6. Water stress probability classifier (XGBoost / Random Forest) — code ✅
+   (Random Forest, scikit-learn). Interim label: FAO-56 Ks < 1 tomorrow
+   without irrigation (agreed by the student; confirm with supervisor).
+   On simulated data it partly re-learns FAO-56, so scores are not accuracy.
 7. Climate risk assessment (heatwave, drought, waterlogging, root rot) —
    daily risk flags ✅ (heat: Tmax >= 33 degC, Erickson & Markhart 2002;
    drought: Ks < 1, FAO-56; root rot: water beyond FC and Tmean 23.9-33.3
    degC, UC IPM; waterlogging: longest wet run only, threshold not yet
-   confirmed). Not yet used as an NSGA-II objective.
-8. Baseline schedules: fixed threshold ✅ and DoA Sri Lanka interval
-   schedule ✅ (code done); reactive ML ("Paper 8" methodology) still to do
+   confirmed). Root-rot risk days are an NSGA-II objective.
+8. Baseline schedules: fixed threshold ✅, DoA Sri Lanka interval
+   schedule ✅, generic reactive ML ✅ (Random Forest; align with the
+   "Paper 8" methodology once that paper is identified)
 9. NSGA-II optimisation with pymoo (yield, water-use efficiency,
    water volume, cost, climate risk) — version 2 ✅: decides WHICH days to
    irrigate; each irrigation refills to field capacity (FAO-56 Example 38).
@@ -43,19 +79,45 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
    weather scenario), irrigation events, root-rot risk days. Minimum
    practical amount is a setting (off until sourced). NSGA-II pop 60 x 80
    generations, tuned with `python -m app.c3.scripts.tune_nsga2` (finds the
-   exact Pareto front in all 120 synthetic test cases). Still to add: cost
-   (needs water price), partial refills for deficit irrigation (Stage 5).
+   exact Pareto front in all 120 synthetic test cases). Cost (cost.py) is
+   reported, not a separate objective: water and events are already
+   objectives, so every cost trade-off is on the Pareto front.
 10. Adaptive 7-day schedule that updates when new sensor data or C2
-    forecasts arrive
+    forecasts arrive — code ✅: planner.plan_today (soil reading ->
+    depletion, forecast -> 7-day plan); weather_sources.py fetches
+    Open-Meteo forecasts / ERA5 history and parses C2's proposed format.
+    Cross-check on real ERA5 weather (May 2025, placeholder location
+    7.9N 80.7E): our ET0 tracks Open-Meteo's FAO ET0 (r = 0.96) but is
+    0.46 mm/day higher on average; cause not yet investigated.
 11. Evaluation against the baselines — pipeline ✅ and first run on
     SYNTHETIC data (`python -m app.c3.scripts.run_synthetic_evaluation`).
-    Not a result. With optimiser v2 the tiny daily irrigations are gone,
-    but on synthetic data it is only slightly better than the fixed
-    threshold (about 1 % less water at zero stress, with more irrigation
-    events). Assumptions: season starts at field capacity; optimiser knows
-    the true depletion.
+    Not a result. On synthetic data NSGA-II (deficit 0) uses about the
+    same water as the fixed threshold and the reactive ML baseline (all
+    ~449-455 mm, zero stress); DoA uses less water but has 27-35 stress
+    days. With perfect knowledge of soil water and synthetic weather, a
+    forecast-based optimiser has little room to help; its value must be
+    tested on real forecasts and sensor data. Assumptions: season starts
+    at field capacity; schedules know the true depletion.
+    REAL-WEATHER test (`python -m app.c3.scripts.run_real_weather_evaluation`):
+    Yala 2025 (90 days from 1 May) at the demo location Mahailuppallama,
+    real ERA5 weather and real past forecasts (Open-Meteo Previous Runs);
+    soil/crop still placeholders/proxy. With PERFECT forecasts NSGA-II
+    beats the reactive rules (421 vs 434-444 mm, drainage 5.6 vs 12.5-18.8
+    mm, root-rot days 1 vs 3). With REAL forecasts the advantage disappears
+    (about 441 mm, drainage 14.7 mm). Run-to-run sensitivity of the
+    optimiser is about +/-10 mm per season, so 2-4 % differences are not
+    meaningful; one location and one season only. Interpretation: forecast
+    quality limits the benefit, which links C3 to C2's forecasts.
+    "Trust the forecast" (worst_case_no_rain=False) did not clearly help,
+    so the "rain fails" safety case stays the default.
 12. FastAPI endpoints for C4 and the Irrigation Operations Dashboard
-    (weekly schedule, water-use optimisation, risk alerts)
+    (weekly schedule, water-use optimisation, risk alerts) — code ✅:
+    api.py router mounted in backend/app/main.py; dashboard page at
+    /irrigation (frontend/src/pages/c3/). Live demo mode
+    (/c3/demo/live-plan) uses today's real forecast at the demo location
+    and shows, per day, the facts behind the plan and what reactive rules
+    would do instead. Synthetic mode stays available. All demo outputs are
+    labelled with their data source and placeholders.
 
 ## Open questions (data sources)
 

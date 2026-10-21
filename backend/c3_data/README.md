@@ -15,4 +15,10 @@ file name and must never be reported as field data.
 
 | File | Source | Date obtained | Units / notes |
 | --- | --- | --- | --- |
-| (none yet) | | | |
+| processed/era5_daily_demo_location_2025-05-01_90d.csv | ERA5 reanalysis via Open-Meteo archive API (archive-api.open-meteo.com), Mahailuppallama demo location 8.0974 N 80.4465 E; "Generated using Copernicus Climate Change Service information" | 2026-10-21 | Daily; degC, %, mm, wind converted 10 m -> 2 m (FAO-56 Eq. 47), MJ/m2/day. Real weather, demo location (not the test plot) |
+| processed/era5_daily_demo_location_2024.csv | Same source and location, full year 2024 | 2026-10-21 | As above; used only to train the reactive ML baseline |
+| processed/previous_runs_forecasts_demo_location_2025-05-01_90d.csv | Open-Meteo Previous Runs API (previous-runs-api.open-meteo.com), "best match" models, forecasts as issued 1-7 days ahead | 2026-10-21 | Hourly -> daily (max/min from hourly values, radiation sum W/m2 x 3600 s -> MJ/m2/day). Real past forecasts, demo location |
+
+Regenerate with `python -m app.c3.scripts.run_real_weather_evaluation`
+(delete the files first to download again). Open-Meteo is free for
+non-commercial use; cite Open-Meteo and its sources.
