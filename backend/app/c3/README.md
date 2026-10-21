@@ -33,7 +33,11 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
 8. Baseline schedules: fixed threshold ✅ and DoA Sri Lanka interval
    schedule ✅ (code done); reactive ML ("Paper 8" methodology) still to do
 9. NSGA-II optimisation with pymoo (yield, water-use efficiency,
-   water volume, cost, climate risk)
+   water volume, cost, climate risk) — prototype ✅: objectives are water
+   applied, relative ET deficit (FAO-33 yield proxy, worst weather
+   scenario) and deep percolation. Still to add: cost (needs water price),
+   climate risk (Stage 7), and a minimum practical irrigation amount
+   (the prototype can plan unrealistically tiny amounts, e.g. 0.09 mm).
 10. Adaptive 7-day schedule that updates when new sensor data or C2
     forecasts arrive
 11. Evaluation against the baselines
