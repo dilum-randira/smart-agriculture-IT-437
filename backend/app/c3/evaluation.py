@@ -38,14 +38,17 @@ def season_truth(weather: pd.DataFrame, start_date: str, n_days: int,
 def optimiser_rule(forecasts: pd.DataFrame, season_dates: list[pd.Timestamp],
                    kc: list[float], taw_mm: float, raw_mm: float,
                    latitude_deg: float, elevation_m: float, max_relative_et_deficit: float,
-                   pop_size: int = 60, n_generations: int = 100,
+                   *, min_irrigation_mm: float = 0.0,
+                   pop_size: int = opt.DEFAULT_POP_SIZE,
+                   n_generations: int = opt.DEFAULT_N_GENERATIONS,
                    seed: int = 1) -> bl.IrrigationRule:
     """An irrigation rule that runs NSGA-II every morning (receding horizon).
 
     On season day t it uses the forecast issued on day t-1, plans the next 7
-    days from today's depletion, and returns the planned amount for today.
-    The plan is the least-water one within max_relative_et_deficit; if none
-    qualifies, the plan with the smallest deficit is used.
+    days from today's depletion, and if the plan irrigates today, refills the
+    root zone (unless that is below min_irrigation_mm). The plan is the
+    least-water one within max_relative_et_deficit; if none qualifies, the
+    plan with the smallest deficit is used.
     """
     horizon = 7   # C2 forecasts 7 days ahead (TAF, C2 description)
 
@@ -56,12 +59,14 @@ def optimiser_rule(forecasts: pd.DataFrame, season_dates: list[pd.Timestamp],
         # Kc for the next 7 days; after the season ends, keep the last value.
         kc_window = [kc[min(day - 1 + i, len(kc) - 1)] for i in range(horizon)]
         front = opt.optimise_schedule(depletion_mm, scenarios, kc_window, taw_mm, raw_mm,
-                                      pop_size, n_generations, seed)
+                                      min_irrigation_mm, pop_size, n_generations, seed)
         try:
             plan = opt.least_water_schedule(front, max_relative_et_deficit)
         except ValueError:
             plan = front.sort_values("relative_et_deficit").iloc[0]
-        return float(plan["day1_mm"])
+        if plan["day1_irrigate"] and depletion_mm > 0 and depletion_mm >= min_irrigation_mm:
+            return depletion_mm          # refill to field capacity (FAO-56 Example 38)
+        return 0.0
 
     return rule
 

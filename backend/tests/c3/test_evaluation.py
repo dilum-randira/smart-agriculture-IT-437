@@ -48,6 +48,21 @@ def test_optimiser_rule_returns_a_valid_amount(truth):
     assert 0.0 <= amount <= TAW
 
 
+def test_optimiser_rule_irrigates_when_crop_would_be_stressed(truth):
+    # Depletion 30 mm is beyond RAW (18 mm): a zero-deficit plan must refill today.
+    forecasts = dl.load_forecasts(SAMPLE / "c2_forecast_synthetic_7day.csv")
+    rule = ev.optimiser_rule(forecasts, truth["date"].tolist(), [1.05] * DAYS, TAW, RAW,
+                             LAT, ELEV, max_relative_et_deficit=0.0)
+    assert rule(1, 30.0) == pytest.approx(30.0)
+
+
+def test_script_optimiser_rows_irrigate(tmp_path):
+    # Guards against settings being passed into the wrong parameter.
+    table = script.main(season_days=DAYS, output_dir=tmp_path)
+    optimiser_rows = table[table["schedule"].str.startswith("NSGA-II")]
+    assert (optimiser_rows["total_irrigation_mm"] > 0).all()
+
+
 # --- run_season -------------------------------------------------------------
 def test_fixed_threshold_season_has_no_stress(truth):
     result = ev.run_season(bl.fixed_threshold_rule(RAW), truth, [1.05] * DAYS, TAW, RAW)
