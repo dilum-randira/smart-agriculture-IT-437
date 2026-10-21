@@ -29,7 +29,11 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
 5. Stage-aware irrigation rules (deficit irrigation at flowering,
    normal at vegetative and fruiting stages)
 6. Water stress probability classifier (XGBoost / Random Forest)
-7. Climate risk assessment (heatwave, drought, waterlogging, root rot)
+7. Climate risk assessment (heatwave, drought, waterlogging, root rot) —
+   daily risk flags ✅ (heat: Tmax >= 33 degC, Erickson & Markhart 2002;
+   drought: Ks < 1, FAO-56; root rot: water beyond FC and Tmean 23.9-33.3
+   degC, UC IPM; waterlogging: longest wet run only, threshold not yet
+   confirmed). Not yet used as an NSGA-II objective.
 8. Baseline schedules: fixed threshold ✅ and DoA Sri Lanka interval
    schedule ✅ (code done); reactive ML ("Paper 8" methodology) still to do
 9. NSGA-II optimisation with pymoo (yield, water-use efficiency,
@@ -40,7 +44,12 @@ These follow the C3 tasks in the approved Topic Assessment Form (26-IT-437).
    (the prototype can plan unrealistically tiny amounts, e.g. 0.09 mm).
 10. Adaptive 7-day schedule that updates when new sensor data or C2
     forecasts arrive
-11. Evaluation against the baselines
+11. Evaluation against the baselines — pipeline ✅ and first run on
+    SYNTHETIC data (`python -m app.c3.scripts.run_synthetic_evaluation`).
+    Not a result. First finding: the prototype optimiser does not yet beat
+    the fixed threshold (similar water, irrigates every day in tiny amounts,
+    allowed deficit 0.05 used more water than 0.00). Assumptions: season
+    starts at field capacity; optimiser knows the true depletion.
 12. FastAPI endpoints for C4 and the Irrigation Operations Dashboard
     (weekly schedule, water-use optimisation, risk alerts)
 
@@ -62,6 +71,12 @@ availability. For C3 these are still open:
   need a source or must be stated as assumptions in the thesis.
 - Water cost (LKR/m3) for the test plot.
 - Which paper "Paper 8" is, for the reactive ML baseline.
+- Waterlogging threshold: confirm "more than 2 days at flowering causes
+  total yield loss" from Abdulrasaq & Arslan (2026), Russ. J. Plant
+  Physiol. 73(2):51 before using it.
+- Heat threshold (33 degC) comes from a constant-temperature study and is
+  compared here with daily Tmax; a heat-stress source using daily maximum
+  temperature would be better.
 - The model of C1's soil moisture sensor, so its datasheet measuring range
   can be used as the validity limit (ask the C1 member). A sudden-jump
   check will be added later.
