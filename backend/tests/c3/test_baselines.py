@@ -4,6 +4,7 @@ Uses FAO-56 Examples 37 and 38 (Allen et al., 1998, chapter 8) where
 possible, and small hand-checkable cases otherwise.
 """
 
+import pandas as pd
 import pytest
 
 from app.c3 import baselines as bl
@@ -89,3 +90,23 @@ def test_summarise_schedule():
     assert summary["stress_days"] == 1                 # day 1 starts at 70 mm > RAW
     assert summary["total_irrigation_mm"] == pytest.approx(result["irrigation_mm"].sum())
     assert 0.0 < summary["mean_ks"] < 1.0
+
+
+# --- stage_aware_rule (Stage 5) ---------------------------------------------
+def test_stage_aware_rule_uses_each_days_settings():
+    # Day 1 normal (trigger 0.3 x TAW, full refill); day 2 deficit (0.5 x TAW, 60 % refill).
+    rule = bl.stage_aware_rule(100.0, depletion_fraction_by_day=[0.3, 0.5],
+                               refill_fraction_by_day=[1.0, 0.6])
+    assert rule(1, 30.0) == pytest.approx(30.0)      # at 30 mm trigger: full refill
+    assert rule(2, 40.0) == 0.0                      # below 50 mm deficit trigger
+    assert rule(2, 50.0) == pytest.approx(30.0)      # 60 % of 50 mm
+
+
+def test_stage_aware_rule_with_full_refill_matches_fixed_threshold():
+    days = 20
+    common = dict(start_depletion_mm=0.0, et0_mm_day=[5.0] * days, kc=[1.2] * days,
+                  rain_mm=[0.0] * days, taw_mm=160.0, raw_mm=64.0)
+    staged = bl.simulate_with_rule(
+        bl.stage_aware_rule(160.0, [0.4] * days, [1.0] * days), **common)
+    fixed = bl.simulate_with_rule(bl.fixed_threshold_rule(64.0), **common)
+    pd.testing.assert_frame_equal(staged, fixed)

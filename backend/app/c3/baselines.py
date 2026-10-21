@@ -73,6 +73,26 @@ def doa_schedule_rule(irrigation_days: list[int]) -> IrrigationRule:
     return rule
 
 
+def stage_aware_rule(taw_mm: float, depletion_fraction_by_day: list[float],
+                     refill_fraction_by_day: list[float]) -> IrrigationRule:
+    """Stage 5: irrigate when depletion reaches a day-specific fraction of TAW,
+    and refill only a day-specific fraction of the depletion.
+
+    Normal stages: fraction = the crop's p (FAO-56 Table 22) and refill 1.0,
+    which is the fixed threshold rule. Deficit at flowering: a larger
+    fraction and/or a refill below 1.0, allowing controlled stress (see
+    growth_stages.py for the evidence and its limits). Build the daily lists
+    with growth_stages.daily_values_by_stage. The deficit values have no
+    source yet and must be chosen and justified by the caller.
+    """
+    def rule(day: int, depletion_mm: float) -> float:
+        trigger_mm = depletion_fraction_by_day[day - 1] * taw_mm
+        if depletion_mm >= trigger_mm:
+            return refill_fraction_by_day[day - 1] * depletion_mm
+        return 0.0
+    return rule
+
+
 # ---------------------------------------------------------------------------
 # Running a rule and summarising the result
 # ---------------------------------------------------------------------------

@@ -101,3 +101,28 @@ def test_add_et0_column_on_synthetic_weather():
     assert "et0_mm_day" not in weather.columns          # input not changed
     assert out["et0_mm_day"].notna().all()
     assert (out["et0_mm_day"] > 0).all()
+
+
+# --- Eq. 17 and Eq. 47 (FAO-56 Example 18) ----------------------------------
+def test_actual_vapour_pressure_from_rh_max_min_example_18():
+    # Tmax 21.5, Tmin 12.3, RHmax 84 %, RHmin 63 % -> ea = 1.409 kPa.
+    ea = et0.actual_vapour_pressure_from_rh_max_min_kpa(21.5, 12.3, 84.0, 63.0)
+    assert ea == pytest.approx(1.409, abs=0.001)
+
+
+def test_wind_speed_at_2m_example_18():
+    # 2.78 m/s measured at 10 m -> 2.078 m/s at 2 m.
+    assert et0.wind_speed_at_2m_m_s(2.78, 10.0) == pytest.approx(2.078, abs=0.002)
+    assert et0.wind_speed_at_2m_m_s(3.0, 2.0) == pytest.approx(3.0, abs=0.01)
+
+
+def test_add_et0_column_prefers_rh_max_min():
+    import pandas as pd
+    day = pd.DataFrame({"date": pd.to_datetime(["2024-07-05"]), "tmax_c": [21.5],
+                        "tmin_c": [12.3], "rh_mean_pct": [10.0], "rh_max_pct": [84.0],
+                        "rh_min_pct": [63.0], "wind_speed_2m_ms": [2.078],
+                        "solar_radiation_mj_m2_day": [22.07]})
+    # 5 July 2024 is day 187 (leap year), the day number FAO-56 Example 18 uses.
+    # rh_mean 10 % is deliberately wrong: the answer only matches if Eq. 17 is used.
+    out = et0.add_et0_column(day, latitude_deg=50.80, elevation_m=100.0)
+    assert out["et0_mm_day"].iloc[0] == pytest.approx(3.88, abs=0.05)

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import IrrigationPlanning from "./pages/c3/IrrigationPlanning";
 
 const sections = [
   {
@@ -183,7 +184,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Overview />} />
           {sections.map((section) => (
-            <Route key={section.path} path={section.path} element={<ModuleWorkspace section={section} />} />
+            <Route key={section.path} path={section.path} element={section.path === "/irrigation" ? <IrrigationPlanning apiBase={apiBase} /> : <ModuleWorkspace section={section} />} />
           ))}
           <Route path="*" element={<NotFound />} />
         </Routes>

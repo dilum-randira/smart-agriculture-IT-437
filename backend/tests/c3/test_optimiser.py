@@ -130,3 +130,22 @@ def test_forecast_scenarios_unknown_date():
     forecasts = dl.load_forecasts(config.SAMPLE_DATA_DIR / "c2_forecast_synthetic_7day.csv")
     with pytest.raises(ValueError, match="no forecast"):
         opt.forecast_scenarios(forecasts, "1999-01-01", 7.9, 150.0)
+
+
+# --- partial refill (Stage 5) -----------------------------------------------
+def test_run_schedule_partial_refill():
+    # 30 mm depleted, refill 50 % on day 1 -> 15 mm applied.
+    result = opt.run_schedule([True] + [False] * 6, 30.0, DRY, KC, TAW, RAW,
+                              refill_fraction=[0.5] * 7)
+    assert result["total_water_mm"] == pytest.approx(15.0)
+
+
+def test_optimise_schedule_accepts_refill_fraction():
+    front = opt.optimise_schedule(50.0, [DRY], KC, TAW, RAW, pop_size=10, n_generations=5,
+                                  refill_fraction=[0.7] * 7)
+    assert len(front) >= 1
+
+
+def test_optimise_schedule_keeps_one_plan_per_result():
+    front = opt.optimise_schedule(0.0, [DRY], KC, TAW, RAW)
+    assert not front.duplicated(subset=opt.OBJECTIVES).any()

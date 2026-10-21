@@ -64,13 +64,16 @@ def relative_et_deficit(eta_mm: float, etm_mm: float) -> float:
 
 def run_schedule(irrigate: list[bool], start_depletion_mm: float, scenario: WeatherScenario,
                  kc: list[float], taw_mm: float, raw_mm: float,
-                 min_irrigation_mm: float = 0.0) -> dict:
+                 min_irrigation_mm: float = 0.0,
+                 refill_fraction: list[float] | None = None) -> dict:
     """Water balance for an irrigation plan under one weather scenario.
 
     Same daily order as baselines.simulate_with_rule (FAO-56 Example 38):
-    irrigate in the morning (refill to field capacity), Ks after irrigation
-    (Eq. 84), ETa = Ks x Kc x ET0 (Eq. 81), then the balance (Eq. 85, 86, 88).
-    Kept free of pandas so the optimiser can call it thousands of times.
+    irrigate in the morning, Ks after irrigation (Eq. 84), ETa = Ks x Kc x
+    ET0 (Eq. 81), then the balance (Eq. 85, 86, 88). Each irrigation applies
+    refill_fraction[day] x depletion (default 1.0 = refill to field capacity;
+    below 1.0 = Stage 5 deficit irrigation). Irrigations smaller than
+    min_irrigation_mm are skipped. Kept free of pandas for speed.
     """
     depletion = start_depletion_mm
     water = 0.0
@@ -78,7 +81,9 @@ def run_schedule(irrigate: list[bool], start_depletion_mm: float, scenario: Weat
     eta_total = etm_total = 0.0
     percolation = []
     for day, wanted in enumerate(irrigate):
-        irrigation = depletion if (wanted and depletion >= min_irrigation_mm and depletion > 0) else 0.0
+        fraction = 1.0 if refill_fraction is None else refill_fraction[day]
+        amount = fraction * depletion
+        irrigation = amount if (wanted and amount > 0 and amount >= min_irrigation_mm) else 0.0
         if irrigation > 0:
             water += irrigation
             events += 1
@@ -102,13 +107,15 @@ def run_schedule(irrigate: list[bool], start_depletion_mm: float, scenario: Weat
 
 def evaluate_schedule(irrigate: list[bool], start_depletion_mm: float,
                       scenarios: list[WeatherScenario], kc: list[float], taw_mm: float,
-                      raw_mm: float, min_irrigation_mm: float = 0.0) -> list[float]:
+                      raw_mm: float, min_irrigation_mm: float = 0.0,
+                      refill_fraction: list[float] | None = None) -> list[float]:
     """The four objective values for one plan (order as in OBJECTIVES).
 
     ET deficit comes from the worst scenario (protects the crop); water,
     events and root-rot risk from the first scenario (the forecast itself).
     """
-    results = [run_schedule(irrigate, start_depletion_mm, s, kc, taw_mm, raw_mm, min_irrigation_mm)
+    results = [run_schedule(irrigate, start_depletion_mm, s, kc, taw_mm, raw_mm,
+                            min_irrigation_mm, refill_fraction)
                for s in scenarios]
     forecast = results[0]
     return [forecast["total_water_mm"],
@@ -140,36 +147,47 @@ class IrrigationProblem(ElementwiseProblem):
     """pymoo problem: one variable per day in [0, 1]; >= 0.5 means irrigate."""
 
     def __init__(self, start_depletion_mm: float, scenarios: list[WeatherScenario],
-                 kc: list[float], taw_mm: float, raw_mm: float, min_irrigation_mm: float):
-        self.args = (start_depletion_mm, scenarios, kc, taw_mm, raw_mm, min_irrigation_mm)
+                 kc: list[float], taw_mm: float, raw_mm: float, min_irrigation_mm: float,
+                 refill_fraction: list[float] | None = None):
+        self.args = (start_depletion_mm, scenarios, kc, taw_mm, raw_mm, min_irrigation_mm,
+                     refill_fraction)
         super().__init__(n_var=len(kc), n_obj=len(OBJECTIVES), xl=0.0, xu=1.0)
 
     def _evaluate(self, x, out, *args, **kwargs):
-        start, scenarios, kc, taw, raw, min_mm = self.args
-        out["F"] = evaluate_schedule(list(x >= 0.5), start, scenarios, kc, taw, raw, min_mm)
+        out["F"] = evaluate_schedule(list(x >= 0.5), *self.args)
 
 
 def optimise_schedule(start_depletion_mm: float, scenarios: list[WeatherScenario],
                       kc: list[float], taw_mm: float, raw_mm: float,
                       min_irrigation_mm: float = 0.0, pop_size: int = DEFAULT_POP_SIZE,
-                      n_generations: int = DEFAULT_N_GENERATIONS, seed: int = 1) -> pd.DataFrame:
-    """Run NSGA-II; return the Pareto front, one row per distinct plan."""
+                      n_generations: int = DEFAULT_N_GENERATIONS, seed: int = 1,
+                      refill_fraction: list[float] | None = None) -> pd.DataFrame:
+    """Run NSGA-II; return the Pareto front, one row per distinct plan.
+
+    refill_fraction (one value per day, default 1.0) enables Stage 5 deficit
+    irrigation: e.g. 0.7 on flowering days refills only 70 % of the depletion.
+    """
     _check_scenarios(scenarios, len(kc))
-    problem = IrrigationProblem(start_depletion_mm, scenarios, kc, taw_mm, raw_mm, min_irrigation_mm)
+    problem = IrrigationProblem(start_depletion_mm, scenarios, kc, taw_mm, raw_mm,
+                                min_irrigation_mm, refill_fraction)
     result = minimize(problem, NSGA2(pop_size=pop_size), ("n_gen", n_generations),
                       seed=seed, verbose=False)
     plans = [list(x >= 0.5) for x in np.atleast_2d(result.X)]
-    return _plans_table(plans, np.atleast_2d(result.F).tolist())
+    table = _plans_table(plans, np.atleast_2d(result.F).tolist())
+    # Plans that differ only on days where irrigating changes nothing (e.g. the
+    # soil is already full) have identical results: keep one of each.
+    return table.drop_duplicates(subset=OBJECTIVES).reset_index(drop=True)
 
 
 def all_schedules(start_depletion_mm: float, scenarios: list[WeatherScenario],
                   kc: list[float], taw_mm: float, raw_mm: float,
-                  min_irrigation_mm: float = 0.0) -> pd.DataFrame:
+                  min_irrigation_mm: float = 0.0,
+                  refill_fraction: list[float] | None = None) -> pd.DataFrame:
     """Every possible plan (2^days of them). Used to check / tune NSGA-II."""
     _check_scenarios(scenarios, len(kc))
     plans = [list(p) for p in itertools.product([False, True], repeat=len(kc))]
     objectives = [evaluate_schedule(p, start_depletion_mm, scenarios, kc, taw_mm, raw_mm,
-                                    min_irrigation_mm) for p in plans]
+                                    min_irrigation_mm, refill_fraction) for p in plans]
     return _plans_table(plans, objectives)
 
 

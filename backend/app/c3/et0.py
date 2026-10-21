@@ -54,6 +54,19 @@ def actual_vapour_pressure_from_rh_mean_kpa(tmax_c, tmin_c, rh_mean_pct):
     return rh_mean_pct / 100.0 * mean_saturation_vapour_pressure_kpa(tmax_c, tmin_c)
 
 
+def actual_vapour_pressure_from_rh_max_min_kpa(tmax_c, tmin_c, rh_max_pct, rh_min_pct):
+    """Actual vapour pressure ea in kPa from daily max and min relative humidity.
+    FAO-56 Eq. 17 (the preferred humidity method when RHmax and RHmin exist).
+    """
+    return (saturation_vapour_pressure_kpa(tmin_c) * rh_max_pct / 100.0
+            + saturation_vapour_pressure_kpa(tmax_c) * rh_min_pct / 100.0) / 2.0
+
+
+def wind_speed_at_2m_m_s(wind_speed_m_s, measurement_height_m):
+    """Convert wind speed measured at height z (m) to 2 m height. FAO-56 Eq. 47."""
+    return wind_speed_m_s * 4.87 / np.log(67.8 * measurement_height_m - 5.42)
+
+
 # ---------------------------------------------------------------------------
 # Radiation
 # ---------------------------------------------------------------------------
@@ -127,9 +140,17 @@ def et0_daily_mm(tmax_c, tmin_c, ea_kpa, rs_mj_m2_day, u2_m_s,
 def add_et0_column(weather: pd.DataFrame, latitude_deg: float, elevation_m: float) -> pd.DataFrame:
     """Return a copy of a daily weather table (from data_loading.load_weather)
     with an extra 'et0_mm_day' column.
+
+    Uses FAO-56 Eq. 17 when the table has rh_max_pct and rh_min_pct
+    (preferred), otherwise Eq. 19 with rh_mean_pct.
     """
     out = weather.copy()
-    ea = actual_vapour_pressure_from_rh_mean_kpa(out["tmax_c"], out["tmin_c"], out["rh_mean_pct"])
+    if {"rh_max_pct", "rh_min_pct"} <= set(out.columns):
+        ea = actual_vapour_pressure_from_rh_max_min_kpa(out["tmax_c"], out["tmin_c"],
+                                                        out["rh_max_pct"], out["rh_min_pct"])
+    else:
+        ea = actual_vapour_pressure_from_rh_mean_kpa(out["tmax_c"], out["tmin_c"],
+                                                     out["rh_mean_pct"])
     out["et0_mm_day"] = et0_daily_mm(
         out["tmax_c"], out["tmin_c"], ea, out["solar_radiation_mj_m2_day"],
         out["wind_speed_2m_ms"], latitude_deg, elevation_m, out["date"].dt.dayofyear,

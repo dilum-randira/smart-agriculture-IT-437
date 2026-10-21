@@ -39,6 +39,8 @@ def optimiser_rule(forecasts: pd.DataFrame, season_dates: list[pd.Timestamp],
                    kc: list[float], taw_mm: float, raw_mm: float,
                    latitude_deg: float, elevation_m: float, max_relative_et_deficit: float,
                    *, min_irrigation_mm: float = 0.0,
+                   refill_fraction_by_day: list[float] | None = None,
+                   worst_case_no_rain: bool = True,
                    pop_size: int = opt.DEFAULT_POP_SIZE,
                    n_generations: int = opt.DEFAULT_N_GENERATIONS,
                    seed: int = 1) -> bl.IrrigationRule:
@@ -56,19 +58,47 @@ def optimiser_rule(forecasts: pd.DataFrame, season_dates: list[pd.Timestamp],
         today = pd.Timestamp(season_dates[day - 1])
         issue_date = (today - pd.DateOffset(days=1)).strftime("%Y-%m-%d")
         scenarios = opt.forecast_scenarios(forecasts, issue_date, latitude_deg, elevation_m)
-        # Kc for the next 7 days; after the season ends, keep the last value.
-        kc_window = [kc[min(day - 1 + i, len(kc) - 1)] for i in range(horizon)]
+        if not worst_case_no_rain:
+            scenarios = scenarios[:1]          # trust the forecast (no "rain fails" case)
+        # Real archives can miss a lead day: plan over the days that exist.
+        days_available = min(horizon, len(scenarios[0].et0_mm_day))
+        scenarios = [opt.WeatherScenario(s.name, s.et0_mm_day[:days_available],
+                                         s.rain_mm[:days_available], s.tmean_c[:days_available])
+                     for s in scenarios]
+        # Kc for the planned days; after the season ends, keep the last value.
+        window = lambda values: [values[min(day - 1 + i, len(values) - 1)]
+                                 for i in range(days_available)]
+        kc_window = window(kc)
+        refill_window = window(refill_fraction_by_day) if refill_fraction_by_day else None
         front = opt.optimise_schedule(depletion_mm, scenarios, kc_window, taw_mm, raw_mm,
-                                      min_irrigation_mm, pop_size, n_generations, seed)
+                                      min_irrigation_mm, pop_size, n_generations, seed,
+                                      refill_fraction=refill_window)
         try:
             plan = opt.least_water_schedule(front, max_relative_et_deficit)
         except ValueError:
             plan = front.sort_values("relative_et_deficit").iloc[0]
-        if plan["day1_irrigate"] and depletion_mm > 0 and depletion_mm >= min_irrigation_mm:
-            return depletion_mm          # refill to field capacity (FAO-56 Example 38)
+        amount = (refill_window[0] if refill_window else 1.0) * depletion_mm
+        if plan["day1_irrigate"] and amount > 0 and amount >= min_irrigation_mm:
+            return amount        # refill (or partial refill) of today's depletion
         return 0.0
 
     return rule
+
+
+def perfect_forecasts(truth: pd.DataFrame, horizon: int = 7) -> pd.DataFrame:
+    """A 'forecast' that is exactly the true weather: the upper bound on how
+    much forecasts can help. truth: daily weather (date + weather columns).
+    Every true day becomes the forecast for lead days 1..horizon, issued
+    `lead` days before it."""
+    weather = truth.drop(columns=[c for c in ("et0_mm_day", "tmean_c") if c in truth])
+    parts = []
+    for lead in range(1, horizon + 1):
+        part = weather.rename(columns={"date": "target_date"})
+        part["lead_day"] = lead
+        part["issue_date"] = part["target_date"] - pd.to_timedelta(lead, unit="D")
+        parts.append(part)
+    return pd.concat(parts, ignore_index=True).sort_values(["issue_date", "lead_day"]) \
+        .reset_index(drop=True)
 
 
 def run_season(rule: bl.IrrigationRule, truth: pd.DataFrame, kc: list[float],
