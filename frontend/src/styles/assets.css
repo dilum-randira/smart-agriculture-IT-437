@@ -1,74 +1,252 @@
-/* Palette merged from the supplied docs/tokens.css. The pack is kept intact. */
-:root { --nm-bg:#f6f8fa; --nm-surface:#fff; --nm-ink:#182c39; --nm-muted:#607282; --nm-border:#dfe8ec; --nm-brand:#1b8749; --nm-forest:#113e34; --nm-weather-blue:#258acb; --nm-temperature-amber:#f8ae32; --nm-soil-green:#40a95b; --nm-alert:#e96551; --nm-radius:16px; --nm-shadow:0 10px 34px #182c3912; }
-.ui-asset { display:block; object-fit:contain; max-width:100%; }
-.ui-icon { display:inline-block; vertical-align:middle; object-fit:contain; flex-shrink:0; }
-.ui-brand { object-fit:contain; object-position:left center; }
-.ui-page-icon { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border:1px solid #dce7e7; border-radius:12px; background:#fff; margin-bottom:16px; box-shadow:0 5px 15px #233b4710; }
-.ui-empty { display:flex; align-items:center; gap:24px; }
-.ui-empty>.ui-asset { flex:0 0 145px; }
-.ui-feedback { display:flex; align-items:center; gap:10px; }
-.auth-brand .ui-brand { width:250px; height:51px; }
-.auth-story { position:relative; background:#f0f4f4 url('/assets/nai-miris/backgrounds/surface-neutral.svg') center/cover; overflow:hidden; }
-.auth-story>.auth-art { width:210px; height:175px; object-fit:contain; opacity:.88; margin:22px 0; }
-.auth-card>.auth-eyebrow { display:flex; gap:9px; align-items:center; }
-.auth-password button { display:flex; align-items:center; gap:5px; }
-.auth-password input { padding-right:95px; }
-.auth-card input { border-color:#cad9dd; background:#fff; }
-.auth-card h2 { color:#253e49; }
-.auth-error { border-color:#e9cfc5; }
-.farm-workspace { max-width:1400px; color:var(--nm-ink); }
-.farm-stats article { background:#fff; border-color:var(--nm-border); box-shadow:0 5px 16px #1d3a4b04; }
-.farm-stats article>.ui-icon { margin-bottom:12px; }
-.farm-stats strong { color:#294958; }
-.farm-card { border-color:var(--nm-border); box-shadow:0 5px 20px #223b4a03; }
-.farm-heading p,.farm-card p { color:var(--nm-muted); }
-.farm-heading h1 { color:#263d4b; }
-.farm-shortcuts a { display:flex; align-items:center; gap:10px; border-color:#dce6eb; }
-.farm-form input { border-color:#cbd9df; }
-.farm-account-identity { display:flex; align-items:center; gap:20px; }
-.farm-site li>strong { display:flex; align-items:center; gap:8px; }
-.farm-sample { display:inline-flex; align-items:center; gap:6px; }
-.application-body .mc-dashboard { max-width:1600px; }
-.application-body .mc-hero h1 { font-size:clamp(42px,4.2vw,64px); }
-.mc-hero-visual>.mc-crop-art { opacity:.9; width:70%; height:70%; inset:auto -8% -6% auto; object-fit:contain; filter:none; z-index:-1; }
-.mc-hero-visual { background:#163942 url('/assets/nai-miris/backgrounds/surface-dark-forest.svg') center/cover; }
-.mc-hero-visual:before { z-index:0; pointer-events:none; background:linear-gradient(90deg,#102735,transparent 55%); }
-.mc-atmosphere { z-index:1; }
-.mc-atmosphere-icon .ui-icon { width:44px; height:44px; filter:drop-shadow(0 2px 7px #0002); }
-.mc-weather-unknown { display:flex!important; align-items:center; gap:6px; }
-.mc-metric-icon .ui-icon { width:25px; height:25px; }
-.mc-chart-heading .ui-icon { width:23px; height:23px; }
-.mc-static-farm>.ui-asset { width:100%; height:85%; object-fit:contain; }
-.mc-static-farm>.mc-fallback-label { font-size:10px; color:#73867d; text-align:center; line-height:1.7; }
-.mc-environment .mc-farm-view { background:transparent url('/assets/nai-miris/overlays/3d-ground-blend.svg') center 60%/95% 65% no-repeat; }
-.mc-environment .mc-farm-view:after { content:""; position:absolute; inset:0; background:url('/assets/nai-miris/overlays/edge-fade-light.svg') center/100% 100% no-repeat; pointer-events:none; z-index:0; opacity:.35; }
-.mc-environment .mc-scene-toolbar,.mc-environment .mc-scene-node-controls,.mc-environment .mc-scene-tooltip { z-index:2; }
-.mc-environment .mc-farm-canvas { z-index:1; }
-.mc-day-heading h3 { display:flex; align-items:center; gap:9px; }
-.mc-model-label { display:flex; align-items:center; gap:9px; }
-.mc-run-button .ui-icon { filter:brightness(0) invert(1); }
-.mc-saved-forecasts>label .ui-icon { width:18px; }
-.mc-data-notice .ui-icon { width:18px; }
-.mc-data-notice>div { flex-wrap:wrap; }
-.c2-yield { max-width:1400px; --c2-ink:#223b48; --c2-muted:#667a86; --c2-line:#e0e7ed; }
-.c2-botanical .c2-plant { object-fit:contain; }
-.c2-hero-note .ui-icon { width:17px; height:17px; }
-.c2-button .ui-icon { width:20px; height:20px; }
-.mc-admin>.mc-section-heading { padding:22px; background:#fff; border:1px solid var(--nm-border); border-radius:14px; }
-.mc-admin h1 { display:flex; align-items:center; gap:12px; }
-@media(max-width:680px) { .ui-empty { align-items:flex-start; flex-direction:column; gap:10px; }.ui-empty>.ui-asset { flex:0 0 auto; width:125px; height:95px; }.auth-story>.auth-art { position:absolute; width:160px; height:135px; right:-20px; top:120px; opacity:.12; pointer-events:none; }.auth-story>h1,.auth-story>p { position:relative; z-index:1; }.auth-brand .ui-brand { width:224px; height:46px; }.application-body .mc-hero h1 { font-size:clamp(40px,9vw,60px); } }
-@media(prefers-reduced-motion:reduce) { .ui-asset { animation:none!important; transition:none!important; } }
-.auth-login .auth-story { background:#f0f4f4 url('/assets/nai-miris/backgrounds/surface-neutral.svg') center/cover; }
-.application-body .farm-workspace { max-width:1400px; color:var(--nm-ink); }
-.farm-workspace .farm-stats article { background:#fff; border-color:var(--nm-border); }
-.farm-workspace .farm-card { border-color:var(--nm-border); }
-.farm-workspace .farm-card p { color:var(--nm-muted); }
-.mc-dashboard .mc-hero-visual { background:#163942 url('/assets/nai-miris/backgrounds/surface-dark-forest.svg') center/cover; }
-.mc-dashboard .mc-hero-visual:before { z-index:0; pointer-events:none; background:linear-gradient(90deg,#102735,transparent 55%); }
-.mc-dashboard .mc-hero-visual>.mc-crop-art { opacity:.9; width:70%; height:70%; inset:auto -8% -6% auto; object-fit:contain; filter:none; z-index:-1; }
-.mc-dashboard .mc-awaiting>.ui-asset { flex-shrink:0; }
-.c2-hero-copy .ui-icon { filter:brightness(0) invert(1); opacity:.85; }
-.c2-hero-copy .c2-button .ui-icon { filter:none; }
-.ui-brand { --brand-width:410px; --brand-x:-7px; --brand-y:-15px; display:block; width:194px; height:52px; position:relative; overflow:hidden; }
-.ui-brand>.ui-asset { position:absolute; width:var(--brand-width); height:auto; max-width:none; transform:translate(var(--brand-x),var(--brand-y)); }
-.auth-login .auth-brand .ui-brand { width:250px; height:66px; --brand-width:520px; --brand-x:-9px; --brand-y:-19px; }
+/* ═══════════════════════════════════════════════════════════
+   ASSET INTEGRATION & SHARED UI COMPONENTS
+   Links the Nai Miris asset pack to the design system.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Asset Primitives ── */
+.ui-asset { display: block; object-fit: contain; max-width: 100%; }
+.ui-icon { display: inline-block; vertical-align: middle; object-fit: contain; flex-shrink: 0; }
+.ui-brand { object-fit: contain; object-position: left center; }
+
+/* Brand crop — the SVG has generous transparent canvas */
+.ui-brand {
+  --brand-width: 410px;
+  --brand-x: -7px;
+  --brand-y: -15px;
+  display: block;
+  width: 194px;
+  height: 52px;
+  position: relative;
+  overflow: hidden;
+}
+.ui-brand > .ui-asset {
+  position: absolute;
+  width: var(--brand-width);
+  height: auto;
+  max-width: none;
+  transform: translate(var(--brand-x), var(--brand-y));
+}
+
+/* ── Page Icon ── */
+.ui-page-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--nm-border);
+  border-radius: var(--nm-radius);
+  background: var(--nm-surface);
+  margin-bottom: 12px;
+  box-shadow: var(--nm-shadow-xs);
+}
+
+/* ── Empty State ── */
+.ui-empty {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.ui-empty > .ui-asset { flex: 0 0 130px; }
+.ui-feedback { display: flex; align-items: center; gap: 10px; }
+
+/* ── Auth Brand ── */
+.auth-brand .ui-brand { width: 250px; height: 51px; }
+.auth-login .auth-brand .ui-brand {
+  width: 250px;
+  height: 66px;
+  --brand-width: 520px;
+  --brand-x: -9px;
+  --brand-y: -19px;
+}
+
+/* ── Auth Story Panel ── */
+.auth-story {
+  position: relative;
+  background: linear-gradient(145deg, #0F2318, #1A3D2A);
+  overflow: hidden;
+}
+.auth-story > .auth-art {
+  width: 210px;
+  height: 175px;
+  object-fit: contain;
+  opacity: 0.15;
+  margin: 22px 0;
+}
+
+/* ── Auth Card ── */
+.auth-card > .auth-eyebrow { display: flex; gap: 9px; align-items: center; }
+.auth-password button { display: flex; align-items: center; gap: 5px; }
+.auth-password input { padding-right: 95px; }
+.auth-card input { border-color: var(--nm-border-strong); background: var(--nm-surface); }
+.auth-card h2 { color: var(--nm-ink); }
+.auth-error { border-color: #FCA5A5; background: var(--nm-alert-surface); }
+
+/* ── Farm Workspace ── */
+.farm-workspace { max-width: 1440px; color: var(--nm-ink); }
+.farm-stats article {
+  background: var(--nm-surface);
+  border-color: var(--nm-border);
+  box-shadow: var(--nm-shadow-xs);
+}
+.farm-stats article > .ui-icon { margin-bottom: 10px; }
+.farm-stats strong { color: var(--nm-ink); }
+.farm-card {
+  border-color: var(--nm-border);
+  box-shadow: var(--nm-shadow-sm);
+}
+.farm-heading p, .farm-card p { color: var(--nm-ink-secondary); }
+.farm-heading h1 { color: var(--nm-ink); }
+.farm-shortcuts a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-color: var(--nm-border);
+  transition: background 0.15s, border-color 0.15s;
+}
+.farm-shortcuts a:hover {
+  background: var(--nm-brand-surface);
+  border-color: var(--nm-brand-border);
+}
+.farm-form input { border-color: var(--nm-border-strong); }
+.farm-account-identity { display: flex; align-items: center; gap: 20px; }
+.farm-site li > strong { display: flex; align-items: center; gap: 8px; }
+.farm-sample { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ── Dashboard Shell Integration ── */
+.application-body .mc-dashboard { max-width: 1600px; }
+.application-body .mc-hero h1 { font-size: clamp(38px, 3.6vw, 56px); }
+.application-body .farm-workspace { max-width: 1440px; color: var(--nm-ink); }
+.farm-workspace .farm-stats article { background: var(--nm-surface); border-color: var(--nm-border); }
+.farm-workspace .farm-card { border-color: var(--nm-border); }
+.farm-workspace .farm-card p { color: var(--nm-ink-secondary); }
+
+/* ── Hero Visual Backgrounds ── */
+.mc-hero-visual {
+  background: #102735 url('/assets/nai-miris/backgrounds/surface-dark-forest.svg') center/cover;
+}
+.mc-hero-visual:before {
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #102735, transparent 55%);
+}
+.mc-hero-visual > .mc-crop-art {
+  opacity: 0.9;
+  width: 70%;
+  height: 70%;
+  inset: auto -8% -6% auto;
+  object-fit: contain;
+  filter: none;
+  z-index: -1;
+}
+.mc-dashboard .mc-hero-visual {
+  background: #102735 url('/assets/nai-miris/backgrounds/surface-dark-forest.svg') center/cover;
+}
+.mc-dashboard .mc-hero-visual:before {
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #102735, transparent 55%);
+}
+.mc-dashboard .mc-hero-visual > .mc-crop-art {
+  opacity: 0.9;
+  width: 70%;
+  height: 70%;
+  inset: auto -8% -6% auto;
+  object-fit: contain;
+  filter: none;
+  z-index: -1;
+}
+.mc-dashboard .mc-awaiting > .ui-asset { flex-shrink: 0; }
+
+/* ── Atmosphere ── */
+.mc-atmosphere { z-index: 1; }
+.mc-atmosphere-icon .ui-icon {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 7px rgba(0,0,0,0.1));
+}
+.mc-weather-unknown { display: flex !important; align-items: center; gap: 6px; }
+
+/* ── Metric Icons ── */
+.mc-metric-icon .ui-icon { width: 22px; height: 22px; }
+.mc-chart-heading .ui-icon { width: 20px; height: 20px; }
+
+/* ── Static Farm ── */
+.mc-static-farm > .ui-asset { width: 100%; height: 85%; object-fit: contain; }
+.mc-static-farm > .mc-fallback-label {
+  font-size: 11px;
+  color: var(--nm-ink-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ── Environment View 3D ── */
+.mc-environment .mc-farm-view {
+  background: transparent url('/assets/nai-miris/overlays/3d-ground-blend.svg') center 60%/95% 65% no-repeat;
+}
+.mc-environment .mc-farm-view:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/assets/nai-miris/overlays/edge-fade-light.svg') center/100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+.mc-environment .mc-scene-toolbar,
+.mc-environment .mc-scene-node-controls,
+.mc-environment .mc-scene-tooltip { z-index: 2; }
+.mc-environment .mc-farm-canvas { z-index: 1; }
+
+/* ── Day Heading ── */
+.mc-day-heading h3 { display: flex; align-items: center; gap: 9px; }
+.mc-model-label { display: flex; align-items: center; gap: 9px; }
+
+/* ── Button Icons ── */
+.mc-run-button .ui-icon { filter: brightness(0) invert(1); }
+.mc-saved-forecasts > label .ui-icon { width: 18px; }
+.mc-data-notice .ui-icon { width: 18px; }
+.mc-data-notice > div { flex-wrap: wrap; }
+
+/* ── Yield Hero ── */
+.c2-yield { max-width: 1440px; --c2-ink: var(--nm-ink); --c2-muted: var(--nm-ink-secondary); --c2-line: var(--nm-border); }
+.c2-botanical .c2-plant { object-fit: contain; }
+.c2-hero-note .ui-icon { width: 17px; height: 17px; }
+.c2-button .ui-icon { width: 20px; height: 20px; }
+.c2-hero-copy .ui-icon { filter: brightness(0) invert(1); opacity: 0.85; }
+.c2-hero-copy .c2-button .ui-icon { filter: none; }
+
+/* ── Admin ── */
+.mc-admin > .mc-section-heading {
+  padding: 20px 24px;
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: var(--nm-radius-lg);
+}
+.mc-admin h1 { display: flex; align-items: center; gap: 12px; }
+
+/* ── Auth Login Background ── */
+.auth-login .auth-story {
+  background: linear-gradient(145deg, #0F2318, #1A3D2A);
+}
+
+/* ── Responsive ── */
+@media (max-width: 680px) {
+  .ui-empty { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .ui-empty > .ui-asset { flex: 0 0 auto; width: 120px; height: 90px; }
+  .auth-story > .auth-art {
+    position: absolute;
+    width: 160px;
+    height: 135px;
+    right: -20px;
+    top: 120px;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .auth-story > h1, .auth-story > p { position: relative; z-index: 1; }
+  .auth-brand .ui-brand { width: 220px; height: 44px; }
+  .application-body .mc-hero h1 { font-size: clamp(36px, 8vw, 52px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-asset { animation: none !important; transition: none !important; }
+}

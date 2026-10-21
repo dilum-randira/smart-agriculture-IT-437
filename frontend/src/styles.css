@@ -1,9 +1,85 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700&display=swap');
 
 :root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* ── Surfaces ── */
+  --nm-bg: #F5F7FA;
+  --nm-surface: #FFFFFF;
+  --nm-surface-raised: #FFFFFF;
+  --nm-surface-sunken: #F0F2F5;
+
+  /* ── Text ── */
+  --nm-ink: #162334;
+  --nm-ink-secondary: #64748B;
+  --nm-ink-muted: #94A3B8;
+  --nm-ink-inverse: #FFFFFF;
+
+  /* ── Borders & Lines ── */
+  --nm-border: #E2E8F0;
+  --nm-border-strong: #CBD5E1;
+
+  /* ── Brand ── */
+  --nm-brand: #15803D;
+  --nm-brand-hover: #166534;
+  --nm-brand-surface: #F0FDF4;
+  --nm-brand-border: #BBF7D0;
+  --nm-forest: #14532D;
+  --nm-forest-deep: #0C3B20;
+
+  /* ── Sidebar ── */
+  --nm-sidebar-bg: #0F1D15;
+  --nm-sidebar-ink: #C8D6CE;
+  --nm-sidebar-active: rgba(21,128,61,0.15);
+  --nm-sidebar-hover: rgba(255,255,255,0.06);
+  --nm-sidebar-border: rgba(255,255,255,0.08);
+
+  /* ── Temperature ── */
+  --nm-temp: #F59E0B;
+  --nm-temp-strong: #D97706;
+  --nm-temp-surface: #FFFBEB;
+  --nm-temp-border: #FDE68A;
+
+  /* ── Humidity ── */
+  --nm-humid: #0EA5E9;
+  --nm-humid-strong: #0284C7;
+  --nm-humid-surface: #F0F9FF;
+  --nm-humid-border: #BAE6FD;
+
+  /* ── Soil ── */
+  --nm-soil: #16A34A;
+  --nm-soil-strong: #15803D;
+  --nm-soil-surface: #F0FDF4;
+  --nm-soil-border: #BBF7D0;
+
+  /* ── Alerts ── */
+  --nm-alert: #EF4444;
+  --nm-alert-surface: #FEF2F2;
+  --nm-warning: #F59E0B;
+  --nm-warning-surface: #FFFBEB;
+  --nm-info: #3B82F6;
+  --nm-info-surface: #EFF6FF;
+
+  /* ── Radius ── */
+  --nm-radius-sm: 6px;
+  --nm-radius: 10px;
+  --nm-radius-lg: 14px;
+  --nm-radius-xl: 18px;
+
+  /* ── Shadows ── */
+  --nm-shadow-xs: 0 1px 2px rgba(22,35,52,0.05);
+  --nm-shadow-sm: 0 2px 6px rgba(22,35,52,0.06);
+  --nm-shadow: 0 4px 16px rgba(22,35,52,0.08);
+  --nm-shadow-lg: 0 10px 30px rgba(22,35,52,0.10);
+
+  /* ── Typography ── */
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ── Sidebar layout ── */
+  --nm-sidebar-width: 224px;
 }
 
 html {
@@ -13,8 +89,25 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  background: var(--nm-bg);
+  color: var(--nm-ink);
+  line-height: 1.5;
 }
 
 button, a {
   -webkit-tap-highlight-color: transparent;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--nm-brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--nm-brand);
+  color: white;
 }
