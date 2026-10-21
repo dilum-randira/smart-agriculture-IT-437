@@ -1,0 +1,18 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "output_shape": [
+    2,
+    168,
+    3
+  ],
+  "attention_shape": [
+    2,
+    336
+  ],
+  "attention_sum_max_error": 5.960464477539063e-08,
+  "all_gradients_finite": true,
+  "attention_score_gradient_nonzero": true,
+  "valid_supervision_elements": 990,
+  "masked_loss": 0.7756643295288086,
+  "input_contract": "Historical X only; no y or future observations enter encoder"
+}

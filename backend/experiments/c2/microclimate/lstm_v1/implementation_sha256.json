@@ -1,0 +1,12 @@
+{
+  "evaluation_label": "Synthetic Data ? Prototype Evaluation Only",
+  "source_sha256": {
+    "infer_lstm.py": "cf6a39f6dc7a65159e55ff924b15d45d2f1821beecd82f33fed37118663d74bc",
+    "lstm_evaluation.py": "d80b26226f8579e12c42f4aab97d489dae1df3c729c4a5bc71e1a39c6ed73a35",
+    "lstm_model.py": "d4dfab3596bff5885e698868d5dc6a494eec48e1e59ada1ae94c56004741d43c",
+    "lstm_reporting.py": "3269a5e9499a2d6869511aca51e470950127ec41eae289395d87a8f137479034",
+    "test_lstm.py": "5818a4324afd8fdb5a9691f7fe21cf89959c4a95f9d04d4e39f1e3eda65b22aa",
+    "train_lstm.py": "e759973653d94cdc26b59ab2b7c9b753c76901cd666d40a9f2044615540bee6e",
+    "verify_lstm_artifacts.py": "3f4848fd696a1732c1745d635365341f0e192fa6046840fd4c25f6f3b1882f94"
+  }
+}

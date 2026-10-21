@@ -1,0 +1,39 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "status": "complete",
+  "epochs_completed": 21,
+  "best_epoch": 11,
+  "training_duration_seconds": 1085.9330794000125,
+  "mean_epoch_seconds": 51.69163583333249,
+  "best_epoch_training_loss": 0.07535881528640528,
+  "best_validation_loss": 0.08226760066789446,
+  "last_epoch_training_loss": 0.07046117645701988,
+  "last_epoch_validation_loss": 0.08998937998955098,
+  "stopped_early": true,
+  "maximum_epochs": 100,
+  "patience": 10,
+  "parameters": 13027,
+  "preflight_tests": {
+    "tests_run": 64,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "trained_model": "lstm_best.keras",
+  "reload_max_absolute_error": 0.0,
+  "input_files_unchanged": true,
+  "validation_only_model_selection": true,
+  "heldout_test_evaluated_after_selection": true,
+  "physical_units": [
+    "index (not volumetric water content)",
+    "°C",
+    "% RH"
+  ],
+  "limitations": [
+    "100% synthetic; no real Sri Lankan Nai Miris field validation.",
+    "Overlapping forecast origins are dependent; counts are repeated observation/forecast pairs.",
+    "Quality filtering and stale historical fills remain limitations.",
+    "R2 is unavailable for fewer than two valid values or constant actuals.",
+    "This is one fixed baseline configuration, not a tuned or statistically proven winner."
+  ]
+}

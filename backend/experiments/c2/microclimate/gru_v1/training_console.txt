@@ -1,0 +1,141 @@
+Synthetic Data — Prototype Evaluation Only
+
+.\.venv\Scripts\python.exe : WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+At line:2 char:191
++ ... NG='utf-8'; .\.venv\Scripts\python.exe -B -u -m app.c2.microclimate.m ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: All lo...itten to STDERR:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+I0000 00:00:1792582170.640369   29892 port.cc:153] oneDNN custom operations are on. You may see slightly different 
+numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the 
+environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792582173.362703   29892 port.cc:153] oneDNN custom operations are on. You may see slightly different 
+numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the 
+environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if 
+CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+test_comparison_rejects_different_masks_or_origins (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_comparison_rejects_different_masks_or_origins) ... ok
+test_empty_batch_skip_and_finite_optimizer_update (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_empty_batch_skip_and_finite_optimizer_update) ... ok
+test_excluded_labels_have_zero_gradient (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_excluded_labels_have_zero_gradient) ... ok
+test_fixed_architecture_and_shape (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_fixed_architecture_and_shape) ... ok
+test_masked_metric_denominator (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_masked_metric_denominator) ... ok
+test_save_reload_roundtrip (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_save_reload_roundtrip) ... ok
+test_shared_optimization_identity (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_shared_optimization_identity) ... ok
+test_validation_mask_count (app.c2.microclimate.models.gru.tests.test_gru.GRUTests.test_validation_mask_count) ... ok
+test_batched_inference (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_batched_inference) ... ok
+test_cumulative_horizons_and_lead_counts (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_cumulative_horizons_and_lead_counts) ... ok
+test_epoch_loss_uses_valid_element_weighting (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_epoch_loss_uses_valid_element_weighting) ... ok
+test_evaluation_denominators_r2_and_mask_exclusion (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_evaluation_denominators_r2_and_mask_exclusion) ... ok
+test_exact_architecture_and_finite_shape (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_exact_architecture_and_finite_shape) ... ok
+test_masked_labels_and_exact_gradient (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_masked_labels_and_exact_gradient) ... ok
+test_pooled_errors_not_average_rmse (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_pooled_errors_not_average_rmse) ... ok
+test_save_reload_consistency_without_retraining (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_save_reload_consistency_without_retraining) ... ok
+test_validation_uses_same_mask_weighted_tracker (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_validation_uses_same_mask_weighted_tracker) ... ok
+test_zero_valid_batch_skips_optimizer_and_finite_update (app.c2.microclimate.models.lstm.tests.test_lstm.LSTMTests.test_zero_valid_batch_skips_optimizer_and_finite_update) ... ok
+test_custom_serialization_names_are_preserved (app.c2.microclimate.models.lstm.tests.test_refactor.RefactorTests.test_custom_serialization_names_are_preserved) ... ok
+test_legacy_and_canonical_cli_help_is_safe (app.c2.microclimate.models.lstm.tests.test_refactor.RefactorTests.test_legacy_and_canonical_cli_help_is_safe) ... ok
+test_legacy_symbols_keep_identity (app.c2.microclimate.models.lstm.tests.test_refactor.RefactorTests.test_legacy_symbols_keep_identity) ... ok
+test_paths_still_resolve_to_existing_backend (app.c2.microclimate.models.lstm.tests.test_refactor.RefactorTests.test_paths_still_resolve_to_existing_backend) ... ok
+test_private_legacy_helpers_are_accessible (app.c2.microclimate.models.lstm.tests.test_refactor.RefactorTests.test_private_legacy_helpers_are_accessible) ... ok
+test_actual_schema_and_hourly_nodes (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_actual_schema_and_hourly_nodes) ... ok
+test_duplicates_and_gap_rejected (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_duplicates_and_gap_rejected) ... ok
+test_empty_windows_explicit_no_score (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_empty_windows_explicit_no_score) ... ok
+test_executed_artifacts_reproduce_metrics_and_source_hash (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_executed_artifacts_reproduce_metrics_and_source_hash) ... ok
+test_flagged_target_windows_excluded (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_flagged_target_windows_excluded) ... ok
+test_flags_status_origin_ranges (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_flags_status_origin_ranges) ... ok
+test_forward_fill_only_from_past (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_forward_fill_only_from_past) ... ok
+test_future_observations_cannot_change_history (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_future_observations_cannot_change_history) ... ok
+test_invalid_config_and_evaluation (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_invalid_config_and_evaluation) ... ok
+test_metrics_known_values_and_cumulative_horizons (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_metrics_known_values_and_cumulative_horizons) ... ok
+test_no_backfill_of_leading_bad_history (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_no_backfill_of_leading_bad_history) ... ok
+test_no_nodes_mixed (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_no_nodes_mixed) ... ok
+test_ordering_preserves_nodes (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_ordering_preserves_nodes) ... ok
+test_quality_policy (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_quality_policy) ... ok
+test_real_split_windows_and_all_target_timestamps (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_real_split_windows_and_all_target_timestamps) ... ok
+test_required_missing_nonfinite_and_boolean (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_required_missing_nonfinite_and_boolean) ... ok
+test_schema_missing_extra_duplicate (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_schema_missing_extra_duplicate) ... ok
+test_shapes_alignment_and_persistence (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_shapes_alignment_and_persistence) ... ok
+test_split_before_windows_no_cross_boundary (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_split_before_windows_no_cross_boundary) ... ok
+test_timestamp_timezone_and_alignment (app.c2.microclimate.preprocessing.tests.test_phase1.Phase1Tests.test_timestamp_timezone_and_alignment) ... ok
+test_95_percent_rule_and_no_empty_labels (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_95_percent_rule_and_no_empty_labels) ... ok
+test_all_untrusted_flags_excluded_and_clean_warn_retained (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_all_untrusted_flags_excluded_and_clean_warn_retained) ... ok
+test_bad_mask_and_eligible_nonfinite_rejected (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_bad_mask_and_eligible_nonfinite_rejected) ... ok
+test_complete_case_interface_preserved (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_complete_case_interface_preserved) ... ok
+test_development_analysis_is_training_only (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_development_analysis_is_training_only) ... ok
+test_frozen_literal_boundaries (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_frozen_literal_boundaries) ... ok
+test_future_values_and_quality_never_enter_inputs (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_future_values_and_quality_never_enter_inputs) ... ok
+test_known_metric_denominators_and_masked_loss (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_known_metric_denominators_and_masked_loss) ... ok
+test_mask_shape_binary_and_temporal_alignment (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_mask_shape_binary_and_temporal_alignment) ... ok
+test_no_backward_fill_or_node_mixing (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_no_backward_fill_or_node_mixing) ... ok
+test_prefix_horizons_are_cumulative (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_prefix_horizons_are_cumulative) ... ok
+test_quality_captured_before_history_filling (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_quality_captured_before_history_filling) ... ok
+test_saved_arrays_masks_alignment_and_counts (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_saved_arrays_masks_alignment_and_counts) ... ok
+test_saved_metrics_independently_reproduced (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_saved_metrics_independently_reproduced) ... ok
+test_source_and_original_artifacts_preserved (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_source_and_original_artifacts_preserved) ... ok
+test_zero_denominators_and_empty_cohorts (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_zero_denominators_and_empty_cohorts) ... ok
+test_zero_prefix_with_nonzero_later_labels (app.c2.microclimate.preprocessing.tests.test_phase1_masked.TargetMaskTests.test_zero_prefix_with_nonzero_later_labels) ... ok
+test_different_input_target_scalers_use_correct_inverse (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_different_input_target_scalers_use_correct_inverse) ... ok
+test_empty_eligible_feature_rejected (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_empty_eligible_feature_rejected) ... ok
+test_feature_order_enforced (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_feature_order_enforced) ... ok
+test_fit_pools_only_source_genuine_observations (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_fit_pools_only_source_genuine_observations) ... ok
+test_invalid_anomaly_imputed_training_values_cannot_affect_fit (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_invalid_anomaly_imputed_training_values_cannot_affect_fit) ... ok
+test_original_unit_metrics_and_denominators_reproduced (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_original_unit_metrics_and_denominators_reproduced) ... ok
+test_outside_training_window_or_duplicate_source_rejected (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_outside_training_window_or_duplicate_source_rejected) ... ok
+test_population_statistics_match_standard_scaler (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_population_statistics_match_standard_scaler) ... ok
+test_previous_artifacts_and_manifest_preserved (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_previous_artifacts_and_manifest_preserved) ... ok
+test_saved_input_and_eligible_target_inverse_round_trips (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_saved_input_and_eligible_target_inverse_round_trips) ... ok
+test_saved_shapes_dtypes_finiteness_masks_and_alignment (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_saved_shapes_dtypes_finiteness_masks_and_alignment) ... ok
+test_selected_fitting_ignores_untrusted_nonfinite_values (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_selected_fitting_ignores_untrusted_nonfinite_values) ... ok
+test_serialized_parameters_round_trip (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_serialized_parameters_round_trip) ... ok
+test_target_placeholder_and_loss_are_mask_safe (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_target_placeholder_and_loss_are_mask_safe) ... ok
+test_unique_observations_not_overlap_weighted (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_unique_observations_not_overlap_weighted) ... ok
+test_validation_and_test_changes_do_not_affect_fit (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_validation_and_test_changes_do_not_affect_fit) ... ok
+test_zero_and_numerically_constant_variance (app.c2.microclimate.preprocessing.tests.test_scaling.ScalingTests.test_zero_and_numerically_constant_variance) ... ok
+
+----------------------------------------------------------------------
+Ran 77 tests in 28.803s
+
+OK
+
+GRU_FULL_TRAINING_START {"seed": 42, "units": 32, "lookback": 336, "horizon": 168, "features": ["soil_moisture_avg_index", "air_temperature_c", "relative_humidity_pct"], "batch_size": 16, "learning_rate": 0.001, "optimizer": "Adam", "global_clipnorm": 1.0, "maximum_epochs": 100, "patience": 10, "restore_best_weights": true, "shuffle_buffer": 1024, "drop_remainder": false, "intra_op_threads": 6, "inter_op_threads": 1, "steps_per_execution": 16, "jit_compile": false, "training_samples": 11137, "validation_samples": 1622, "test_samples": 1622, "gru_reset_after": true, "model": "Standard GRU baseline; not Attention BiLSTM", "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C:\Users\Asus\Documents\Research\smart-agriculture-IT-437\backend\.venv\Lib\site-packages\keras\src\trainers\epoch_iter
+ator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a 
+tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+E0000 00:00:1792582211.600917   29892 util.cc:131] oneDNN supports DT_INT32 only on platforms with AVX-512. Falling 
+back to the default Eigen-based implementation if present.
+C2_EPOCH {"epoch": 1, "loss": 0.596782161964322, "val_loss": 0.20339142705903093, "seconds": 74.67181260001962, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 2, "loss": 0.11778471579835727, "val_loss": 0.12706603566490737, "seconds": 67.55337350000627, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 3, "loss": 0.09580268219970084, "val_loss": 0.10644476326683157, "seconds": 69.0424531000026, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 4, "loss": 0.08759457591675465, "val_loss": 0.0887456613414935, "seconds": 67.88108280001325, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 5, "loss": 0.0848037600933906, "val_loss": 0.08809128163348953, "seconds": 68.05859000000055, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 6, "loss": 0.08411454625969066, "val_loss": 0.07925368557031137, "seconds": 66.33208500000183, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 7, "loss": 0.08036274872438127, "val_loss": 0.08052288560504069, "seconds": 65.37319780001417, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 8, "loss": 0.07999788900252205, "val_loss": 0.09799453832500259, "seconds": 65.9788762999815, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 9, "loss": 0.07902967904634647, "val_loss": 0.07939231268534773, "seconds": 65.26625389998662, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 10, "loss": 0.0779166939804306, "val_loss": 0.09870550921443719, "seconds": 65.40318940000725, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 11, "loss": 0.07799655522244128, "val_loss": 0.12074911335072219, "seconds": 65.3795276999881, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 12, "loss": 0.08003482875556057, "val_loss": 0.09004807758820975, "seconds": 68.68156339999405, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 13, "loss": 0.07681651940053769, "val_loss": 0.0808972288322453, "seconds": 67.50065829997766, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 14, "loss": 0.07669962163941418, "val_loss": 0.07587326922626783, "seconds": 66.96046090000891, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 15, "loss": 0.07621600535161126, "val_loss": 0.08084642571177295, "seconds": 64.91929330001585, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 16, "loss": 0.07516008347517407, "val_loss": 0.0880232490040863, "seconds": 65.20016219999525, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 17, "loss": 0.07622248573000287, "val_loss": 0.08003944856126279, "seconds": 65.47576669999398, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 18, "loss": 0.07494560184730081, "val_loss": 0.08997834112304709, "seconds": 65.32758260000264, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 19, "loss": 0.07696147948986426, "val_loss": 0.08436547978405418, "seconds": 65.22967349999817, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 20, "loss": 0.07381033685314613, "val_loss": 0.07362894464765268, "seconds": 65.65134409998427, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 21, "loss": 0.07382283679361233, "val_loss": 0.09109220334878451, "seconds": 65.07432729998254, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 22, "loss": 0.0739043211761377, "val_loss": 0.07340588134772297, "seconds": 64.87095129999216, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 23, "loss": 0.07350307378891428, "val_loss": 0.07942897020891128, "seconds": 65.46958140001516, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 24, "loss": 0.07451611070386951, "val_loss": 0.07655488515692585, "seconds": 64.96614179998869, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 25, "loss": 0.07286885382430483, "val_loss": 0.0835167474756725, "seconds": 65.29935299998033, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 26, "loss": 0.07449958976634401, "val_loss": 0.08467697716705463, "seconds": 65.13058500000625, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 27, "loss": 0.07273040451825444, "val_loss": 0.08402817596613925, "seconds": 65.24133930000244, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 28, "loss": 0.07235337452097114, "val_loss": 0.12384073048115107, "seconds": 64.96376449998934, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 29, "loss": 0.07176584391925704, "val_loss": 0.13709783653220559, "seconds": 64.54947460000403, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 30, "loss": 0.07144486697210727, "val_loss": 0.19149795120548063, "seconds": 64.74230509999325, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 31, "loss": 0.07082813461034167, "val_loss": 0.17099335173846808, "seconds": 65.03558669998893, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+C2_EPOCH {"epoch": 32, "loss": 0.06983050062292248, "val_loss": 0.2046472110596816, "seconds": 65.10811510001076, "validation_valid_elements": 805122, "evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only"}
+GRU_FULL_TRAINING_COMPLETE {"evaluation_label": "Synthetic Data \u2014 Prototype Evaluation Only", "status": "complete", "epochs_completed": 32, "best_epoch": 22, "training_duration_seconds": 2116.716825200012, "mean_epoch_seconds": 66.13557725624833, "best_epoch_training_loss": 0.0739043211761377, "best_validation_loss": 0.07340588134772297, "minimum_training_loss": 0.06983050062292248, "last_epoch_training_loss": 0.06983050062292248, "last_epoch_validation_loss": 0.2046472110596816, "stopped_early": true, "maximum_epochs": 100, "patience": 10, "parameters": 9987, "preflight_tests": {"tests_run": 77, "failures": 0, "errors": 0, "skipped": 0}, "trained_model": "gru_best.keras", "reload_max_absolute_error": 0.0, "input_files_unchanged": true, "validation_only_model_selection": true, "heldout_test_evaluated_after_selection": true, "physical_units": ["index (not volumetric water content)", "\u00b0C", "% RH"], "limitations": ["100% synthetic; no real Sri Lankan Nai Miris field validation.", "Overlapping origins are dependent forecast/observation pairs.", "Single fixed seed/configuration; no significance or generalization claim.", "Existing test results have already been inspected for LSTM; this is comparative prototype evidence.", "Missing future irrigation/weather and stale historical fills limit forecasts."]}

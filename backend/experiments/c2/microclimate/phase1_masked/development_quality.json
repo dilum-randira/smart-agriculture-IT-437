@@ -1,0 +1,51 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "analysis_partition": "train only",
+  "nodes": [
+    {
+      "node": "NODE_01",
+      "candidates": 5629,
+      "minimum_valid_hours": 161,
+      "median_valid_hours": 165.0,
+      "maximum_valid_hours": 168,
+      "valid_hours_distribution": {
+        "161": 32,
+        "162": 212,
+        "163": 779,
+        "164": 669,
+        "165": 1594,
+        "166": 1301,
+        "167": 705,
+        "168": 337
+      },
+      "target_hours_required": 160,
+      "meeting_coverage_rule": 5629
+    },
+    {
+      "node": "NODE_02",
+      "candidates": 5629,
+      "minimum_valid_hours": 157,
+      "median_valid_hours": 165.0,
+      "maximum_valid_hours": 168,
+      "valid_hours_distribution": {
+        "157": 16,
+        "158": 22,
+        "159": 83,
+        "160": 108,
+        "161": 193,
+        "162": 417,
+        "163": 446,
+        "164": 682,
+        "165": 1128,
+        "166": 954,
+        "167": 1061,
+        "168": 519
+      },
+      "target_hours_required": 160,
+      "meeting_coverage_rule": 5508
+    }
+  ],
+  "minimum_target_fraction": 0.95,
+  "minimum_valid_hours_per_target": 160,
+  "rationale": "Training medians are 165/168; requiring >=95% (160/168) usable hours retains most training windows while excluding its lower-coverage tail. Fixed before validation/test evaluation; not optimized using forecast errors."
+}

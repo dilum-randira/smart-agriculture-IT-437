@@ -1,0 +1,40 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "status": "complete",
+  "epochs_completed": 15,
+  "best_epoch": 5,
+  "training_duration_seconds": 932.1202767000068,
+  "mean_epoch_seconds": 62.12396568000161,
+  "best_epoch_training_loss": 0.07621320227489943,
+  "best_validation_loss": 0.07635669853757047,
+  "minimum_training_loss": 0.07005647493550224,
+  "last_epoch_training_loss": 0.07023745507453863,
+  "last_epoch_validation_loss": 0.07945705903172225,
+  "stopped_early": true,
+  "maximum_epochs": 100,
+  "patience": 10,
+  "parameters": 30040,
+  "preflight_tests": {
+    "tests_run": 89,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "trained_model": "attention_bilstm_best.keras",
+  "reload_max_absolute_error": 0.0,
+  "input_files_unchanged": true,
+  "validation_only_model_selection": true,
+  "heldout_test_evaluated_after_selection": true,
+  "physical_units": [
+    "index (not volumetric water content)",
+    "°C",
+    "% RH"
+  ],
+  "limitations": [
+    "100% synthetic; no real Sri Lankan Nai Miris field validation.",
+    "Attention is descriptive, not causal or independent proof of explainability.",
+    "Overlapping origins are dependent forecast/observation pairs.",
+    "Single fixed configuration/seed; repeated use of the same test is not external validation.",
+    "Historical forward fills and unknown future irrigation/weather limit interpretation."
+  ]
+}

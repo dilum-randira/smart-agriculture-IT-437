@@ -1,0 +1,69 @@
+# Synthetic Data — Prototype Evaluation Only
+
+Persistence: repeat last valid historical target for every future hour.
+No model training or fitted preprocessing. Missing metrics mean zero eligible windows, not zero error.
+
+     split    node                  target                                 unit  window_hours  samples  forecast_values       MAE      RMSE                           evaluation_label
+     train NODE_01 soil_moisture_avg_index index (not volumetric water content)            24      337             8088  1.313422  1.752819 Synthetic Data — Prototype Evaluation Only
+     train NODE_01 soil_moisture_avg_index index (not volumetric water content)            72      337            24264  1.881869  2.406387 Synthetic Data — Prototype Evaluation Only
+     train NODE_01 soil_moisture_avg_index index (not volumetric water content)           168      337            56616  3.201958  4.056229 Synthetic Data — Prototype Evaluation Only
+     train NODE_01       air_temperature_c                                   °C            24      337             8088  2.937002  3.602363 Synthetic Data — Prototype Evaluation Only
+     train NODE_01       air_temperature_c                                   °C            72      337            24264  2.926485  3.592860 Synthetic Data — Prototype Evaluation Only
+     train NODE_01       air_temperature_c                                   °C           168      337            56616  2.922852  3.591429 Synthetic Data — Prototype Evaluation Only
+     train NODE_01   relative_humidity_pct                                 % RH            24      337             8088 10.287646 12.659411 Synthetic Data — Prototype Evaluation Only
+     train NODE_01   relative_humidity_pct                                 % RH            72      337            24264 10.324721 12.691411 Synthetic Data — Prototype Evaluation Only
+     train NODE_01   relative_humidity_pct                                 % RH           168      337            56616 10.319125 12.680535 Synthetic Data — Prototype Evaluation Only
+     train NODE_02 soil_moisture_avg_index index (not volumetric water content)            24      519            12456  1.380387  1.923860 Synthetic Data — Prototype Evaluation Only
+     train NODE_02 soil_moisture_avg_index index (not volumetric water content)            72      519            37368  2.369873  3.371692 Synthetic Data — Prototype Evaluation Only
+     train NODE_02 soil_moisture_avg_index index (not volumetric water content)           168      519            87192  4.069932  5.737152 Synthetic Data — Prototype Evaluation Only
+     train NODE_02       air_temperature_c                                   °C            24      519            12456  2.917051  3.587500 Synthetic Data — Prototype Evaluation Only
+     train NODE_02       air_temperature_c                                   °C            72      519            37368  2.919991  3.587258 Synthetic Data — Prototype Evaluation Only
+     train NODE_02       air_temperature_c                                   °C           168      519            87192  2.930933  3.598119 Synthetic Data — Prototype Evaluation Only
+     train NODE_02   relative_humidity_pct                                 % RH            24      519            12456 10.191292 12.539308 Synthetic Data — Prototype Evaluation Only
+     train NODE_02   relative_humidity_pct                                 % RH            72      519            37368 10.262814 12.599505 Synthetic Data — Prototype Evaluation Only
+     train NODE_02   relative_humidity_pct                                 % RH           168      519            87192 10.309294 12.640826 Synthetic Data — Prototype Evaluation Only
+validation NODE_01 soil_moisture_avg_index index (not volumetric water content)            24        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01 soil_moisture_avg_index index (not volumetric water content)            72        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01 soil_moisture_avg_index index (not volumetric water content)           168        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01       air_temperature_c                                   °C            24        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01       air_temperature_c                                   °C            72        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01       air_temperature_c                                   °C           168        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01   relative_humidity_pct                                 % RH            24        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01   relative_humidity_pct                                 % RH            72        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_01   relative_humidity_pct                                 % RH           168        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+validation NODE_02 soil_moisture_avg_index index (not volumetric water content)            24      347             8328  1.390094  1.740160 Synthetic Data — Prototype Evaluation Only
+validation NODE_02 soil_moisture_avg_index index (not volumetric water content)            72      347            24984  1.900559  2.372986 Synthetic Data — Prototype Evaluation Only
+validation NODE_02 soil_moisture_avg_index index (not volumetric water content)           168      347            58296  2.011725  2.493617 Synthetic Data — Prototype Evaluation Only
+validation NODE_02       air_temperature_c                                   °C            24      347             8328  2.918955  3.590831 Synthetic Data — Prototype Evaluation Only
+validation NODE_02       air_temperature_c                                   °C            72      347            24984  2.919216  3.585051 Synthetic Data — Prototype Evaluation Only
+validation NODE_02       air_temperature_c                                   °C           168      347            58296  2.926478  3.594288 Synthetic Data — Prototype Evaluation Only
+validation NODE_02   relative_humidity_pct                                 % RH            24      347             8328 10.136173 12.464014 Synthetic Data — Prototype Evaluation Only
+validation NODE_02   relative_humidity_pct                                 % RH            72      347            24984 10.172026 12.480963 Synthetic Data — Prototype Evaluation Only
+validation NODE_02   relative_humidity_pct                                 % RH           168      347            58296 10.236676 12.555287 Synthetic Data — Prototype Evaluation Only
+      test NODE_01 soil_moisture_avg_index index (not volumetric water content)            24       87             2088  1.772064  2.239255 Synthetic Data — Prototype Evaluation Only
+      test NODE_01 soil_moisture_avg_index index (not volumetric water content)            72       87             6264  1.890878  2.343018 Synthetic Data — Prototype Evaluation Only
+      test NODE_01 soil_moisture_avg_index index (not volumetric water content)           168       87            14616  2.217527  2.755042 Synthetic Data — Prototype Evaluation Only
+      test NODE_01       air_temperature_c                                   °C            24       87             2088  2.830431  3.468272 Synthetic Data — Prototype Evaluation Only
+      test NODE_01       air_temperature_c                                   °C            72       87             6264  2.832000  3.476727 Synthetic Data — Prototype Evaluation Only
+      test NODE_01       air_temperature_c                                   °C           168       87            14616  2.846806  3.491879 Synthetic Data — Prototype Evaluation Only
+      test NODE_01   relative_humidity_pct                                 % RH            24       87             2088  9.857586 12.103873 Synthetic Data — Prototype Evaluation Only
+      test NODE_01   relative_humidity_pct                                 % RH            72       87             6264  9.874807 12.138787 Synthetic Data — Prototype Evaluation Only
+      test NODE_01   relative_humidity_pct                                 % RH           168       87            14616  9.825560 12.066289 Synthetic Data — Prototype Evaluation Only
+      test NODE_02 soil_moisture_avg_index index (not volumetric water content)            24        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02 soil_moisture_avg_index index (not volumetric water content)            72        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02 soil_moisture_avg_index index (not volumetric water content)           168        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02       air_temperature_c                                   °C            24        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02       air_temperature_c                                   °C            72        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02       air_temperature_c                                   °C           168        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02   relative_humidity_pct                                 % RH            24        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02   relative_humidity_pct                                 % RH            72        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+      test NODE_02   relative_humidity_pct                                 % RH           168        0                0       NaN       NaN Synthetic Data — Prototype Evaluation Only
+
+Window counts/shapes:
+     split    node  rows  quality_usable_rows  candidate_windows  valid_samples  rejected_windows   input_shape  output_shape                window_artifact
+     train NODE_01  6132                 6031               5629            337              5292 [337, 336, 3] [337, 168, 3]      windows_train_NODE_01.npz
+     train NODE_02  6132                 6025               5629            519              5110 [519, 336, 3] [519, 168, 3]      windows_train_NODE_02.npz
+validation NODE_01  1314                 1291                811              0               811   [0, 336, 3]   [0, 168, 3] windows_validation_NODE_01.npz
+validation NODE_02  1314                 1293                811            347               464 [347, 336, 3] [347, 168, 3] windows_validation_NODE_02.npz
+      test NODE_01  1314                 1293                811             87               724  [87, 336, 3]  [87, 168, 3]       windows_test_NODE_01.npz
+      test NODE_02  1314                 1291                811              0               811   [0, 336, 3]   [0, 168, 3]       windows_test_NODE_02.npz

@@ -1,0 +1,40 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "status": "complete",
+  "epochs_completed": 32,
+  "best_epoch": 22,
+  "training_duration_seconds": 2116.716825200012,
+  "mean_epoch_seconds": 66.13557725624833,
+  "best_epoch_training_loss": 0.0739043211761377,
+  "best_validation_loss": 0.07340588134772297,
+  "minimum_training_loss": 0.06983050062292248,
+  "last_epoch_training_loss": 0.06983050062292248,
+  "last_epoch_validation_loss": 0.2046472110596816,
+  "stopped_early": true,
+  "maximum_epochs": 100,
+  "patience": 10,
+  "parameters": 9987,
+  "preflight_tests": {
+    "tests_run": 77,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "trained_model": "gru_best.keras",
+  "reload_max_absolute_error": 0.0,
+  "input_files_unchanged": true,
+  "validation_only_model_selection": true,
+  "heldout_test_evaluated_after_selection": true,
+  "physical_units": [
+    "index (not volumetric water content)",
+    "°C",
+    "% RH"
+  ],
+  "limitations": [
+    "100% synthetic; no real Sri Lankan Nai Miris field validation.",
+    "Overlapping origins are dependent forecast/observation pairs.",
+    "Single fixed seed/configuration; no significance or generalization claim.",
+    "Existing test results have already been inspected for LSTM; this is comparative prototype evidence.",
+    "Missing future irrigation/weather and stale historical fills limit forecasts."
+  ]
+}

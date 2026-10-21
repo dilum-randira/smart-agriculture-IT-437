@@ -1,0 +1,44 @@
+.application-shell { --sidebar-width:232px; display:grid; grid-template-columns:var(--sidebar-width) minmax(0,1fr); grid-template-rows:76px 1fr; min-height:100vh; background:var(--nm-bg); color:var(--nm-ink); }
+.application-body { grid-column:2; grid-row:2; display:flex; flex-direction:column; min-width:0; }
+.application-body>main { flex:1; }
+.app-sidebar { position:fixed; inset:0 auto 0 0; z-index:50; width:var(--sidebar-width); height:100dvh; display:flex; flex-direction:column; padding:25px 15px 18px; border-right:1px solid var(--nm-border); background:#fff; overflow-y:auto; }
+.app-sidebar-brand { display:flex; align-items:center; justify-content:space-between; padding:0 4px 25px; }
+.app-sidebar-brand .ui-brand { width:194px; height:52px; }
+.app-nav-caption { font-size:9px; font-weight:650; letter-spacing:.16em; color:#8e9ba8; padding:15px 14px; border-top:1px solid #edf0f3; }
+.app-sidebar nav { display:grid; gap:6px; }
+.app-nav-link { display:flex; gap:13px; align-items:center; padding:12px 14px; border:1px solid transparent; border-radius:9px; color:#637485; font-size:13px; font-weight:450; text-decoration:none; }
+.app-nav-link .ui-icon { opacity:.78; flex-shrink:0; }
+.app-nav-link:hover { background:#f5f8fa; color:#263e4e; }
+.app-nav-link.is-active { background:#edf6f0; color:#216b44; border-color:#dcece1; font-weight:600; box-shadow:inset 3px 0 #39865c; }
+.app-nav-link.is-active .ui-icon { opacity:1; }
+.app-sidebar-context { margin-top:auto; padding:24px 12px 20px; display:flex; align-items:flex-start; gap:10px; }
+.app-sidebar-context .ui-icon { margin-top:1px; flex-shrink:0; }
+.app-sidebar-context strong { font-size:11px; font-weight:550; color:#657e72; }
+.app-sidebar-context p { font-size:10px; line-height:1.8; color:#91a097; margin-top:6px; }
+.app-sidebar-account { display:flex; align-items:center; gap:10px; padding:15px 8px 0; border-top:1px solid #e8edf0; }
+.app-sidebar-account>span { display:grid; gap:4px; flex:1; }
+.app-sidebar-account strong { font-size:11px; font-weight:550; color:#4e655b; }
+.app-sidebar-account small { font-size:10px; color:#95a199; }
+.app-topbar { position:sticky; top:0; z-index:35; grid-column:2; grid-row:1; display:flex; justify-content:space-between; align-items:center; gap:20px; min-width:0; padding:14px clamp(18px,3vw,42px); background:#ffffffed; backdrop-filter:blur(12px); border-bottom:1px solid var(--nm-border); }
+.app-topbar-heading { display:flex; align-items:center; gap:16px; min-width:0; }
+.app-topbar-eyebrow { font-size:8px; letter-spacing:.15em; color:#92a09d; font-weight:650; }
+.app-topbar-heading p { margin:4px 0 0; font-size:15px; font-weight:550; color:#243c47; }
+.app-menu-button,.app-drawer-close { display:none; }
+.app-account-dropdown { position:relative; flex-shrink:0; }
+.app-account-dropdown>summary { display:flex; align-items:center; gap:12px; list-style:none; cursor:pointer; padding:3px 0 3px 10px; border-radius:8px; }
+.app-account-dropdown>summary::-webkit-details-marker { display:none; }
+.app-profile-identity { display:grid; gap:4px; min-width:0; }
+.app-profile-identity strong { max-width:170px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; font-weight:550; color:#354c50; }
+.app-profile-identity small { font-size:10px; color:#8b9b92; }
+.app-account-menu { position:absolute; top:calc(100% + 16px); right:0; width:250px; max-width:calc(100vw - 30px); padding:10px; border:1px solid var(--nm-border); border-radius:12px; background:#fff; box-shadow:0 12px 42px #233e4924; }
+.app-account-menu>span { display:block; font-size:10px; line-height:1.8; color:#8c9b96; padding:7px 10px 12px; border-bottom:1px solid #edf1ef; overflow-wrap:anywhere; }
+.app-account-menu>span strong { color:#4e655c; font-weight:550; }
+.app-account-menu>a,.app-account-menu>button { display:flex; align-items:center; gap:11px; padding:12px 10px; width:100%; border:0; border-radius:6px; background:#fff; color:#5d7269; font-size:12px; text-align:left; cursor:pointer; }
+.app-account-menu>a:hover,.app-account-menu>button:hover { background:#f2f7f3; }
+.app-account-menu>p { font-size:11px; padding:10px; color:#a35c48; line-height:1.7; }
+.app-account-menu>button:disabled { opacity:.6; cursor:wait; }
+.app-sidebar :focus-visible,.app-topbar :focus-visible { outline:2px solid #397954; outline-offset:3px; }
+.app-drawer-scrim { display:none; }
+@media(max-width:1100px) { .application-shell { grid-template-columns:minmax(0,1fr); grid-template-rows:72px 1fr; }.application-body,.app-topbar { grid-column:1; }.app-sidebar { width:260px; visibility:hidden; transform:translateX(-100%); transition:transform .2s,visibility .2s; z-index:65; }.app-sidebar.is-open { visibility:visible; transform:translateX(0); }.app-drawer-scrim { display:block; position:fixed; inset:0; border:0; background:#142f3b66; backdrop-filter:blur(2px); z-index:60; }.app-menu-button { display:flex; align-items:center; gap:8px; border:1px solid #dbe5e6; border-radius:7px; background:#fff; padding:8px 10px; font-size:11px; color:#61766c; }.app-drawer-close { display:block; padding:6px; background:#f5f8f6; border:1px solid #e2eae4; border-radius:6px; }.app-sidebar-brand .ui-brand { width:186px; }.app-sidebar-brand { gap:9px; }.app-topbar-eyebrow { display:none; } }
+@media(max-width:600px) { .app-topbar { padding:12px 16px; gap:12px; }.app-menu-button>span { display:none; }.app-topbar-heading { gap:11px; }.app-topbar-heading p { font-size:13px; }.app-profile-identity strong { max-width:100px; }.app-account-dropdown>summary { gap:7px; }.app-account-dropdown>summary>.ui-asset { width:32px; height:32px; }.app-profile-identity small { font-size:9px; } }
+@media(prefers-reduced-motion:reduce) { .app-sidebar { transition:none; } }

@@ -1,0 +1,29 @@
+Synthetic Data — Prototype Evaluation Only
+
+test_actual_schema_and_hourly_nodes (app.c2.microclimate.test_phase1.Phase1Tests.test_actual_schema_and_hourly_nodes) ... ok
+test_duplicates_and_gap_rejected (app.c2.microclimate.test_phase1.Phase1Tests.test_duplicates_and_gap_rejected) ... ok
+test_empty_windows_explicit_no_score (app.c2.microclimate.test_phase1.Phase1Tests.test_empty_windows_explicit_no_score) ... ok
+test_executed_artifacts_reproduce_metrics_and_source_hash (app.c2.microclimate.test_phase1.Phase1Tests.test_executed_artifacts_reproduce_metrics_and_source_hash) ... ok
+test_flagged_target_windows_excluded (app.c2.microclimate.test_phase1.Phase1Tests.test_flagged_target_windows_excluded) ... ok
+test_flags_status_origin_ranges (app.c2.microclimate.test_phase1.Phase1Tests.test_flags_status_origin_ranges) ... ok
+test_forward_fill_only_from_past (app.c2.microclimate.test_phase1.Phase1Tests.test_forward_fill_only_from_past) ... ok
+test_future_observations_cannot_change_history (app.c2.microclimate.test_phase1.Phase1Tests.test_future_observations_cannot_change_history) ... ok
+test_invalid_config_and_evaluation (app.c2.microclimate.test_phase1.Phase1Tests.test_invalid_config_and_evaluation) ... ok
+test_metrics_known_values_and_cumulative_horizons (app.c2.microclimate.test_phase1.Phase1Tests.test_metrics_known_values_and_cumulative_horizons) ... ok
+test_no_backfill_of_leading_bad_history (app.c2.microclimate.test_phase1.Phase1Tests.test_no_backfill_of_leading_bad_history) ... ok
+test_no_nodes_mixed (app.c2.microclimate.test_phase1.Phase1Tests.test_no_nodes_mixed) ... ok
+test_ordering_preserves_nodes (app.c2.microclimate.test_phase1.Phase1Tests.test_ordering_preserves_nodes) ... ok
+test_quality_policy (app.c2.microclimate.test_phase1.Phase1Tests.test_quality_policy) ... ok
+test_real_split_windows_and_all_target_timestamps (app.c2.microclimate.test_phase1.Phase1Tests.test_real_split_windows_and_all_target_timestamps) ... ok
+test_required_missing_nonfinite_and_boolean (app.c2.microclimate.test_phase1.Phase1Tests.test_required_missing_nonfinite_and_boolean) ... ok
+test_schema_missing_extra_duplicate (app.c2.microclimate.test_phase1.Phase1Tests.test_schema_missing_extra_duplicate) ... ok
+test_shapes_alignment_and_persistence (app.c2.microclimate.test_phase1.Phase1Tests.test_shapes_alignment_and_persistence) ... ok
+test_split_before_windows_no_cross_boundary (app.c2.microclimate.test_phase1.Phase1Tests.test_split_before_windows_no_cross_boundary) ... ok
+test_timestamp_timezone_and_alignment (app.c2.microclimate.test_phase1.Phase1Tests.test_timestamp_timezone_and_alignment) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 2.056s
+
+OK
+
+Tests run: 20; failures: 0; errors: 0; skipped: 0

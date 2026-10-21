@@ -1,0 +1,1194 @@
+{
+  "pack": "Nai Miris Smart Agriculture \u2014 original web asset kit",
+  "version": "1.0",
+  "assets": [
+    {
+      "path": "backgrounds/surface-cool-blue.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/surface-cool-blue.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/surface-dark-forest.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/surface-dark-forest.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/surface-farm-green.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/surface-farm-green.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/surface-neutral.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/surface-neutral.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/surface-warm-sun.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/surface-warm-sun.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/weather-cloudy.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/weather-cloudy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/weather-evening.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/weather-evening.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/weather-field.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/weather-field.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/weather-night.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/weather-night.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/weather-rainy.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/weather-rainy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "backgrounds/weather-sunny.png",
+      "type": "png",
+      "width": 1440
+    },
+    {
+      "path": "backgrounds/weather-sunny.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/avatar-admin.png",
+      "type": "png",
+      "width": 270
+    },
+    {
+      "path": "branding/avatar-admin.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/avatar-farmer.png",
+      "type": "png",
+      "width": 270
+    },
+    {
+      "path": "branding/avatar-farmer.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/avatar-researcher.png",
+      "type": "png",
+      "width": 270
+    },
+    {
+      "path": "branding/avatar-researcher.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/favicon.png",
+      "type": "png",
+      "width": 256
+    },
+    {
+      "path": "branding/favicon.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/logo-horizontal-dark.png",
+      "type": "png",
+      "width": 640
+    },
+    {
+      "path": "branding/logo-horizontal-dark.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/logo-horizontal-light.png",
+      "type": "png",
+      "width": 640
+    },
+    {
+      "path": "branding/logo-horizontal-light.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/logo-mark-dark-tile.png",
+      "type": "png",
+      "width": 512
+    },
+    {
+      "path": "branding/logo-mark-dark-tile.svg",
+      "type": "svg"
+    },
+    {
+      "path": "branding/logo-mark.png",
+      "type": "png",
+      "width": 512
+    },
+    {
+      "path": "branding/logo-mark.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/arrow-right.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/arrow-right.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/calendar.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/calendar.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/chart-bars.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/chart-bars.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/chart-line.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/chart-line.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/chevron-down.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/chevron-down.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/chevron-right.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/chevron-right.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/clock.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/clock.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/collapse.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/collapse.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/compare.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/compare.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/delete.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/delete.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/download.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/download.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/edit.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/edit.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/expand.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/expand.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/eye-off.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/eye-off.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/eye.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/eye.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/filter.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/filter.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/link.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/link.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/location.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/location.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/map.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/map.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/menu.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/menu.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/minus.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/minus.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/notification.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/notification.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/pause.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/pause.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/play.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/play.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/plus.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/plus.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/refresh.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/refresh.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/search.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/search.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/settings.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/settings.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/table.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/table.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/upload.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/upload.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/zoom-in.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/zoom-in.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/controls/zoom-out.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/controls/zoom-out.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/flower.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/flower.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/fruit.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/fruit.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/growth-stage.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/growth-stage.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/harvest.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/harvest.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/irrigation-volume.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/irrigation-volume.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/leaf-wetness.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/leaf-wetness.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/plant.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/plant.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/crops/root-zone.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/crops/root-zone.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/air-pressure.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/air-pressure.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/air-temperature.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/air-temperature.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/cloud-cover.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/cloud-cover.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/crop-growth.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/crop-growth.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/dew-point.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/dew-point.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/evapotranspiration.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/evapotranspiration.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/rainfall.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/rainfall.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/relative-humidity.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/relative-humidity.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/soil-moisture.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/soil-moisture.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/soil-temperature.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/soil-temperature.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/solar-radiation.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/solar-radiation.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/water-deficit.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/water-deficit.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/metrics/wind-speed.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/metrics/wind-speed.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/admin.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/admin.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/analytics.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/analytics.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/harvest-market.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/harvest-market.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/irrigation.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/irrigation.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/login.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/login.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/logout.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/logout.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/microclimate.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/microclimate.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/monitoring.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/monitoring.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/my-account.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/my-account.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/my-farms.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/my-farms.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/overview.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/overview.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/register.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/register.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/sensor-nodes.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/sensor-nodes.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/navigation/yield-prediction.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/navigation/yield-prediction.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/available.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/available.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/error.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/error.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/fresh.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/fresh.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/info.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/info.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/locked.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/locked.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/no-data.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/no-data.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/sample-data.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/sample-data.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/sensor-offline.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/sensor-offline.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/sensor-online.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/sensor-online.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/stale.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/stale.svg",
+      "type": "svg"
+    },
+    {
+      "path": "icons/status/warning.png",
+      "type": "png",
+      "width": 96
+    },
+    {
+      "path": "icons/status/warning.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/nai-miris-pepper-hero.png",
+      "type": "png",
+      "width": 640
+    },
+    {
+      "path": "illustrations/crops/nai-miris-pepper-hero.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/stage-flowering.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "illustrations/crops/stage-flowering.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/stage-fruit-set.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "illustrations/crops/stage-fruit-set.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/stage-harvest.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "illustrations/crops/stage-harvest.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/stage-seed.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "illustrations/crops/stage-seed.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/stage-seedling.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "illustrations/crops/stage-seedling.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/crops/stage-vegetative.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "illustrations/crops/stage-vegetative.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/empty-states/no-farms.png",
+      "type": "png",
+      "width": 720
+    },
+    {
+      "path": "illustrations/empty-states/no-farms.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/empty-states/no-forecast.png",
+      "type": "png",
+      "width": 720
+    },
+    {
+      "path": "illustrations/empty-states/no-forecast.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/empty-states/no-sensors.png",
+      "type": "png",
+      "width": 720
+    },
+    {
+      "path": "illustrations/empty-states/no-sensors.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/farm/isometric-open-field-on-surface.png",
+      "type": "png",
+      "width": 700
+    },
+    {
+      "path": "illustrations/farm/isometric-open-field-on-surface.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/farm/isometric-open-field.png",
+      "type": "png",
+      "width": 850
+    },
+    {
+      "path": "illustrations/farm/isometric-open-field.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/system/historical-weather-analytics.png",
+      "type": "png",
+      "width": 700
+    },
+    {
+      "path": "illustrations/system/historical-weather-analytics.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/system/sensor-station.png",
+      "type": "png",
+      "width": 640
+    },
+    {
+      "path": "illustrations/system/sensor-station.svg",
+      "type": "svg"
+    },
+    {
+      "path": "illustrations/system/soil-profile.png",
+      "type": "png",
+      "width": 640
+    },
+    {
+      "path": "illustrations/system/soil-profile.svg",
+      "type": "svg"
+    },
+    {
+      "path": "overlays/3d-ground-blend.png",
+      "type": "png",
+      "width": 850
+    },
+    {
+      "path": "overlays/3d-ground-blend.svg",
+      "type": "svg"
+    },
+    {
+      "path": "overlays/edge-fade-dark.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "overlays/edge-fade-dark.svg",
+      "type": "svg"
+    },
+    {
+      "path": "overlays/edge-fade-light.png",
+      "type": "png",
+      "width": 520
+    },
+    {
+      "path": "overlays/edge-fade-light.svg",
+      "type": "svg"
+    },
+    {
+      "path": "overlays/forecast-waves-decorative.png",
+      "type": "png",
+      "width": 860
+    },
+    {
+      "path": "overlays/forecast-waves-decorative.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/cloudy.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/cloudy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/fog.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/fog.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/heavy-rain.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/heavy-rain.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/high-humidity.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/high-humidity.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/hot-sunny.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/hot-sunny.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/mist.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/mist.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/mostly-cloudy.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/mostly-cloudy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/night-clear.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/night-clear.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/night-cloudy.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/night-cloudy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/no-data.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/no-data.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/partly-cloudy.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/partly-cloudy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/rainy.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/rainy.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/showers.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/showers.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/sunny.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/sunny.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/thunderstorm.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/thunderstorm.svg",
+      "type": "svg"
+    },
+    {
+      "path": "weather/icons/windy.png",
+      "type": "png",
+      "width": 320
+    },
+    {
+      "path": "weather/icons/windy.svg",
+      "type": "svg"
+    }
+  ]
+}

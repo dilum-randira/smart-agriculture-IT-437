@@ -1,0 +1,13 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "NODE_01": {
+    "samples": 811,
+    "scaled_max_abs_error": 0.0,
+    "original_units_max_abs_error": 0.0
+  },
+  "NODE_02": {
+    "samples": 811,
+    "scaled_max_abs_error": 0.0,
+    "original_units_max_abs_error": 0.0
+  }
+}

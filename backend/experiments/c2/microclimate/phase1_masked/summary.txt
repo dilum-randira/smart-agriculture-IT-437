@@ -1,0 +1,68 @@
+Synthetic Data — Prototype Evaluation Only
+
+Target masks are mandatory. Original-unit y is unchanged; mask=False is NOT ground truth.
+No scaling or training. Counts include repeated target timestamps across rolling forecasts.
+
+     split    node  eligible_samples  rejected_windows    input_shape   output_shape     mask_shape
+     train NODE_01              5629                 0 [5629, 336, 3] [5629, 168, 3] [5629, 168, 3]
+     train NODE_02              5508               121 [5508, 336, 3] [5508, 168, 3] [5508, 168, 3]
+validation NODE_01               811                 0  [811, 336, 3]  [811, 168, 3]  [811, 168, 3]
+validation NODE_02               811                 0  [811, 336, 3]  [811, 168, 3]  [811, 168, 3]
+      test NODE_01               811                 0  [811, 336, 3]  [811, 168, 3]  [811, 168, 3]
+      test NODE_02               811                 0  [811, 336, 3]  [811, 168, 3]  [811, 168, 3]
+
+     split    node                  target                                 unit  window_hours  samples  contributing_samples  valid_observations  possible_observations  masked_observations  coverage_fraction       MAE      RMSE
+     train NODE_01 soil_moisture_avg_index index (not volumetric water content)            24     5629                  5629              132782                 135096                 2314           0.982871  1.372288  1.837490
+     train NODE_01 soil_moisture_avg_index index (not volumetric water content)            72     5629                  5629              398338                 405288                 6950           0.982852  2.178487  2.861981
+     train NODE_01 soil_moisture_avg_index index (not volumetric water content)           168     5629                  5629              929516                 945672                16156           0.982916  3.277115  4.361913
+     train NODE_01       air_temperature_c                                   °C            24     5629                  5629              132782                 135096                 2314           0.982871  2.933799  3.608019
+     train NODE_01       air_temperature_c                                   °C            72     5629                  5629              398338                 405288                 6950           0.982852  2.936552  3.609802
+     train NODE_01       air_temperature_c                                   °C           168     5629                  5629              929516                 945672                16156           0.982916  2.938591  3.611205
+     train NODE_01   relative_humidity_pct                                 % RH            24     5629                  5629              132782                 135096                 2314           0.982871 10.248563 12.602967
+     train NODE_01   relative_humidity_pct                                 % RH            72     5629                  5629              398338                 405288                 6950           0.982852 10.265044 12.611825
+     train NODE_01   relative_humidity_pct                                 % RH           168     5629                  5629              929516                 945672                16156           0.982916 10.273552 12.616804
+     train NODE_02 soil_moisture_avg_index index (not volumetric water content)            24     5508                  5508              129923                 132192                 2269           0.982836  1.378689  1.860565
+     train NODE_02 soil_moisture_avg_index index (not volumetric water content)            72     5508                  5508              389735                 396576                 6841           0.982750  2.178937  2.864087
+     train NODE_02 soil_moisture_avg_index index (not volumetric water content)           168     5508                  5508              909316                 925344                16028           0.982679  3.262677  4.367527
+     train NODE_02       air_temperature_c                                   °C            24     5508                  5508              129923                 132192                 2269           0.982836  2.933439  3.607980
+     train NODE_02       air_temperature_c                                   °C            72     5508                  5508              389735                 396576                 6841           0.982750  2.936622  3.609799
+     train NODE_02       air_temperature_c                                   °C           168     5508                  5508              909316                 925344                16028           0.982679  2.938492  3.611082
+     train NODE_02   relative_humidity_pct                                 % RH            24     5508                  5508              129923                 132192                 2269           0.982836 10.220070 12.559325
+     train NODE_02   relative_humidity_pct                                 % RH            72     5508                  5508              389735                 396576                 6841           0.982750 10.232459 12.565896
+     train NODE_02   relative_humidity_pct                                 % RH           168     5508                  5508              909316                 925344                16028           0.982679 10.238684 12.568734
+validation NODE_01 soil_moisture_avg_index index (not volumetric water content)            24      811                   811               19104                  19464                  360           0.981504  1.348604  1.719167
+validation NODE_01 soil_moisture_avg_index index (not volumetric water content)            72      811                   811               57312                  58392                 1080           0.981504  1.965185  2.458875
+validation NODE_01 soil_moisture_avg_index index (not volumetric water content)           168      811                   811              133648                 136248                 2600           0.980917  2.429744  3.104229
+validation NODE_01       air_temperature_c                                   °C            24      811                   811               19104                  19464                  360           0.981504  2.965870  3.646647
+validation NODE_01       air_temperature_c                                   °C            72      811                   811               57312                  58392                 1080           0.981504  2.965875  3.642839
+validation NODE_01       air_temperature_c                                   °C           168      811                   811              133648                 136248                 2600           0.980917  2.965054  3.641141
+validation NODE_01   relative_humidity_pct                                 % RH            24      811                   811               19104                  19464                  360           0.981504 10.351709 12.744155
+validation NODE_01   relative_humidity_pct                                 % RH            72      811                   811               57312                  58392                 1080           0.981504 10.376064 12.750886
+validation NODE_01   relative_humidity_pct                                 % RH           168      811                   811              133648                 136248                 2600           0.980917 10.379743 12.757439
+validation NODE_02 soil_moisture_avg_index index (not volumetric water content)            24      811                   811               19211                  19464                  253           0.987002  1.364614  1.755210
+validation NODE_02 soil_moisture_avg_index index (not volumetric water content)            72      811                   811               57691                  58392                  701           0.987995  1.916184  2.390336
+validation NODE_02 soil_moisture_avg_index index (not volumetric water content)           168      811                   811              134726                 136248                 1522           0.988829  2.360432  3.057211
+validation NODE_02       air_temperature_c                                   °C            24      811                   811               19211                  19464                  253           0.987002  2.939576  3.613150
+validation NODE_02       air_temperature_c                                   °C            72      811                   811               57691                  58392                  701           0.987995  2.940292  3.610887
+validation NODE_02       air_temperature_c                                   °C           168      811                   811              134726                 136248                 1522           0.988829  2.940377  3.610505
+validation NODE_02   relative_humidity_pct                                 % RH            24      811                   811               19211                  19464                  253           0.987002 10.244871 12.588415
+validation NODE_02   relative_humidity_pct                                 % RH            72      811                   811               57691                  58392                  701           0.987995 10.274334 12.603247
+validation NODE_02   relative_humidity_pct                                 % RH           168      811                   811              134726                 136248                 1522           0.988829 10.287989 12.620035
+      test NODE_01 soil_moisture_avg_index index (not volumetric water content)            24      811                   811               19190                  19464                  274           0.985923  1.391584  1.803109
+      test NODE_01 soil_moisture_avg_index index (not volumetric water content)            72      811                   811               57590                  58392                  802           0.986265  1.973733  2.534656
+      test NODE_01 soil_moisture_avg_index index (not volumetric water content)           168      811                   811              134495                 136248                 1753           0.987134  2.701473  3.394201
+      test NODE_01       air_temperature_c                                   °C            24      811                   811               19190                  19464                  274           0.985923  2.924966  3.596192
+      test NODE_01       air_temperature_c                                   °C            72      811                   811               57590                  58392                  802           0.986265  2.927624  3.596145
+      test NODE_01       air_temperature_c                                   °C           168      811                   811              134495                 136248                 1753           0.987134  2.929905  3.596934
+      test NODE_01   relative_humidity_pct                                 % RH            24      811                   811               19190                  19464                  274           0.985923 10.233031 12.590166
+      test NODE_01   relative_humidity_pct                                 % RH            72      811                   811               57590                  58392                  802           0.986265 10.232623 12.571439
+      test NODE_01   relative_humidity_pct                                 % RH           168      811                   811              134495                 136248                 1753           0.987134 10.221262 12.549616
+      test NODE_02 soil_moisture_avg_index index (not volumetric water content)            24      811                   811               19076                  19464                  388           0.980066  1.471320  1.905222
+      test NODE_02 soil_moisture_avg_index index (not volumetric water content)            72      811                   811               57164                  58392                 1228           0.978970  2.080098  2.674489
+      test NODE_02 soil_moisture_avg_index index (not volumetric water content)           168      811                   811              133368                 136248                 2880           0.978862  2.767205  3.579322
+      test NODE_02       air_temperature_c                                   °C            24      811                   811               19076                  19464                  388           0.980066  2.902549  3.567586
+      test NODE_02       air_temperature_c                                   °C            72      811                   811               57164                  58392                 1228           0.978970  2.901079  3.563633
+      test NODE_02       air_temperature_c                                   °C           168      811                   811              133368                 136248                 2880           0.978862  2.902841  3.563766
+      test NODE_02   relative_humidity_pct                                 % RH            24      811                   811               19076                  19464                  388           0.980066 10.127646 12.440650
+      test NODE_02   relative_humidity_pct                                 % RH            72      811                   811               57164                  58392                 1228           0.978970 10.123899 12.423261
+      test NODE_02   relative_humidity_pct                                 % RH           168      811                   811              133368                 136248                 2880           0.978862 10.107416 12.397328

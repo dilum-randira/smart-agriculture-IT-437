@@ -1,3 +1,4 @@
+import { API_BASE, sessionFetch } from "./accessApi.js";
 export const yieldFields = [
   { key: "plant_height_cm", label: "Plant height", unit: "cm", hint: "Height from the plant base to its highest point.", minimum: 0 },
   { key: "main_branches", label: "Main branches", unit: "count", hint: "Number of main branches. Aggregate averages may be fractional.", minimum: 0 },
@@ -30,7 +31,7 @@ export class YieldApiError extends Error {
   }
 }
 
-const baseUrl = (import.meta.env?.VITE_API_BASE_URL || "http://127.0.0.1:8000").replace(/\/+$/, "");
+const baseUrl = API_BASE;
 
 export async function predictYield(values, { signal, timeoutMs = 30000 } = {}) {
   const errors = validateMeasurements(values);
@@ -42,7 +43,7 @@ export async function predictYield(values, { signal, timeoutMs = 30000 } = {}) {
   signal?.addEventListener("abort", abort, { once: true });
   const timeout = setTimeout(() => { timedOut = true; controller.abort(); }, timeoutMs);
   try {
-    const response = await fetch(`${baseUrl}/api/c2/yield/predict`, {
+    const response = await sessionFetch(`${baseUrl}/api/c2/yield/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(yieldFields.map(({ key }) => [key, Number(values[key])]))),

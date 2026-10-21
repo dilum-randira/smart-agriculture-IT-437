@@ -1,0 +1,18 @@
+/* Optional design tokens — scope by import or merge into existing tokens. */
+:root {
+  --nm-bg: #F6F8FA;
+  --nm-surface: #FFFFFF;
+  --nm-ink: #182C39;
+  --nm-muted: #607282;
+  --nm-border: #DFE8EC;
+  --nm-brand: #1B8749;
+  --nm-forest: #113E34;
+  --nm-weather-blue: #258ACB;
+  --nm-temperature-amber: #F8AE32;
+  --nm-soil-green: #40A95B;
+  --nm-alert: #E96551;
+  --nm-radius: 16px;
+  --nm-shadow: 0 10px 34px rgba(24,44,57,.07);
+}
+.nm-farm-blend { background-image: url('/assets/nai-miris/overlays/3d-ground-blend.svg'); background-repeat:no-repeat; background-size:contain; background-position:center; }
+@media (prefers-reduced-motion:reduce) { .nm-motion { animation:none!important; transition:none!important; } }

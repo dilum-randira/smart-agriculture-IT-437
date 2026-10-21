@@ -1,0 +1,55 @@
+split,node,target,unit,window_hours,samples,contributing_samples,valid_observations,possible_observations,masked_observations,coverage_fraction,MAE,RMSE,evaluation_label
+train,NODE_01,soil_moisture_avg_index,index (not volumetric water content),24,5629,5629,132782,135096,2314,0.9828714395688991,1.3722881070944515,1.837489548193831,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,soil_moisture_avg_index,index (not volumetric water content),72,5629,5629,398338,405288,6950,0.9828517005191371,2.1784868887788176,2.8619809767778626,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,soil_moisture_avg_index,index (not volumetric water content),168,5629,5629,929516,945672,16156,0.982915852430864,3.2771154703745133,4.361913435247232,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,air_temperature_c,°C,24,5629,5629,132782,135096,2314,0.9828714395688991,2.933799387063437,3.6080187043793326,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,air_temperature_c,°C,72,5629,5629,398338,405288,6950,0.9828517005191371,2.9365522511114928,3.6098021443202284,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,air_temperature_c,°C,168,5629,5629,929516,945672,16156,0.982915852430864,2.9385912361853097,3.611205173715894,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,relative_humidity_pct,% RH,24,5629,5629,132782,135096,2314,0.9828714395688991,10.24856252991577,12.602966629655088,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,relative_humidity_pct,% RH,72,5629,5629,398338,405288,6950,0.9828517005191371,10.265044031572007,12.611824641983443,Synthetic Data — Prototype Evaluation Only
+train,NODE_01,relative_humidity_pct,% RH,168,5629,5629,929516,945672,16156,0.982915852430864,10.273552331460818,12.616804497643447,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,soil_moisture_avg_index,index (not volumetric water content),24,5508,5508,129923,132192,2269,0.9828355725006052,1.378688835418421,1.8605645719903887,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,soil_moisture_avg_index,index (not volumetric water content),72,5508,5508,389735,396576,6841,0.982749838618575,2.1789371538475635,2.864086957022407,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,soil_moisture_avg_index,index (not volumetric water content),168,5508,5508,909316,925344,16028,0.9826788740187433,3.262676515617851,4.367527100530029,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,air_temperature_c,°C,24,5508,5508,129923,132192,2269,0.9828355725006052,2.933438651973622,3.607979906658514,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,air_temperature_c,°C,72,5508,5508,389735,396576,6841,0.982749838618575,2.936622012246784,3.609799081838612,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,air_temperature_c,°C,168,5508,5508,909316,925344,16028,0.9826788740187433,2.93849191030071,3.6110819714870006,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,relative_humidity_pct,% RH,24,5508,5508,129923,132192,2269,0.9828355725006052,10.220069585588938,12.559324611724083,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,relative_humidity_pct,% RH,72,5508,5508,389735,396576,6841,0.982749838618575,10.232459035889077,12.565896274823903,Synthetic Data — Prototype Evaluation Only
+train,NODE_02,relative_humidity_pct,% RH,168,5508,5508,909316,925344,16028,0.9826788740187433,10.238683928341466,12.568733759899658,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,soil_moisture_avg_index,index (not volumetric water content),24,811,811,19104,19464,360,0.9815043156596794,1.3486044733285705,1.7191672583766253,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,soil_moisture_avg_index,index (not volumetric water content),72,811,811,57312,58392,1080,0.9815043156596794,1.9651854451449797,2.458874912346,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,soil_moisture_avg_index,index (not volumetric water content),168,811,811,133648,136248,2600,0.980917151077447,2.429743484717175,3.104229346423933,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,air_temperature_c,°C,24,811,811,19104,19464,360,0.9815043156596794,2.9658699712058607,3.646646863869007,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,air_temperature_c,°C,72,811,811,57312,58392,1080,0.9815043156596794,2.9658752054814204,3.642838989681808,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,air_temperature_c,°C,168,811,811,133648,136248,2600,0.980917151077447,2.965054168370192,3.6411414919616245,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,relative_humidity_pct,% RH,24,811,811,19104,19464,360,0.9815043156596794,10.351708535275085,12.744155234609545,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,relative_humidity_pct,% RH,72,811,811,57312,58392,1080,0.9815043156596794,10.37606382037321,12.750886252169954,Synthetic Data — Prototype Evaluation Only
+validation,NODE_01,relative_humidity_pct,% RH,168,811,811,133648,136248,2600,0.980917151077447,10.379743426389153,12.757439025899302,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,soil_moisture_avg_index,index (not volumetric water content),24,811,811,19211,19464,253,0.9870016440608302,1.3646140762124384,1.7552103376632164,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,soil_moisture_avg_index,index (not volumetric water content),72,811,811,57691,58392,701,0.98799493081244,1.9161840461767117,2.390336050874787,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,soil_moisture_avg_index,index (not volumetric water content),168,811,811,134726,136248,1522,0.9888291938230286,2.360432180724858,3.057210771222145,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,air_temperature_c,°C,24,811,811,19211,19464,253,0.9870016440608302,2.9395757683001578,3.6131501083131163,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,air_temperature_c,°C,72,811,811,57691,58392,701,0.98799493081244,2.9402919044180362,3.6108871181162865,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,air_temperature_c,°C,168,811,811,134726,136248,1522,0.9888291938230286,2.9403773631581087,3.6105048384617864,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,relative_humidity_pct,% RH,24,811,811,19211,19464,253,0.9870016440608302,10.244870681109393,12.588414727404086,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,relative_humidity_pct,% RH,72,811,811,57691,58392,701,0.98799493081244,10.27433398643492,12.60324748106998,Synthetic Data — Prototype Evaluation Only
+validation,NODE_02,relative_humidity_pct,% RH,168,811,811,134726,136248,1522,0.9888291938230286,10.28798936061162,12.620035375727772,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,soil_moisture_avg_index,index (not volumetric water content),24,811,811,19190,19464,274,0.9859227291409782,1.3915836270784638,1.8031090751216765,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,soil_moisture_avg_index,index (not volumetric water content),72,811,811,57590,58392,802,0.9862652418139471,1.9737327798151691,2.534656339859572,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,soil_moisture_avg_index,index (not volumetric water content),168,811,811,134495,136248,1753,0.9871337560918325,2.701473162224431,3.3942015082590204,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,air_temperature_c,°C,24,811,811,19190,19464,274,0.9859227291409782,2.924965604396821,3.5961918077545754,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,air_temperature_c,°C,72,811,811,57590,58392,802,0.9862652418139471,2.9276240639177598,3.5961445551163553,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,air_temperature_c,°C,168,811,811,134495,136248,1753,0.9871337560918325,2.9299046774973747,3.5969337858337576,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,relative_humidity_pct,% RH,24,811,811,19190,19464,274,0.9859227291409782,10.233030746342978,12.590165819544103,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,relative_humidity_pct,% RH,72,811,811,57590,58392,802,0.9862652418139471,10.232622505494852,12.571438506966759,Synthetic Data — Prototype Evaluation Only
+test,NODE_01,relative_humidity_pct,% RH,168,811,811,134495,136248,1753,0.9871337560918325,10.22126176006278,12.549615513833846,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,soil_moisture_avg_index,index (not volumetric water content),24,811,811,19076,19464,388,0.98006576243321,1.4713200124724932,1.905222489425233,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,soil_moisture_avg_index,index (not volumetric water content),72,811,811,57164,58392,1228,0.9789697218797095,2.0800983521396246,2.674489088303878,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,soil_moisture_avg_index,index (not volumetric water content),168,811,811,133368,136248,2880,0.9788620750396336,2.7672052670133884,3.579321639356878,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,air_temperature_c,°C,24,811,811,19076,19464,388,0.98006576243321,2.902549281331287,3.5675857585982045,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,air_temperature_c,°C,72,811,811,57164,58392,1228,0.9789697218797095,2.9010788303133554,3.563633438238572,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,air_temperature_c,°C,168,811,811,133368,136248,2880,0.9788620750396336,2.902841015631329,3.563765895707569,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,relative_humidity_pct,% RH,24,811,811,19076,19464,388,0.98006576243321,10.12764573081123,12.44065041021506,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,relative_humidity_pct,% RH,72,811,811,57164,58392,1228,0.9789697218797095,10.123899480079599,12.423261115478342,Synthetic Data — Prototype Evaluation Only
+test,NODE_02,relative_humidity_pct,% RH,168,811,811,133368,136248,2880,0.9788620750396336,10.107416095797596,12.397328362893363,Synthetic Data — Prototype Evaluation Only

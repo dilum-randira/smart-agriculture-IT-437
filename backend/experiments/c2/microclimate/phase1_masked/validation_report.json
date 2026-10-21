@@ -1,0 +1,337 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "experiment": "phase1_masked",
+  "config": {
+    "lookback": 336,
+    "horizon": 168,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "stride": 1
+  },
+  "source": "data/c2/microclimate/synthetic/c1_synthetic_hourly_2025_2nodes.csv",
+  "source_sha256": "86905c135c6260dcbb0ab686a95abdbdb3fe777ab5123897f311ddd6af6a691e",
+  "splits": {
+    "train": {
+      "start": "2025-01-01T00:00:00+05:30",
+      "end": "2025-09-13T11:00:00+05:30"
+    },
+    "validation": {
+      "start": "2025-09-13T12:00:00+05:30",
+      "end": "2025-11-07T05:00:00+05:30"
+    },
+    "test": {
+      "start": "2025-11-07T06:00:00+05:30",
+      "end": "2025-12-31T23:00:00+05:30"
+    }
+  },
+  "features": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "targets": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "excluded_fields": [
+    "forecast_rain_mm_next_24h",
+    "forecast_air_temp_max_c_next_24h"
+  ],
+  "eligibility": {
+    "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+    "analysis_partition": "train only",
+    "nodes": [
+      {
+        "node": "NODE_01",
+        "candidates": 5629,
+        "minimum_valid_hours": 161,
+        "median_valid_hours": 165.0,
+        "maximum_valid_hours": 168,
+        "valid_hours_distribution": {
+          "161": 32,
+          "162": 212,
+          "163": 779,
+          "164": 669,
+          "165": 1594,
+          "166": 1301,
+          "167": 705,
+          "168": 337
+        },
+        "target_hours_required": 160,
+        "meeting_coverage_rule": 5629
+      },
+      {
+        "node": "NODE_02",
+        "candidates": 5629,
+        "minimum_valid_hours": 157,
+        "median_valid_hours": 165.0,
+        "maximum_valid_hours": 168,
+        "valid_hours_distribution": {
+          "157": 16,
+          "158": 22,
+          "159": 83,
+          "160": 108,
+          "161": 193,
+          "162": 417,
+          "163": 446,
+          "164": 682,
+          "165": 1128,
+          "166": 954,
+          "167": 1061,
+          "168": 519
+        },
+        "target_hours_required": 160,
+        "meeting_coverage_rule": 5508
+      }
+    ],
+    "minimum_target_fraction": 0.95,
+    "minimum_valid_hours_per_target": 160,
+    "rationale": "Training medians are 165/168; requiring >=95% (160/168) usable hours retains most training windows while excluding its lower-coverage tail. Fixed before validation/test evaluation; not optimized using forecast errors."
+  },
+  "target_policy": "Boolean original-row quality, repeated across all three channels. INVALID OR anomaly OR supplied-imputed => False. Clean WARN is eligible. Computed before historical forward filling; y contains unchanged source values, including untrusted values at mask=False. Always use the mask.",
+  "input_policy": "Unchanged causal split-local forward fill; finite 336-hour history required.",
+  "preprocessing_fit": "None: no input or target scaling, model fitting or training.",
+  "metrics_policy": "Select eligible cells before error arithmetic; normalize by valid observations. Zero denominator => unavailable (None/blank CSV).",
+  "python": "3.11.9",
+  "interpreter": "C:\\Users\\Asus\\Documents\\Research\\smart-agriculture-IT-437\\backend\\.venv\\Scripts\\python.exe",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2"
+  },
+  "code_sha256": {
+    "pipeline.py": "f0b049993680fe00eaa81798520c6a4916e3bdf2bb8a1262197172cf0406b9bc",
+    "run_phase1.py": "40ac5bc03fd9d9c7b19746e5356e5d983e5d4ee8f241833adcb479a579746303",
+    "run_phase1_masked.py": "f434b32530bf36c34a08ebbaf33171cab11272e82b14d88908dafb9a952afa0a",
+    "test_phase1.py": "f660308cd1649dcd04036ed3ca6e28b6457df273385b48181925861d2cba8f42",
+    "test_phase1_masked.py": "0ddcf99761ff5683d5ec394b41a555f5a84480ab8b3908e090e64ae64d403ec6",
+    "__init__.py": "09274cffda5e7b1895a7513cd3ab5e885358d9cf7e4de315cf92b1f8815a0d63"
+  },
+  "limitations": [
+    "100% synthetic; no field-accuracy evidence.",
+    "Overlapping forecasts repeat target observations; counts are not independent.",
+    "Quality flags can cause selection bias; the 95% floor is an operational policy, not a proven optimum.",
+    "Future target masks are labels/loss metadata, never model inputs.",
+    "Differentiable masked-loss integration is Phase 2; NumPy reference loss only here.",
+    "No scaling, external climate integration or growth-stage fabrication."
+  ],
+  "samples": [
+    {
+      "split": "train",
+      "node": "NODE_01",
+      "candidate_windows": 5629,
+      "eligible_samples": 5629,
+      "rejected_windows": 0,
+      "input_shape": [
+        5629,
+        336,
+        3
+      ],
+      "output_shape": [
+        5629,
+        168,
+        3
+      ],
+      "mask_shape": [
+        5629,
+        168,
+        3
+      ],
+      "target_mask_dtype": "bool",
+      "valid_observations_per_target": {
+        "soil_moisture_avg_index": 929516,
+        "air_temperature_c": 929516,
+        "relative_humidity_pct": 929516
+      },
+      "unique_valid_target_timestamps_per_target": {
+        "soil_moisture_avg_index": 5698,
+        "air_temperature_c": 5698,
+        "relative_humidity_pct": 5698
+      },
+      "possible_observations_per_target": 945672,
+      "window_artifact": "windows_train_NODE_01.npz",
+      "plot": "actual_vs_persistence_train_NODE_01.png"
+    },
+    {
+      "split": "train",
+      "node": "NODE_02",
+      "candidate_windows": 5629,
+      "eligible_samples": 5508,
+      "rejected_windows": 121,
+      "input_shape": [
+        5508,
+        336,
+        3
+      ],
+      "output_shape": [
+        5508,
+        168,
+        3
+      ],
+      "mask_shape": [
+        5508,
+        168,
+        3
+      ],
+      "target_mask_dtype": "bool",
+      "valid_observations_per_target": {
+        "soil_moisture_avg_index": 909316,
+        "air_temperature_c": 909316,
+        "relative_humidity_pct": 909316
+      },
+      "unique_valid_target_timestamps_per_target": {
+        "soil_moisture_avg_index": 5693,
+        "air_temperature_c": 5693,
+        "relative_humidity_pct": 5693
+      },
+      "possible_observations_per_target": 925344,
+      "window_artifact": "windows_train_NODE_02.npz",
+      "plot": "actual_vs_persistence_train_NODE_02.png"
+    },
+    {
+      "split": "validation",
+      "node": "NODE_01",
+      "candidate_windows": 811,
+      "eligible_samples": 811,
+      "rejected_windows": 0,
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "target_mask_dtype": "bool",
+      "valid_observations_per_target": {
+        "soil_moisture_avg_index": 133648,
+        "air_temperature_c": 133648,
+        "relative_humidity_pct": 133648
+      },
+      "unique_valid_target_timestamps_per_target": {
+        "soil_moisture_avg_index": 960,
+        "air_temperature_c": 960,
+        "relative_humidity_pct": 960
+      },
+      "possible_observations_per_target": 136248,
+      "window_artifact": "windows_validation_NODE_01.npz",
+      "plot": "actual_vs_persistence_validation_NODE_01.png"
+    },
+    {
+      "split": "validation",
+      "node": "NODE_02",
+      "candidate_windows": 811,
+      "eligible_samples": 811,
+      "rejected_windows": 0,
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "target_mask_dtype": "bool",
+      "valid_observations_per_target": {
+        "soil_moisture_avg_index": 134726,
+        "air_temperature_c": 134726,
+        "relative_humidity_pct": 134726
+      },
+      "unique_valid_target_timestamps_per_target": {
+        "soil_moisture_avg_index": 966,
+        "air_temperature_c": 966,
+        "relative_humidity_pct": 966
+      },
+      "possible_observations_per_target": 136248,
+      "window_artifact": "windows_validation_NODE_02.npz",
+      "plot": "actual_vs_persistence_validation_NODE_02.png"
+    },
+    {
+      "split": "test",
+      "node": "NODE_01",
+      "candidate_windows": 811,
+      "eligible_samples": 811,
+      "rejected_windows": 0,
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "target_mask_dtype": "bool",
+      "valid_observations_per_target": {
+        "soil_moisture_avg_index": 134495,
+        "air_temperature_c": 134495,
+        "relative_humidity_pct": 134495
+      },
+      "unique_valid_target_timestamps_per_target": {
+        "soil_moisture_avg_index": 966,
+        "air_temperature_c": 966,
+        "relative_humidity_pct": 966
+      },
+      "possible_observations_per_target": 136248,
+      "window_artifact": "windows_test_NODE_01.npz",
+      "plot": "actual_vs_persistence_test_NODE_01.png"
+    },
+    {
+      "split": "test",
+      "node": "NODE_02",
+      "candidate_windows": 811,
+      "eligible_samples": 811,
+      "rejected_windows": 0,
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "target_mask_dtype": "bool",
+      "valid_observations_per_target": {
+        "soil_moisture_avg_index": 133368,
+        "air_temperature_c": 133368,
+        "relative_humidity_pct": 133368
+      },
+      "unique_valid_target_timestamps_per_target": {
+        "soil_moisture_avg_index": 959,
+        "air_temperature_c": 959,
+        "relative_humidity_pct": 959
+      },
+      "possible_observations_per_target": 136248,
+      "window_artifact": "windows_test_NODE_02.npz",
+      "plot": "actual_vs_persistence_test_NODE_02.png"
+    }
+  ]
+}

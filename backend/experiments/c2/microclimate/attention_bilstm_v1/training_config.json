@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "units": 32,
+  "lookback": 336,
+  "horizon": 168,
+  "features": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "global_clipnorm": 1.0,
+  "maximum_epochs": 100,
+  "patience": 10,
+  "restore_best_weights": true,
+  "shuffle_buffer": 1024,
+  "drop_remainder": false,
+  "intra_op_threads": 6,
+  "inter_op_threads": 1,
+  "steps_per_execution": 16,
+  "jit_compile": false,
+  "training_samples": 11137,
+  "validation_samples": 1622,
+  "test_samples": 1622,
+  "model": "AttentionBiLSTM",
+  "attention_units": 32,
+  "attention_formulation": "e_t=v^T tanh(W h_t+b); alpha=softmax_time(e); c=sum_t alpha_t h_t",
+  "attention_interpretation": "Descriptive, not causal",
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only"
+}

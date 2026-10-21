@@ -1,0 +1,12 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "samples": 811,
+  "output_shape": [
+    811,
+    168,
+    3
+  ],
+  "finite": true,
+  "reload_max_absolute_error": 0.0,
+  "training_performed": false
+}

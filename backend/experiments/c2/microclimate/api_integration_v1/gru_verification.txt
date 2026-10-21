@@ -1,0 +1,19 @@
+Synthetic Data — Prototype Evaluation Only
+
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792599174.234263   30920 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792599176.697843   30920 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+test_all_three_model_metrics_independently_reproduced (__main__.verify.<locals>.SavedGRUTests.test_all_three_model_metrics_independently_reproduced) ... ok
+test_architecture_and_selection (__main__.verify.<locals>.SavedGRUTests.test_architecture_and_selection) ... ok
+test_comparison_counts_and_synthetic_labels (__main__.verify.<locals>.SavedGRUTests.test_comparison_counts_and_synthetic_labels) ... ok
+test_full_fresh_process_prediction_and_inverse_replay (__main__.verify.<locals>.SavedGRUTests.test_full_fresh_process_prediction_and_inverse_replay) ... ok
+test_identical_masks_labels_origins_and_reference (__main__.verify.<locals>.SavedGRUTests.test_identical_masks_labels_origins_and_reference) ... ok
+test_protected_inputs_models_and_results_unchanged (__main__.verify.<locals>.SavedGRUTests.test_protected_inputs_models_and_results_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 134.279s
+
+OK
+

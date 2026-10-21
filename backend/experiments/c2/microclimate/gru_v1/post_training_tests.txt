@@ -1,0 +1,12 @@
+Synthetic Data — Prototype Evaluation Only
+test_all_three_model_metrics_independently_reproduced (__main__.verify.<locals>.SavedGRUTests.test_all_three_model_metrics_independently_reproduced) ... ok
+test_architecture_and_selection (__main__.verify.<locals>.SavedGRUTests.test_architecture_and_selection) ... ok
+test_comparison_counts_and_synthetic_labels (__main__.verify.<locals>.SavedGRUTests.test_comparison_counts_and_synthetic_labels) ... ok
+test_full_fresh_process_prediction_and_inverse_replay (__main__.verify.<locals>.SavedGRUTests.test_full_fresh_process_prediction_and_inverse_replay) ... ok
+test_identical_masks_labels_origins_and_reference (__main__.verify.<locals>.SavedGRUTests.test_identical_masks_labels_origins_and_reference) ... ok
+test_protected_inputs_models_and_results_unchanged (__main__.verify.<locals>.SavedGRUTests.test_protected_inputs_models_and_results_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 118.212s
+
+OK

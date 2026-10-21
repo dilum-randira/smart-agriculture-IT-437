@@ -66,8 +66,9 @@ export default function YieldPrediction() {
   }
   return (
     <main className="c2-yield">
-      <div className="c2-page-top"><span>RESEARCH / <strong>YIELD PREDICTION</strong></span><span className="c2-prototype"><YieldIcon name="flask" /> Research prototype</span></div>
+      <div className="c2-page-top"><span>SMART AGRICULTURE / <strong>YIELD PREDICTION</strong></span><span className="c2-prototype"><YieldIcon name="flask" /> Experimental estimate</span></div>
       <YieldHero />
+      <p className="c2-section-note" style={{ maxWidth: 1100, margin: "16px auto", padding: "0 24px" }}>Enter measurements you are authorized to use. This tool does not retrieve farm records or apply farm ownership filtering. Estimates are not validated with Sri Lankan Nai Miris farm data.</p>
       <div className="c2-overview-strip" aria-label="Research overview">
         <div><span className="c2-overview-number">05</span><span><strong>Measured plant traits</strong><small>The inputs behind each estimate</small></span></div>
         <div><YieldIcon name="chart" /><span><strong>Tuned XGBoost</strong><small>Primary research candidate</small></span></div>

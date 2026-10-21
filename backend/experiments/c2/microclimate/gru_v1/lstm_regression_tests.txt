@@ -1,0 +1,17 @@
+Synthetic Data — Prototype Evaluation Only
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792584636.146635   31232 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792584638.733752   31232 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+test_best_epoch_and_completed_training (__main__.verify.<locals>.SavedLSTMTests.test_best_epoch_and_completed_training) ... ok
+test_frozen_reload_inference_consistency (__main__.verify.<locals>.SavedLSTMTests.test_frozen_reload_inference_consistency) ... ok
+test_identical_test_masks_and_temporal_alignment (__main__.verify.<locals>.SavedLSTMTests.test_identical_test_masks_and_temporal_alignment) ... ok
+test_metrics_and_pooled_denominators_independently_reproduced (__main__.verify.<locals>.SavedLSTMTests.test_metrics_and_pooled_denominators_independently_reproduced) ... ok
+test_upstream_files_remain_unchanged (__main__.verify.<locals>.SavedLSTMTests.test_upstream_files_remain_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.206s
+
+OK
+

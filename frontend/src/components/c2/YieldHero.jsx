@@ -1,4 +1,4 @@
-import plant from "../../assets/c2/nai-miris-plant.svg";
+import Asset from "../ui/Asset";
 import YieldIcon from "./YieldIcon";
 
 export default function YieldHero() {
@@ -18,7 +18,7 @@ export default function YieldHero() {
         <span className="c2-botanical-orbit" aria-hidden="true" />
         <span className="c2-botanical-orbit c2-botanical-orbit-inner" aria-hidden="true" />
         <span className="c2-botanical-label">CAPSICUM CHINENSE<span>Nai Miris</span></span>
-        <img className="c2-plant" src={plant} width="480" height="480" alt="Botanical illustration of a Nai Miris plant with green leaves and ripening orange and red peppers" />
+        <Asset name="cropHero" className="c2-plant" width={480} height={480} alt="Illustration of Capsicum chinense peppers and foliage; not an observed crop" loading="eager" />
         <span className="c2-illustration-note">Botanical illustration · not a simulation</span>
       </div>
     </section>

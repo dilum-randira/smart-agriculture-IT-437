@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:c2": "node --test tests/c2/yieldApi.test.mjs"
+    "test:c2": "node --test tests/c2/*.test.mjs",
+    "test:microclimate:render": "node tests/c2/microclimateRender.mjs",
+    "test:microclimate:live": "node tests/c2/microclimateLive.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.0.0"
+    "react-router-dom": "^7.0.0",
+    "three": "0.186.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.0",

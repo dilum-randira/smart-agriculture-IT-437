@@ -1,12 +1,39 @@
 # React + Vite + JavaScript (JSX) frontend
 
-## C2 integration update
+## Site-wide sign-in
+
+Open `/login` and use your existing account. All application routes now share
+authentication and role-based navigation. Viewer users see assigned farm/saved
+forecast information; unscoped research APIs and Yield require Admin/Researcher.
+Do not reset the existing SQLite database or rerun bootstrap.
+See [startup, role policy and verification](../docs/c2/PP1_Sitewide_Authentication.md).
+
+## C2 Microclimate workspace
+
+`/predictions/microclimate` opens the synthetic Microclimate Forecasting workspace
+with real local FastAPI inference, three trained models, historical/forecast charts
+and optional lazy-loaded Three.js visualization. `/predictions` still opens Yield
+Prediction. Start FastAPI on port 8000 and Vite with `npm run dev`, then select a
+node/model and **Run forecast**. No external image or weather service is needed.
+
+See [Microclimate setup and verified limitations](../docs/c2/PP1_Microclimate_Dashboard.md).
+Three.js `0.186.1` is the only added runtime dependency; `package-lock.json` pins
+the dependency graph. The existing JavaScript/JSX stack is retained.
+
+```powershell
+npm run build
+npm run test:c2
+npm run test:microclimate:render
+npm run test:microclimate:live # requires local FastAPI on port 8000
+```
+
+## Earlier C2 Yield integration
 
 `/predictions` now opens the C2 Yield Prediction workspace connected to the
 existing FastAPI endpoint. Other research routes and the earlier C4 demo remain
 as described below. See [C2 setup and file inventory](src/pages/c2/README.md)
 and [verification results](tests/c2/VERIFICATION.md). Run `npm run test:c2`
-for API service tests. No new application dependencies were added.
+for API service tests. That earlier Yield implementation added no dependencies.
 
 The scaffold notes below describe the original shared shell; C2 now has its
 own implementation under the functional `src/*/c2/` folders.

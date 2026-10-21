@@ -1,0 +1,24 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "protected_sha256": {
+    "data/c2/microclimate/synthetic/c1_synthetic_hourly_2025_2nodes.csv": "86905c135c6260dcbb0ab686a95abdbdb3fe777ab5123897f311ddd6af6a691e",
+    "experiments/c2/microclimate/phase1/actual_vs_persistence_test_NODE_01.png": "779e815d1772384944016ff651172543c2508e7fb3b9e8676a859fa8f6650b1e",
+    "experiments/c2/microclimate/phase1/actual_vs_persistence_train_NODE_01.png": "ea6aa844bc3a5f7eeb80fab5cbdcd5ba66ef68fc3d1875f545a17274e5410f62",
+    "experiments/c2/microclimate/phase1/actual_vs_persistence_train_NODE_02.png": "76d58744a2af563bb052440c9b7e0feb01fd70d1283190e35146a33a1a885cc9",
+    "experiments/c2/microclimate/phase1/actual_vs_persistence_validation_NODE_02.png": "fb696baab19128414f6253e2dfe8f8a1dd5b756fd5b2027b4768f0f9a4304137",
+    "experiments/c2/microclimate/phase1/lead_time_mae.png": "b42e74cf9711d30cee90db53b5413490df8b5a0f376ea015a3ecfeb10591f9c8",
+    "experiments/c2/microclimate/phase1/persistence_lead_time_metrics.csv": "cf7260ea092f17a0a8b5cf01969244ba1616fea5923e37f1365934dfd250f954",
+    "experiments/c2/microclimate/phase1/persistence_metrics.csv": "8ea2bbab5afb482e764eb2155a2005950f3d36c6d9071e80b52a83a9c01b3eac",
+    "experiments/c2/microclimate/phase1/sample_manifest.csv": "6d349c6834efc97dcef186c949c7fb11f169cd8d456be08ff5693612c3339066",
+    "experiments/c2/microclimate/phase1/summary.txt": "4b4d95e25eed5e0a02549efef4f8f80e460f002288123c3ab75be74c4a17af14",
+    "experiments/c2/microclimate/phase1/test_results.txt": "6e26b0e372c17c8d3811ff714670539fa57ecd5868e63f92d6dd62001cdeb344",
+    "experiments/c2/microclimate/phase1/validation_report.json": "fab55578c0fca74069a2680bf6366dfa8f30f095b4cb03427e25f8a85d241f83",
+    "experiments/c2/microclimate/phase1/windows_test_NODE_01.npz": "defff2491ea910ebd9a975f69cd75ea01f097b1ced145b0115a30663fa37f8ac",
+    "experiments/c2/microclimate/phase1/windows_test_NODE_02.npz": "8426a6679a67350cf9143984d2aa13796ba7c11445ed699ec3525d5ac0a31878",
+    "experiments/c2/microclimate/phase1/windows_train_NODE_01.npz": "b4acb802c830c3d84d062c36fcd0be1a8223a12233092270aa804220c0190029",
+    "experiments/c2/microclimate/phase1/windows_train_NODE_02.npz": "d1b73dc1bed2b2b9204111f7f5c5ee3a35f7e132078a27913148af5a6740f28f",
+    "experiments/c2/microclimate/phase1/windows_validation_NODE_01.npz": "8426a6679a67350cf9143984d2aa13796ba7c11445ed699ec3525d5ac0a31878",
+    "experiments/c2/microclimate/phase1/windows_validation_NODE_02.npz": "5ec4e8d31b465a400e9cc64a913028bc9f297533e43d1efe860c00feec403987"
+  },
+  "unchanged_after_execution": true
+}

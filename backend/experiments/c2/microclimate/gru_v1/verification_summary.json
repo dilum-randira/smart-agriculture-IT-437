@@ -1,0 +1,15 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "automated_tests": {
+    "existing_and_gru_unit_tests": 77,
+    "gru_saved_artifact_tests": 6,
+    "lstm_saved_artifact_tests": 5,
+    "total": 88,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "inference_cli_prediction_replay": "passed",
+  "preexisting_files_checked": 217,
+  "unchanged": true
+}

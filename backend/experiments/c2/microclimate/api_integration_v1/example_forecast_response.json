@@ -1,0 +1,1586 @@
+{
+  "model": "attention_bilstm",
+  "node_id": "NODE_01",
+  "history": {
+    "start": "2025-11-07T06:00:00+05:30",
+    "end": "2025-11-21T05:00:00+05:30",
+    "observations": 336,
+    "timezone": "Asia/Colombo (UTC+05:30)",
+    "eligible_under_declared_quality": 327,
+    "causally_filled_rows": 9,
+    "history_valid_mask": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "quality_metadata_rows": 336,
+    "quality_policy": "INVALID/anomalous/supplied-imputed rows are excluded as observations and all three inputs are causally forward-filled within supplied history. Clean WARN is retained. No backward fill, interpolation or scaler fitting. Missing/nonfinite values and leading untrusted history are rejected. Omitted quality flags are caller assertions of usable data, not independently verified quality."
+  },
+  "forecast_origin": "2025-11-21T05:00:00+05:30",
+  "forecast_hours": 168,
+  "feature_order": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "target_order": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "units": {
+    "soil_moisture_avg_index": "INDEX (not calibrated volumetric water content)",
+    "air_temperature_c": "°C",
+    "relative_humidity_pct": "% RH"
+  },
+  "predictions": [
+    {
+      "lead_hour": 1,
+      "timestamp": "2025-11-21T06:00:00+05:30",
+      "soil_moisture_avg_index": 60.25034086665588,
+      "air_temperature_c": 24.62260791076761,
+      "relative_humidity_pct": 89.68580850988123
+    },
+    {
+      "lead_hour": 2,
+      "timestamp": "2025-11-21T07:00:00+05:30",
+      "soil_moisture_avg_index": 60.92400057762783,
+      "air_temperature_c": 25.424732976349347,
+      "relative_humidity_pct": 87.34103746253939
+    },
+    {
+      "lead_hour": 3,
+      "timestamp": "2025-11-21T08:00:00+05:30",
+      "soil_moisture_avg_index": 60.66546205843359,
+      "air_temperature_c": 26.429345756956586,
+      "relative_humidity_pct": 83.72357450565998
+    },
+    {
+      "lead_hour": 4,
+      "timestamp": "2025-11-21T09:00:00+05:30",
+      "soil_moisture_avg_index": 60.73425584541354,
+      "air_temperature_c": 27.15290697508543,
+      "relative_humidity_pct": 80.39804504739965
+    },
+    {
+      "lead_hour": 5,
+      "timestamp": "2025-11-21T10:00:00+05:30",
+      "soil_moisture_avg_index": 60.43093509436847,
+      "air_temperature_c": 28.141867893699203,
+      "relative_humidity_pct": 77.85641857277795
+    },
+    {
+      "lead_hour": 6,
+      "timestamp": "2025-11-21T11:00:00+05:30",
+      "soil_moisture_avg_index": 60.399776389016054,
+      "air_temperature_c": 28.92544994083839,
+      "relative_humidity_pct": 74.70635176807662
+    },
+    {
+      "lead_hour": 7,
+      "timestamp": "2025-11-21T12:00:00+05:30",
+      "soil_moisture_avg_index": 60.5571589685003,
+      "air_temperature_c": 29.528142804502053,
+      "relative_humidity_pct": 73.16549755250895
+    },
+    {
+      "lead_hour": 8,
+      "timestamp": "2025-11-21T13:00:00+05:30",
+      "soil_moisture_avg_index": 60.257579486053935,
+      "air_temperature_c": 30.081127507839145,
+      "relative_humidity_pct": 71.78828584359839
+    },
+    {
+      "lead_hour": 9,
+      "timestamp": "2025-11-21T14:00:00+05:30",
+      "soil_moisture_avg_index": 60.827480869618526,
+      "air_temperature_c": 30.034663276129635,
+      "relative_humidity_pct": 70.99437948637079
+    },
+    {
+      "lead_hour": 10,
+      "timestamp": "2025-11-21T15:00:00+05:30",
+      "soil_moisture_avg_index": 60.54967284427646,
+      "air_temperature_c": 30.08063915605051,
+      "relative_humidity_pct": 71.27044649805661
+    },
+    {
+      "lead_hour": 11,
+      "timestamp": "2025-11-21T16:00:00+05:30",
+      "soil_moisture_avg_index": 60.87188646369097,
+      "air_temperature_c": 29.725800344442778,
+      "relative_humidity_pct": 71.90397625321981
+    },
+    {
+      "lead_hour": 12,
+      "timestamp": "2025-11-21T17:00:00+05:30",
+      "soil_moisture_avg_index": 60.9236275268759,
+      "air_temperature_c": 29.308363755193632,
+      "relative_humidity_pct": 73.95074395694475
+    },
+    {
+      "lead_hour": 13,
+      "timestamp": "2025-11-21T18:00:00+05:30",
+      "soil_moisture_avg_index": 60.37808743352036,
+      "air_temperature_c": 28.536214770537548,
+      "relative_humidity_pct": 76.50143473700267
+    },
+    {
+      "lead_hour": 14,
+      "timestamp": "2025-11-21T19:00:00+05:30",
+      "soil_moisture_avg_index": 60.54431920728359,
+      "air_temperature_c": 27.68260580058848,
+      "relative_humidity_pct": 79.57903399133058
+    },
+    {
+      "lead_hour": 15,
+      "timestamp": "2025-11-21T20:00:00+05:30",
+      "soil_moisture_avg_index": 60.7056295807425,
+      "air_temperature_c": 26.694783436892337,
+      "relative_humidity_pct": 82.32948365296568
+    },
+    {
+      "lead_hour": 16,
+      "timestamp": "2025-11-21T21:00:00+05:30",
+      "soil_moisture_avg_index": 61.27320298413399,
+      "air_temperature_c": 25.913192074479543,
+      "relative_humidity_pct": 85.47635412236215
+    },
+    {
+      "lead_hour": 17,
+      "timestamp": "2025-11-21T22:00:00+05:30",
+      "soil_moisture_avg_index": 60.942992089224944,
+      "air_temperature_c": 24.96826053044196,
+      "relative_humidity_pct": 88.64950975781743
+    },
+    {
+      "lead_hour": 18,
+      "timestamp": "2025-11-21T23:00:00+05:30",
+      "soil_moisture_avg_index": 61.32386793938066,
+      "air_temperature_c": 24.25388218981804,
+      "relative_humidity_pct": 91.00299381416286
+    },
+    {
+      "lead_hour": 19,
+      "timestamp": "2025-11-22T00:00:00+05:30",
+      "soil_moisture_avg_index": 61.56783237006435,
+      "air_temperature_c": 23.739578036408272,
+      "relative_humidity_pct": 92.77341100381774
+    },
+    {
+      "lead_hour": 20,
+      "timestamp": "2025-11-22T01:00:00+05:30",
+      "soil_moisture_avg_index": 61.29790324834359,
+      "air_temperature_c": 23.342903183006122,
+      "relative_humidity_pct": 94.35142493265221
+    },
+    {
+      "lead_hour": 21,
+      "timestamp": "2025-11-22T02:00:00+05:30",
+      "soil_moisture_avg_index": 61.103764408714724,
+      "air_temperature_c": 23.099470656502483,
+      "relative_humidity_pct": 95.13527311833474
+    },
+    {
+      "lead_hour": 22,
+      "timestamp": "2025-11-22T03:00:00+05:30",
+      "soil_moisture_avg_index": 61.915608933552306,
+      "air_temperature_c": 23.048751634488863,
+      "relative_humidity_pct": 95.02109400686747
+    },
+    {
+      "lead_hour": 23,
+      "timestamp": "2025-11-22T04:00:00+05:30",
+      "soil_moisture_avg_index": 61.27361369866376,
+      "air_temperature_c": 23.35570046424339,
+      "relative_humidity_pct": 93.85947487478087
+    },
+    {
+      "lead_hour": 24,
+      "timestamp": "2025-11-22T05:00:00+05:30",
+      "soil_moisture_avg_index": 61.689341097913356,
+      "air_temperature_c": 23.911694980568438,
+      "relative_humidity_pct": 91.9415828531903
+    },
+    {
+      "lead_hour": 25,
+      "timestamp": "2025-11-22T06:00:00+05:30",
+      "soil_moisture_avg_index": 61.110466767656874,
+      "air_temperature_c": 24.691568299240632,
+      "relative_humidity_pct": 89.3546139504555
+    },
+    {
+      "lead_hour": 26,
+      "timestamp": "2025-11-22T07:00:00+05:30",
+      "soil_moisture_avg_index": 61.216748568179455,
+      "air_temperature_c": 25.53303851614585,
+      "relative_humidity_pct": 86.49101317495173
+    },
+    {
+      "lead_hour": 27,
+      "timestamp": "2025-11-22T08:00:00+05:30",
+      "soil_moisture_avg_index": 61.425314428233975,
+      "air_temperature_c": 26.25693230792571,
+      "relative_humidity_pct": 83.68498723194705
+    },
+    {
+      "lead_hour": 28,
+      "timestamp": "2025-11-22T09:00:00+05:30",
+      "soil_moisture_avg_index": 61.61904614035953,
+      "air_temperature_c": 27.31420047763949,
+      "relative_humidity_pct": 80.45113140476911
+    },
+    {
+      "lead_hour": 29,
+      "timestamp": "2025-11-22T10:00:00+05:30",
+      "soil_moisture_avg_index": 62.098127600961156,
+      "air_temperature_c": 28.33598648189664,
+      "relative_humidity_pct": 77.75023246000575
+    },
+    {
+      "lead_hour": 30,
+      "timestamp": "2025-11-22T11:00:00+05:30",
+      "soil_moisture_avg_index": 61.53046631542138,
+      "air_temperature_c": 28.870423877530822,
+      "relative_humidity_pct": 75.48176294424115
+    },
+    {
+      "lead_hour": 31,
+      "timestamp": "2025-11-22T12:00:00+05:30",
+      "soil_moisture_avg_index": 61.48097969836711,
+      "air_temperature_c": 29.519798087464768,
+      "relative_humidity_pct": 73.20361710088004
+    },
+    {
+      "lead_hour": 32,
+      "timestamp": "2025-11-22T13:00:00+05:30",
+      "soil_moisture_avg_index": 61.94283625790359,
+      "air_temperature_c": 29.878558062907146,
+      "relative_humidity_pct": 71.71478959222961
+    },
+    {
+      "lead_hour": 33,
+      "timestamp": "2025-11-22T14:00:00+05:30",
+      "soil_moisture_avg_index": 62.02558178430313,
+      "air_temperature_c": 30.08992891412495,
+      "relative_humidity_pct": 71.23839947429002
+    },
+    {
+      "lead_hour": 34,
+      "timestamp": "2025-11-22T15:00:00+05:30",
+      "soil_moisture_avg_index": 61.850830822695315,
+      "air_temperature_c": 30.01750576676995,
+      "relative_humidity_pct": 71.27787543955053
+    },
+    {
+      "lead_hour": 35,
+      "timestamp": "2025-11-22T16:00:00+05:30",
+      "soil_moisture_avg_index": 61.92173557474749,
+      "air_temperature_c": 29.729982295307316,
+      "relative_humidity_pct": 71.96120836402756
+    },
+    {
+      "lead_hour": 36,
+      "timestamp": "2025-11-22T17:00:00+05:30",
+      "soil_moisture_avg_index": 61.443332062146965,
+      "air_temperature_c": 29.200073344788215,
+      "relative_humidity_pct": 73.95809894129494
+    },
+    {
+      "lead_hour": 37,
+      "timestamp": "2025-11-22T18:00:00+05:30",
+      "soil_moisture_avg_index": 61.49765757789696,
+      "air_temperature_c": 28.63764111658198,
+      "relative_humidity_pct": 76.41640224305722
+    },
+    {
+      "lead_hour": 38,
+      "timestamp": "2025-11-22T19:00:00+05:30",
+      "soil_moisture_avg_index": 61.95086043609658,
+      "air_temperature_c": 27.78359615306563,
+      "relative_humidity_pct": 79.24464480484922
+    },
+    {
+      "lead_hour": 39,
+      "timestamp": "2025-11-22T20:00:00+05:30",
+      "soil_moisture_avg_index": 61.90754171104179,
+      "air_temperature_c": 26.725831053042494,
+      "relative_humidity_pct": 81.97701472493824
+    },
+    {
+      "lead_hour": 40,
+      "timestamp": "2025-11-22T21:00:00+05:30",
+      "soil_moisture_avg_index": 62.1110516572997,
+      "air_temperature_c": 25.80650257201362,
+      "relative_humidity_pct": 85.55688675284968
+    },
+    {
+      "lead_hour": 41,
+      "timestamp": "2025-11-22T22:00:00+05:30",
+      "soil_moisture_avg_index": 61.801460784001016,
+      "air_temperature_c": 25.02152097821221,
+      "relative_humidity_pct": 88.58264231739498
+    },
+    {
+      "lead_hour": 42,
+      "timestamp": "2025-11-22T23:00:00+05:30",
+      "soil_moisture_avg_index": 62.19205209532601,
+      "air_temperature_c": 24.28922413545417,
+      "relative_humidity_pct": 91.31834921864325
+    },
+    {
+      "lead_hour": 43,
+      "timestamp": "2025-11-23T00:00:00+05:30",
+      "soil_moisture_avg_index": 62.09077957725604,
+      "air_temperature_c": 23.581904201678817,
+      "relative_humidity_pct": 93.49250059951633
+    },
+    {
+      "lead_hour": 44,
+      "timestamp": "2025-11-23T01:00:00+05:30",
+      "soil_moisture_avg_index": 62.15703016247524,
+      "air_temperature_c": 23.240662813331895,
+      "relative_humidity_pct": 94.37678258636203
+    },
+    {
+      "lead_hour": 45,
+      "timestamp": "2025-11-23T02:00:00+05:30",
+      "soil_moisture_avg_index": 62.13374318669121,
+      "air_temperature_c": 23.020278120460627,
+      "relative_humidity_pct": 95.12704029484395
+    },
+    {
+      "lead_hour": 46,
+      "timestamp": "2025-11-23T03:00:00+05:30",
+      "soil_moisture_avg_index": 62.74496890859835,
+      "air_temperature_c": 23.147377171504708,
+      "relative_humidity_pct": 94.2662166565101
+    },
+    {
+      "lead_hour": 47,
+      "timestamp": "2025-11-23T04:00:00+05:30",
+      "soil_moisture_avg_index": 61.96084492425044,
+      "air_temperature_c": 23.524494869342078,
+      "relative_humidity_pct": 93.32144844453326
+    },
+    {
+      "lead_hour": 48,
+      "timestamp": "2025-11-23T05:00:00+05:30",
+      "soil_moisture_avg_index": 62.383712299670414,
+      "air_temperature_c": 23.86547703039015,
+      "relative_humidity_pct": 91.71672848391952
+    },
+    {
+      "lead_hour": 49,
+      "timestamp": "2025-11-23T06:00:00+05:30",
+      "soil_moisture_avg_index": 62.47487837068685,
+      "air_temperature_c": 24.46560538427779,
+      "relative_humidity_pct": 90.11495019549307
+    },
+    {
+      "lead_hour": 50,
+      "timestamp": "2025-11-23T07:00:00+05:30",
+      "soil_moisture_avg_index": 62.64038735861823,
+      "air_temperature_c": 25.365335142909668,
+      "relative_humidity_pct": 86.90867328196269
+    },
+    {
+      "lead_hour": 51,
+      "timestamp": "2025-11-23T08:00:00+05:30",
+      "soil_moisture_avg_index": 62.63802350818051,
+      "air_temperature_c": 26.420566810797755,
+      "relative_humidity_pct": 84.08531537514445
+    },
+    {
+      "lead_hour": 52,
+      "timestamp": "2025-11-23T09:00:00+05:30",
+      "soil_moisture_avg_index": 62.445168824024634,
+      "air_temperature_c": 27.43549502861136,
+      "relative_humidity_pct": 79.93717052190166
+    },
+    {
+      "lead_hour": 53,
+      "timestamp": "2025-11-23T10:00:00+05:30",
+      "soil_moisture_avg_index": 61.985455512798524,
+      "air_temperature_c": 28.341281222871693,
+      "relative_humidity_pct": 76.98787177213934
+    },
+    {
+      "lead_hour": 54,
+      "timestamp": "2025-11-23T11:00:00+05:30",
+      "soil_moisture_avg_index": 61.81978869570287,
+      "air_temperature_c": 29.107174360285853,
+      "relative_humidity_pct": 74.76875498380969
+    },
+    {
+      "lead_hour": 55,
+      "timestamp": "2025-11-23T12:00:00+05:30",
+      "soil_moisture_avg_index": 61.58545722457987,
+      "air_temperature_c": 29.55190561884318,
+      "relative_humidity_pct": 72.33374014349724
+    },
+    {
+      "lead_hour": 56,
+      "timestamp": "2025-11-23T13:00:00+05:30",
+      "soil_moisture_avg_index": 61.85115006805033,
+      "air_temperature_c": 29.969461059597574,
+      "relative_humidity_pct": 71.46991534570834
+    },
+    {
+      "lead_hour": 57,
+      "timestamp": "2025-11-23T14:00:00+05:30",
+      "soil_moisture_avg_index": 61.8284926154102,
+      "air_temperature_c": 30.025650214341695,
+      "relative_humidity_pct": 71.27889154639459
+    },
+    {
+      "lead_hour": 58,
+      "timestamp": "2025-11-23T15:00:00+05:30",
+      "soil_moisture_avg_index": 61.5777935425462,
+      "air_temperature_c": 30.188181051529813,
+      "relative_humidity_pct": 71.23757629912521
+    },
+    {
+      "lead_hour": 59,
+      "timestamp": "2025-11-23T16:00:00+05:30",
+      "soil_moisture_avg_index": 61.544615341296314,
+      "air_temperature_c": 29.763341042926044,
+      "relative_humidity_pct": 72.49973320111323
+    },
+    {
+      "lead_hour": 60,
+      "timestamp": "2025-11-23T17:00:00+05:30",
+      "soil_moisture_avg_index": 61.739667079159474,
+      "air_temperature_c": 29.321622092926336,
+      "relative_humidity_pct": 74.25417618364729
+    },
+    {
+      "lead_hour": 61,
+      "timestamp": "2025-11-23T18:00:00+05:30",
+      "soil_moisture_avg_index": 61.99994171916077,
+      "air_temperature_c": 28.53077091927507,
+      "relative_humidity_pct": 77.3426332041465
+    },
+    {
+      "lead_hour": 62,
+      "timestamp": "2025-11-23T19:00:00+05:30",
+      "soil_moisture_avg_index": 61.307347889015084,
+      "air_temperature_c": 27.594194932405497,
+      "relative_humidity_pct": 79.62659700947977
+    },
+    {
+      "lead_hour": 63,
+      "timestamp": "2025-11-23T20:00:00+05:30",
+      "soil_moisture_avg_index": 61.76428842878694,
+      "air_temperature_c": 26.725865523098477,
+      "relative_humidity_pct": 82.70758543030655
+    },
+    {
+      "lead_hour": 64,
+      "timestamp": "2025-11-23T21:00:00+05:30",
+      "soil_moisture_avg_index": 62.160005600924535,
+      "air_temperature_c": 25.910027692145523,
+      "relative_humidity_pct": 84.93919266914318
+    },
+    {
+      "lead_hour": 65,
+      "timestamp": "2025-11-23T22:00:00+05:30",
+      "soil_moisture_avg_index": 62.672559398945836,
+      "air_temperature_c": 24.958716224261785,
+      "relative_humidity_pct": 88.78190858678349
+    },
+    {
+      "lead_hour": 66,
+      "timestamp": "2025-11-23T23:00:00+05:30",
+      "soil_moisture_avg_index": 62.643378938686595,
+      "air_temperature_c": 24.078314184758693,
+      "relative_humidity_pct": 91.82415820214092
+    },
+    {
+      "lead_hour": 67,
+      "timestamp": "2025-11-24T00:00:00+05:30",
+      "soil_moisture_avg_index": 62.46334608061513,
+      "air_temperature_c": 23.509417885216696,
+      "relative_humidity_pct": 93.44911026485232
+    },
+    {
+      "lead_hour": 68,
+      "timestamp": "2025-11-24T01:00:00+05:30",
+      "soil_moisture_avg_index": 62.36597983436106,
+      "air_temperature_c": 23.30066129919509,
+      "relative_humidity_pct": 94.46538217268834
+    },
+    {
+      "lead_hour": 69,
+      "timestamp": "2025-11-24T02:00:00+05:30",
+      "soil_moisture_avg_index": 62.44880427534274,
+      "air_temperature_c": 22.947430570289633,
+      "relative_humidity_pct": 94.8547429538022
+    },
+    {
+      "lead_hour": 70,
+      "timestamp": "2025-11-24T03:00:00+05:30",
+      "soil_moisture_avg_index": 62.3958436231611,
+      "air_temperature_c": 22.90836554666094,
+      "relative_humidity_pct": 94.96486728447717
+    },
+    {
+      "lead_hour": 71,
+      "timestamp": "2025-11-24T04:00:00+05:30",
+      "soil_moisture_avg_index": 63.09125147556535,
+      "air_temperature_c": 23.296552031797017,
+      "relative_humidity_pct": 94.33315430262695
+    },
+    {
+      "lead_hour": 72,
+      "timestamp": "2025-11-24T05:00:00+05:30",
+      "soil_moisture_avg_index": 63.11434833894694,
+      "air_temperature_c": 23.89006556634387,
+      "relative_humidity_pct": 91.90083246700408
+    },
+    {
+      "lead_hour": 73,
+      "timestamp": "2025-11-24T06:00:00+05:30",
+      "soil_moisture_avg_index": 62.956375693609886,
+      "air_temperature_c": 24.62245349739465,
+      "relative_humidity_pct": 89.44222208231898
+    },
+    {
+      "lead_hour": 74,
+      "timestamp": "2025-11-24T07:00:00+05:30",
+      "soil_moisture_avg_index": 63.11168317828651,
+      "air_temperature_c": 25.392001708528028,
+      "relative_humidity_pct": 86.830158663248
+    },
+    {
+      "lead_hour": 75,
+      "timestamp": "2025-11-24T08:00:00+05:30",
+      "soil_moisture_avg_index": 62.84032642003433,
+      "air_temperature_c": 26.374810229061108,
+      "relative_humidity_pct": 83.66815086138456
+    },
+    {
+      "lead_hour": 76,
+      "timestamp": "2025-11-24T09:00:00+05:30",
+      "soil_moisture_avg_index": 62.905814762130575,
+      "air_temperature_c": 27.30103108356934,
+      "relative_humidity_pct": 80.4550154946174
+    },
+    {
+      "lead_hour": 77,
+      "timestamp": "2025-11-24T10:00:00+05:30",
+      "soil_moisture_avg_index": 62.71233593537051,
+      "air_temperature_c": 28.31108806637854,
+      "relative_humidity_pct": 76.90971032558195
+    },
+    {
+      "lead_hour": 78,
+      "timestamp": "2025-11-24T11:00:00+05:30",
+      "soil_moisture_avg_index": 62.208360511130394,
+      "air_temperature_c": 28.983876217813233,
+      "relative_humidity_pct": 74.76887395834522
+    },
+    {
+      "lead_hour": 79,
+      "timestamp": "2025-11-24T12:00:00+05:30",
+      "soil_moisture_avg_index": 62.9020214816482,
+      "air_temperature_c": 29.65892687610132,
+      "relative_humidity_pct": 72.19166632673796
+    },
+    {
+      "lead_hour": 80,
+      "timestamp": "2025-11-24T13:00:00+05:30",
+      "soil_moisture_avg_index": 62.94534738075591,
+      "air_temperature_c": 30.10792524683797,
+      "relative_humidity_pct": 70.9815484578578
+    },
+    {
+      "lead_hour": 81,
+      "timestamp": "2025-11-24T14:00:00+05:30",
+      "soil_moisture_avg_index": 61.94292593356512,
+      "air_temperature_c": 30.11732808541281,
+      "relative_humidity_pct": 70.64203693529228
+    },
+    {
+      "lead_hour": 82,
+      "timestamp": "2025-11-24T15:00:00+05:30",
+      "soil_moisture_avg_index": 62.73495393071958,
+      "air_temperature_c": 30.031246061394025,
+      "relative_humidity_pct": 70.6958380777373
+    },
+    {
+      "lead_hour": 83,
+      "timestamp": "2025-11-24T16:00:00+05:30",
+      "soil_moisture_avg_index": 62.694501239807025,
+      "air_temperature_c": 29.954574518632178,
+      "relative_humidity_pct": 72.11386233970853
+    },
+    {
+      "lead_hour": 84,
+      "timestamp": "2025-11-24T17:00:00+05:30",
+      "soil_moisture_avg_index": 62.85948472836188,
+      "air_temperature_c": 29.05455028277994,
+      "relative_humidity_pct": 73.83639174288749
+    },
+    {
+      "lead_hour": 85,
+      "timestamp": "2025-11-24T18:00:00+05:30",
+      "soil_moisture_avg_index": 62.72995720285958,
+      "air_temperature_c": 28.57996234070808,
+      "relative_humidity_pct": 76.24396955472481
+    },
+    {
+      "lead_hour": 86,
+      "timestamp": "2025-11-24T19:00:00+05:30",
+      "soil_moisture_avg_index": 62.53855705793359,
+      "air_temperature_c": 27.612686986636312,
+      "relative_humidity_pct": 78.97021396098772
+    },
+    {
+      "lead_hour": 87,
+      "timestamp": "2025-11-24T20:00:00+05:30",
+      "soil_moisture_avg_index": 62.49009094990744,
+      "air_temperature_c": 26.811507936923633,
+      "relative_humidity_pct": 81.99379592909868
+    },
+    {
+      "lead_hour": 88,
+      "timestamp": "2025-11-24T21:00:00+05:30",
+      "soil_moisture_avg_index": 62.16790243967816,
+      "air_temperature_c": 25.811449882899502,
+      "relative_humidity_pct": 85.06051400419214
+    },
+    {
+      "lead_hour": 89,
+      "timestamp": "2025-11-24T22:00:00+05:30",
+      "soil_moisture_avg_index": 62.48190176849725,
+      "air_temperature_c": 24.943467981668203,
+      "relative_humidity_pct": 88.56841682157805
+    },
+    {
+      "lead_hour": 90,
+      "timestamp": "2025-11-24T23:00:00+05:30",
+      "soil_moisture_avg_index": 62.69434161712952,
+      "air_temperature_c": 24.202234815889394,
+      "relative_humidity_pct": 91.43123890338751
+    },
+    {
+      "lead_hour": 91,
+      "timestamp": "2025-11-25T00:00:00+05:30",
+      "soil_moisture_avg_index": 62.66676814472475,
+      "air_temperature_c": 23.580630525311527,
+      "relative_humidity_pct": 93.41231176256281
+    },
+    {
+      "lead_hour": 92,
+      "timestamp": "2025-11-25T01:00:00+05:30",
+      "soil_moisture_avg_index": 62.72848114147092,
+      "air_temperature_c": 23.246308103858194,
+      "relative_humidity_pct": 94.56711933452911
+    },
+    {
+      "lead_hour": 93,
+      "timestamp": "2025-11-25T02:00:00+05:30",
+      "soil_moisture_avg_index": 62.31924805362874,
+      "air_temperature_c": 23.01027712503193,
+      "relative_humidity_pct": 94.49936065693278
+    },
+    {
+      "lead_hour": 94,
+      "timestamp": "2025-11-25T03:00:00+05:30",
+      "soil_moisture_avg_index": 62.891654975176266,
+      "air_temperature_c": 23.07998556051175,
+      "relative_humidity_pct": 94.9960064575086
+    },
+    {
+      "lead_hour": 95,
+      "timestamp": "2025-11-25T04:00:00+05:30",
+      "soil_moisture_avg_index": 62.866768185590686,
+      "air_temperature_c": 23.44351737709801,
+      "relative_humidity_pct": 93.70276826199292
+    },
+    {
+      "lead_hour": 96,
+      "timestamp": "2025-11-25T05:00:00+05:30",
+      "soil_moisture_avg_index": 62.50318000946318,
+      "air_temperature_c": 23.875878876696138,
+      "relative_humidity_pct": 91.99798750146259
+    },
+    {
+      "lead_hour": 97,
+      "timestamp": "2025-11-25T06:00:00+05:30",
+      "soil_moisture_avg_index": 62.98347567852181,
+      "air_temperature_c": 24.574185436737338,
+      "relative_humidity_pct": 88.81436505444717
+    },
+    {
+      "lead_hour": 98,
+      "timestamp": "2025-11-25T07:00:00+05:30",
+      "soil_moisture_avg_index": 62.83894182782043,
+      "air_temperature_c": 25.613473221987988,
+      "relative_humidity_pct": 86.95006838151042
+    },
+    {
+      "lead_hour": 99,
+      "timestamp": "2025-11-25T08:00:00+05:30",
+      "soil_moisture_avg_index": 62.64136661684204,
+      "air_temperature_c": 26.48348760873756,
+      "relative_humidity_pct": 83.36588493347917
+    },
+    {
+      "lead_hour": 100,
+      "timestamp": "2025-11-25T09:00:00+05:30",
+      "soil_moisture_avg_index": 62.27902851943615,
+      "air_temperature_c": 27.295235045038023,
+      "relative_humidity_pct": 80.9388225628111
+    },
+    {
+      "lead_hour": 101,
+      "timestamp": "2025-11-25T10:00:00+05:30",
+      "soil_moisture_avg_index": 62.86738515414196,
+      "air_temperature_c": 28.15376591200534,
+      "relative_humidity_pct": 77.90386904744759
+    },
+    {
+      "lead_hour": 102,
+      "timestamp": "2025-11-25T11:00:00+05:30",
+      "soil_moisture_avg_index": 63.25630670464942,
+      "air_temperature_c": 28.834897883631967,
+      "relative_humidity_pct": 74.80175969899523
+    },
+    {
+      "lead_hour": 103,
+      "timestamp": "2025-11-25T12:00:00+05:30",
+      "soil_moisture_avg_index": 62.39178848974708,
+      "air_temperature_c": 29.495396407289643,
+      "relative_humidity_pct": 72.68399796059715
+    },
+    {
+      "lead_hour": 104,
+      "timestamp": "2025-11-25T13:00:00+05:30",
+      "soil_moisture_avg_index": 62.88741331638627,
+      "air_temperature_c": 29.93606659413803,
+      "relative_humidity_pct": 71.7544970755052
+    },
+    {
+      "lead_hour": 105,
+      "timestamp": "2025-11-25T14:00:00+05:30",
+      "soil_moisture_avg_index": 62.148627552990625,
+      "air_temperature_c": 30.07714676227877,
+      "relative_humidity_pct": 70.78261231600935
+    },
+    {
+      "lead_hour": 106,
+      "timestamp": "2025-11-25T15:00:00+05:30",
+      "soil_moisture_avg_index": 62.34705288924024,
+      "air_temperature_c": 30.02056845464016,
+      "relative_humidity_pct": 71.17592283733458
+    },
+    {
+      "lead_hour": 107,
+      "timestamp": "2025-11-25T16:00:00+05:30",
+      "soil_moisture_avg_index": 62.87564607608137,
+      "air_temperature_c": 29.63673205937474,
+      "relative_humidity_pct": 72.54948170645129
+    },
+    {
+      "lead_hour": 108,
+      "timestamp": "2025-11-25T17:00:00+05:30",
+      "soil_moisture_avg_index": 62.431247574329966,
+      "air_temperature_c": 29.174818803680402,
+      "relative_humidity_pct": 74.2008541548724
+    },
+    {
+      "lead_hour": 109,
+      "timestamp": "2025-11-25T18:00:00+05:30",
+      "soil_moisture_avg_index": 62.79499896016144,
+      "air_temperature_c": 28.43947077606857,
+      "relative_humidity_pct": 76.5104810890743
+    },
+    {
+      "lead_hour": 110,
+      "timestamp": "2025-11-25T19:00:00+05:30",
+      "soil_moisture_avg_index": 62.40031843867105,
+      "air_temperature_c": 27.701273656004144,
+      "relative_humidity_pct": 79.23763334607236
+    },
+    {
+      "lead_hour": 111,
+      "timestamp": "2025-11-25T20:00:00+05:30",
+      "soil_moisture_avg_index": 62.693719268038556,
+      "air_temperature_c": 26.704539710520855,
+      "relative_humidity_pct": 82.5722640883408
+    },
+    {
+      "lead_hour": 112,
+      "timestamp": "2025-11-25T21:00:00+05:30",
+      "soil_moisture_avg_index": 62.81867154129001,
+      "air_temperature_c": 25.890604205530877,
+      "relative_humidity_pct": 85.49520220762184
+    },
+    {
+      "lead_hour": 113,
+      "timestamp": "2025-11-25T22:00:00+05:30",
+      "soil_moisture_avg_index": 62.354763202617896,
+      "air_temperature_c": 24.935888000759846,
+      "relative_humidity_pct": 87.95174715149626
+    },
+    {
+      "lead_hour": 114,
+      "timestamp": "2025-11-25T23:00:00+05:30",
+      "soil_moisture_avg_index": 62.58716844053141,
+      "air_temperature_c": 24.22263890540891,
+      "relative_humidity_pct": 91.01679807581343
+    },
+    {
+      "lead_hour": 115,
+      "timestamp": "2025-11-26T00:00:00+05:30",
+      "soil_moisture_avg_index": 63.40277934315291,
+      "air_temperature_c": 23.685963217745726,
+      "relative_humidity_pct": 92.52364593922742
+    },
+    {
+      "lead_hour": 116,
+      "timestamp": "2025-11-26T01:00:00+05:30",
+      "soil_moisture_avg_index": 62.75620347547382,
+      "air_temperature_c": 23.229813948109832,
+      "relative_humidity_pct": 94.60680752463678
+    },
+    {
+      "lead_hour": 117,
+      "timestamp": "2025-11-26T02:00:00+05:30",
+      "soil_moisture_avg_index": 62.93538082773436,
+      "air_temperature_c": 23.07309622850792,
+      "relative_humidity_pct": 94.76538557471349
+    },
+    {
+      "lead_hour": 118,
+      "timestamp": "2025-11-26T03:00:00+05:30",
+      "soil_moisture_avg_index": 63.02268367125244,
+      "air_temperature_c": 23.087386172350506,
+      "relative_humidity_pct": 94.89998650442969
+    },
+    {
+      "lead_hour": 119,
+      "timestamp": "2025-11-26T04:00:00+05:30",
+      "soil_moisture_avg_index": 62.659393218321185,
+      "air_temperature_c": 23.385312581930854,
+      "relative_humidity_pct": 93.50950645519983
+    },
+    {
+      "lead_hour": 120,
+      "timestamp": "2025-11-26T05:00:00+05:30",
+      "soil_moisture_avg_index": 62.46907456187316,
+      "air_temperature_c": 23.89886712860278,
+      "relative_humidity_pct": 91.77447722289061
+    },
+    {
+      "lead_hour": 121,
+      "timestamp": "2025-11-26T06:00:00+05:30",
+      "soil_moisture_avg_index": 62.80265726165542,
+      "air_temperature_c": 24.582038058631493,
+      "relative_humidity_pct": 89.29071015499491
+    },
+    {
+      "lead_hour": 122,
+      "timestamp": "2025-11-26T07:00:00+05:30",
+      "soil_moisture_avg_index": 62.667207555466206,
+      "air_temperature_c": 25.36966636003474,
+      "relative_humidity_pct": 86.86631673954668
+    },
+    {
+      "lead_hour": 123,
+      "timestamp": "2025-11-26T08:00:00+05:30",
+      "soil_moisture_avg_index": 62.8594506516105,
+      "air_temperature_c": 26.37055902613839,
+      "relative_humidity_pct": 83.61485857624356
+    },
+    {
+      "lead_hour": 124,
+      "timestamp": "2025-11-26T09:00:00+05:30",
+      "soil_moisture_avg_index": 63.26909445398245,
+      "air_temperature_c": 27.17389116757201,
+      "relative_humidity_pct": 80.549136410459
+    },
+    {
+      "lead_hour": 125,
+      "timestamp": "2025-11-26T10:00:00+05:30",
+      "soil_moisture_avg_index": 62.84852098198421,
+      "air_temperature_c": 28.062010210355325,
+      "relative_humidity_pct": 77.61747027637709
+    },
+    {
+      "lead_hour": 126,
+      "timestamp": "2025-11-26T11:00:00+05:30",
+      "soil_moisture_avg_index": 62.38020239427844,
+      "air_temperature_c": 28.983607476155033,
+      "relative_humidity_pct": 75.08203690865943
+    },
+    {
+      "lead_hour": 127,
+      "timestamp": "2025-11-26T12:00:00+05:30",
+      "soil_moisture_avg_index": 63.03583729728448,
+      "air_temperature_c": 29.461106188293808,
+      "relative_humidity_pct": 72.50978172607434
+    },
+    {
+      "lead_hour": 128,
+      "timestamp": "2025-11-26T13:00:00+05:30",
+      "soil_moisture_avg_index": 62.79797977915044,
+      "air_temperature_c": 29.84512881544541,
+      "relative_humidity_pct": 71.34159648583714
+    },
+    {
+      "lead_hour": 129,
+      "timestamp": "2025-11-26T14:00:00+05:30",
+      "soil_moisture_avg_index": 63.06880565748641,
+      "air_temperature_c": 30.120191595629212,
+      "relative_humidity_pct": 70.55176098704179
+    },
+    {
+      "lead_hour": 130,
+      "timestamp": "2025-11-26T15:00:00+05:30",
+      "soil_moisture_avg_index": 62.61023660770131,
+      "air_temperature_c": 30.263210665425817,
+      "relative_humidity_pct": 70.98657754363033
+    },
+    {
+      "lead_hour": 131,
+      "timestamp": "2025-11-26T16:00:00+05:30",
+      "soil_moisture_avg_index": 62.60803596696756,
+      "air_temperature_c": 29.767589750279097,
+      "relative_humidity_pct": 72.62425130690315
+    },
+    {
+      "lead_hour": 132,
+      "timestamp": "2025-11-26T17:00:00+05:30",
+      "soil_moisture_avg_index": 62.69884154182469,
+      "air_temperature_c": 29.177604171371694,
+      "relative_humidity_pct": 74.4967057743443
+    },
+    {
+      "lead_hour": 133,
+      "timestamp": "2025-11-26T18:00:00+05:30",
+      "soil_moisture_avg_index": 62.934008790113076,
+      "air_temperature_c": 28.544546229860995,
+      "relative_humidity_pct": 76.02763955014905
+    },
+    {
+      "lead_hour": 134,
+      "timestamp": "2025-11-26T19:00:00+05:30",
+      "soil_moisture_avg_index": 62.71625476177903,
+      "air_temperature_c": 27.69553198384789,
+      "relative_humidity_pct": 79.05501332915408
+    },
+    {
+      "lead_hour": 135,
+      "timestamp": "2025-11-26T20:00:00+05:30",
+      "soil_moisture_avg_index": 62.64599746800303,
+      "air_temperature_c": 26.8133183167418,
+      "relative_humidity_pct": 82.41670421322141
+    },
+    {
+      "lead_hour": 136,
+      "timestamp": "2025-11-26T21:00:00+05:30",
+      "soil_moisture_avg_index": 62.97722349140051,
+      "air_temperature_c": 25.773256592949085,
+      "relative_humidity_pct": 85.4441578445048
+    },
+    {
+      "lead_hour": 137,
+      "timestamp": "2025-11-26T22:00:00+05:30",
+      "soil_moisture_avg_index": 63.10915432463159,
+      "air_temperature_c": 25.08956580456473,
+      "relative_humidity_pct": 88.7207942618521
+    },
+    {
+      "lead_hour": 138,
+      "timestamp": "2025-11-26T23:00:00+05:30",
+      "soil_moisture_avg_index": 62.99049548930575,
+      "air_temperature_c": 24.078378445677544,
+      "relative_humidity_pct": 91.47940215342771
+    },
+    {
+      "lead_hour": 139,
+      "timestamp": "2025-11-27T00:00:00+05:30",
+      "soil_moisture_avg_index": 63.25000609267089,
+      "air_temperature_c": 23.553547979424792,
+      "relative_humidity_pct": 93.37950051497783
+    },
+    {
+      "lead_hour": 140,
+      "timestamp": "2025-11-27T01:00:00+05:30",
+      "soil_moisture_avg_index": 63.4050122671248,
+      "air_temperature_c": 23.16397426950171,
+      "relative_humidity_pct": 94.18124740128174
+    },
+    {
+      "lead_hour": 141,
+      "timestamp": "2025-11-27T02:00:00+05:30",
+      "soil_moisture_avg_index": 63.69187036022767,
+      "air_temperature_c": 23.01385951528468,
+      "relative_humidity_pct": 95.29568616304968
+    },
+    {
+      "lead_hour": 142,
+      "timestamp": "2025-11-27T03:00:00+05:30",
+      "soil_moisture_avg_index": 63.51918911288778,
+      "air_temperature_c": 23.050932450429038,
+      "relative_humidity_pct": 95.3244897909195
+    },
+    {
+      "lead_hour": 143,
+      "timestamp": "2025-11-27T04:00:00+05:30",
+      "soil_moisture_avg_index": 62.81656775027071,
+      "air_temperature_c": 23.318328060739347,
+      "relative_humidity_pct": 94.32157197081578
+    },
+    {
+      "lead_hour": 144,
+      "timestamp": "2025-11-27T05:00:00+05:30",
+      "soil_moisture_avg_index": 63.584449678803765,
+      "air_temperature_c": 23.823960421512734,
+      "relative_humidity_pct": 91.80134295922659
+    },
+    {
+      "lead_hour": 145,
+      "timestamp": "2025-11-27T06:00:00+05:30",
+      "soil_moisture_avg_index": 63.35127681722762,
+      "air_temperature_c": 24.38277493155816,
+      "relative_humidity_pct": 89.78477227883275
+    },
+    {
+      "lead_hour": 146,
+      "timestamp": "2025-11-27T07:00:00+05:30",
+      "soil_moisture_avg_index": 63.4314091948504,
+      "air_temperature_c": 25.3246347412855,
+      "relative_humidity_pct": 86.61529440351322
+    },
+    {
+      "lead_hour": 147,
+      "timestamp": "2025-11-27T08:00:00+05:30",
+      "soil_moisture_avg_index": 63.39587252370249,
+      "air_temperature_c": 26.34845576562386,
+      "relative_humidity_pct": 83.39508809070144
+    },
+    {
+      "lead_hour": 148,
+      "timestamp": "2025-11-27T09:00:00+05:30",
+      "soil_moisture_avg_index": 63.65042406298546,
+      "air_temperature_c": 27.277935600153693,
+      "relative_humidity_pct": 80.24803075223578
+    },
+    {
+      "lead_hour": 149,
+      "timestamp": "2025-11-27T10:00:00+05:30",
+      "soil_moisture_avg_index": 63.06982078597484,
+      "air_temperature_c": 28.143298518002396,
+      "relative_humidity_pct": 77.70417162934808
+    },
+    {
+      "lead_hour": 150,
+      "timestamp": "2025-11-27T11:00:00+05:30",
+      "soil_moisture_avg_index": 63.35766172432798,
+      "air_temperature_c": 28.91851779421751,
+      "relative_humidity_pct": 74.8967313899502
+    },
+    {
+      "lead_hour": 151,
+      "timestamp": "2025-11-27T12:00:00+05:30",
+      "soil_moisture_avg_index": 63.40046212405918,
+      "air_temperature_c": 29.450069687427632,
+      "relative_humidity_pct": 72.65910763028819
+    },
+    {
+      "lead_hour": 152,
+      "timestamp": "2025-11-27T13:00:00+05:30",
+      "soil_moisture_avg_index": 62.99892141446236,
+      "air_temperature_c": 29.913593365420805,
+      "relative_humidity_pct": 71.5961419687023
+    },
+    {
+      "lead_hour": 153,
+      "timestamp": "2025-11-27T14:00:00+05:30",
+      "soil_moisture_avg_index": 62.990066839643674,
+      "air_temperature_c": 30.157669904870875,
+      "relative_humidity_pct": 70.94897194381592
+    },
+    {
+      "lead_hour": 154,
+      "timestamp": "2025-11-27T15:00:00+05:30",
+      "soil_moisture_avg_index": 62.832260991037046,
+      "air_temperature_c": 29.929790704352246,
+      "relative_humidity_pct": 71.53533954998571
+    },
+    {
+      "lead_hour": 155,
+      "timestamp": "2025-11-27T16:00:00+05:30",
+      "soil_moisture_avg_index": 63.011167522799795,
+      "air_temperature_c": 29.593154109954813,
+      "relative_humidity_pct": 72.62545498621316
+    },
+    {
+      "lead_hour": 156,
+      "timestamp": "2025-11-27T17:00:00+05:30",
+      "soil_moisture_avg_index": 62.89241183775951,
+      "air_temperature_c": 29.103199229757223,
+      "relative_humidity_pct": 74.05732531169876
+    },
+    {
+      "lead_hour": 157,
+      "timestamp": "2025-11-27T18:00:00+05:30",
+      "soil_moisture_avg_index": 62.82655941247748,
+      "air_temperature_c": 28.450085408681694,
+      "relative_humidity_pct": 76.71617680667393
+    },
+    {
+      "lead_hour": 158,
+      "timestamp": "2025-11-27T19:00:00+05:30",
+      "soil_moisture_avg_index": 63.69834494298956,
+      "air_temperature_c": 27.696030454391646,
+      "relative_humidity_pct": 79.6647988217752
+    },
+    {
+      "lead_hour": 159,
+      "timestamp": "2025-11-27T20:00:00+05:30",
+      "soil_moisture_avg_index": 63.13047740342829,
+      "air_temperature_c": 26.702450684752385,
+      "relative_humidity_pct": 82.35079727780492
+    },
+    {
+      "lead_hour": 160,
+      "timestamp": "2025-11-27T21:00:00+05:30",
+      "soil_moisture_avg_index": 63.22113770371374,
+      "air_temperature_c": 25.83736730969933,
+      "relative_humidity_pct": 85.009236515296
+    },
+    {
+      "lead_hour": 161,
+      "timestamp": "2025-11-27T22:00:00+05:30",
+      "soil_moisture_avg_index": 63.49228641443119,
+      "air_temperature_c": 25.059511347154316,
+      "relative_humidity_pct": 88.84955632866425
+    },
+    {
+      "lead_hour": 162,
+      "timestamp": "2025-11-27T23:00:00+05:30",
+      "soil_moisture_avg_index": 63.12290160354291,
+      "air_temperature_c": 24.26780778048967,
+      "relative_humidity_pct": 91.02378863365836
+    },
+    {
+      "lead_hour": 163,
+      "timestamp": "2025-11-28T00:00:00+05:30",
+      "soil_moisture_avg_index": 63.3509988226769,
+      "air_temperature_c": 23.514355681743233,
+      "relative_humidity_pct": 93.16097966399988
+    },
+    {
+      "lead_hour": 164,
+      "timestamp": "2025-11-28T01:00:00+05:30",
+      "soil_moisture_avg_index": 63.173907326303365,
+      "air_temperature_c": 23.097147281145247,
+      "relative_humidity_pct": 94.67848164347929
+    },
+    {
+      "lead_hour": 165,
+      "timestamp": "2025-11-28T02:00:00+05:30",
+      "soil_moisture_avg_index": 63.93435155546979,
+      "air_temperature_c": 22.959619244475082,
+      "relative_humidity_pct": 95.2729866791429
+    },
+    {
+      "lead_hour": 166,
+      "timestamp": "2025-11-28T03:00:00+05:30",
+      "soil_moisture_avg_index": 64.21077857562443,
+      "air_temperature_c": 22.95738134237884,
+      "relative_humidity_pct": 95.31924740845713
+    },
+    {
+      "lead_hour": 167,
+      "timestamp": "2025-11-28T04:00:00+05:30",
+      "soil_moisture_avg_index": 63.542467121105645,
+      "air_temperature_c": 23.24234451533926,
+      "relative_humidity_pct": 93.71067631715697
+    },
+    {
+      "lead_hour": 168,
+      "timestamp": "2025-11-28T05:00:00+05:30",
+      "soil_moisture_avg_index": 64.43503588293206,
+      "air_temperature_c": 23.831412504475807,
+      "relative_humidity_pct": 92.42497746292943
+    }
+  ],
+  "slices": [
+    {
+      "hours": 24,
+      "start_index": 0,
+      "end_index_exclusive": 24,
+      "first_timestamp": "2025-11-21T06:00:00+05:30",
+      "last_timestamp": "2025-11-22T05:00:00+05:30"
+    },
+    {
+      "hours": 72,
+      "start_index": 0,
+      "end_index_exclusive": 72,
+      "first_timestamp": "2025-11-21T06:00:00+05:30",
+      "last_timestamp": "2025-11-24T05:00:00+05:30"
+    },
+    {
+      "hours": 168,
+      "start_index": 0,
+      "end_index_exclusive": 168,
+      "first_timestamp": "2025-11-21T06:00:00+05:30",
+      "last_timestamp": "2025-11-28T05:00:00+05:30"
+    }
+  ],
+  "provenance": {
+    "model_artifact_id": "c2_microclimate_attention_bilstm_v1",
+    "checkpoint_sha256": "9386ed77d7dd057a8f69951ceb88adfdd05b6f682c7cbbac5e4e6870d0e22851",
+    "scaler_artifact_id": "c2_microclimate_phase1_masked_scaled",
+    "scaler_sha256": "6983267451bd3d3f3fb098a1e6e49b35102bd105668a0e85912c139552517e82",
+    "training_data": "100% synthetic hourly 2025 data; two nodes; no real C1 field validation",
+    "scaler_fit_policy": "Frozen, per-feature scalers fitted on unique genuine TRAIN observations only; never refitted by API",
+    "inference_mode": "CPU; frozen checkpoint; compile=False; training=False",
+    "declared_input_origin": "synthetic",
+    "limitations": [
+      "Prototype predictions do not establish real Nai Miris field accuracy.",
+      "Quality flags are supplied by the caller; omitted flags assert usable observations.",
+      "Unknown future irrigation/weather and stale historical fills limit forecasts."
+    ]
+  },
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only"
+}

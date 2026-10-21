@@ -1,0 +1,10 @@
+Synthetic Data — Prototype Evaluation Only
+
+Executed using backend/.venv (Python 3.11.9):
+python.exe -B -m unittest app.c2.microclimate.test_phase1 app.c2.microclimate.test_phase1_masked -v
+
+Observed execution: Ran 37 tests in 4.485s; OK.
+Passed: 37 (20 original complete-case tests + 17 target-mask tests).
+Failures: 0. Errors: 0. Skipped: 0.
+Includes saved-array/source alignment, frozen splits, masked denominators,
+loss exclusion, future-input separation and original-artifact preservation.

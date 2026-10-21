@@ -1,0 +1,10 @@
+Synthetic Data — Prototype Evaluation Only
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792587786.528449   15056 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792587790.959142   15056 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From C:\Users\Asus\Documents\Research\smart-agriculture-IT-437\backend\.venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:233: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+Synthetic Data — Prototype Evaluation Only
+Frozen inference only: (811, 168, 3) finite: True output: C:\Users\Asus\Documents\Research\smart-agriculture-IT-437\backend\experiments\c2\microclimate\attention_bilstm_v1\inference_check_NODE_01.npz

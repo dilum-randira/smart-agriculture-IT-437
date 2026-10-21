@@ -1,0 +1,76 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "method": "per-feature population standardization (ddof=0)",
+  "node_policy": "shared across nodes; each node/timestamp observation weighted once",
+  "input": {
+    "features": [
+      "soil_moisture_avg_index",
+      "air_temperature_c",
+      "relative_humidity_pct"
+    ],
+    "mean": [
+      37.8156857727738,
+      27.779749232343914,
+      81.77078727396793
+    ],
+    "variance": [
+      204.41387323322985,
+      6.8199964400156174,
+      80.64485025873945
+    ],
+    "std": [
+      14.297337977163087,
+      2.611512289845793,
+      8.980247783816404
+    ],
+    "scale": [
+      14.297337977163087,
+      2.611512289845793,
+      8.980247783816404
+    ],
+    "counts": [
+      11724,
+      11724,
+      11724
+    ]
+  },
+  "target": {
+    "features": [
+      "soil_moisture_avg_index",
+      "air_temperature_c",
+      "relative_humidity_pct"
+    ],
+    "mean": [
+      37.999393380739185,
+      27.787227635852865,
+      81.77576507769291
+    ],
+    "variance": [
+      226.3544151442596,
+      6.847613225242756,
+      80.84289905252814
+    ],
+    "std": [
+      15.045079432966102,
+      2.6167944560554917,
+      8.991267933530183
+    ],
+    "scale": [
+      15.045079432966102,
+      2.6167944560554917,
+      8.991267933530183
+    ],
+    "counts": [
+      11391,
+      11391,
+      11391
+    ]
+  },
+  "units": {
+    "soil_moisture_avg_index": "index (not volumetric water content)",
+    "air_temperature_c": "°C",
+    "relative_humidity_pct": "% RH"
+  },
+  "zero_variance_policy": "scale=1 for zero/numerically constant features",
+  "masked_target_placeholder": "float32 0 in standardized space, mask=False; never ground truth"
+}

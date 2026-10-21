@@ -1,0 +1,22 @@
+Synthetic Data — Prototype Evaluation Only
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792587510.401821    5480 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792587512.944023    5480 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From C:\Users\Asus\Documents\Research\smart-agriculture-IT-437\backend\.venv\Lib\site-packages\keras\src\backend\tensorflow\core.py:233: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+test_all_original_unit_metrics_and_counts_recomputed (__main__.verify.<locals>.SavedAttentionTests.test_all_original_unit_metrics_and_counts_recomputed) ... ok
+test_complete_fresh_process_forecast_replay (__main__.verify.<locals>.SavedAttentionTests.test_complete_fresh_process_forecast_replay) ... ok
+test_descriptive_attention_replay_and_historical_alignment (__main__.verify.<locals>.SavedAttentionTests.test_descriptive_attention_replay_and_historical_alignment) ... ok
+test_exact_architecture_and_projection (__main__.verify.<locals>.SavedAttentionTests.test_exact_architecture_and_projection) ... ok
+test_four_model_winners_counts_and_labels (__main__.verify.<locals>.SavedAttentionTests.test_four_model_winners_counts_and_labels) ... ok
+test_frozen_scalers_and_all_upstream_hashes (__main__.verify.<locals>.SavedAttentionTests.test_frozen_scalers_and_all_upstream_hashes) ... ok
+test_preserved_lstm_and_gru_reload_without_training (__main__.verify.<locals>.SavedAttentionTests.test_preserved_lstm_and_gru_reload_without_training) ... ok
+test_validation_only_selection_and_complete_epoch_evidence (__main__.verify.<locals>.SavedAttentionTests.test_validation_only_selection_and_complete_epoch_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 121.283s
+
+OK
+

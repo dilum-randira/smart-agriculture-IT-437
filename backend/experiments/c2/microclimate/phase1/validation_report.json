@@ -1,0 +1,276 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "source": "data\\c2\\microclimate\\synthetic\\c1_synthetic_hourly_2025_2nodes.csv",
+  "source_sha256": "86905c135c6260dcbb0ab686a95abdbdb3fe777ab5123897f311ddd6af6a691e",
+  "config": {
+    "lookback": 336,
+    "horizon": 168,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "stride": 1
+  },
+  "features": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "targets": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "excluded_fields": [
+    "forecast_rain_mm_next_24h",
+    "forecast_air_temp_max_c_next_24h"
+  ],
+  "future_feature_contract": {
+    "growth_stage": "unavailable; needs observed label and availability timestamp",
+    "planting_date": "unavailable; never inferred",
+    "crop_age": "unavailable; never fabricated"
+  },
+  "rows": 17520,
+  "columns": 23,
+  "origin_counts": {
+    "synthetic": 17520
+  },
+  "missing_counts": {
+    "timestamp": 0,
+    "node_id": 0,
+    "zone_id": 0,
+    "soil_moisture_1_index": 0,
+    "soil_moisture_2_index": 0,
+    "soil_moisture_avg_index": 0,
+    "soil_temperature_c": 0,
+    "air_temperature_c": 0,
+    "relative_humidity_pct": 0,
+    "light_lux": 0,
+    "rain_detected": 0,
+    "rainfall_mm_24h": 0,
+    "forecast_rain_mm_next_24h": 0,
+    "forecast_air_temp_max_c_next_24h": 0,
+    "soil_moisture_change_1h_index": 0,
+    "air_temperature_avg_24h_c": 0,
+    "vpd_kpa": 0,
+    "quality_score": 0,
+    "is_anomaly": 0,
+    "is_imputed": 0,
+    "imputed_fields": 17286,
+    "record_status": 0,
+    "data_origin": 0
+  },
+  "duplicate_keys": 0,
+  "hourly_gaps": 0,
+  "status_counts": {
+    "OK": 17224,
+    "WARN": 290,
+    "INVALID": 6
+  },
+  "anomaly_rows": 64,
+  "imputed_rows": 234,
+  "imputed_fields": {
+    "": 17286,
+    "soil_moisture_1_index": 119,
+    "soil_moisture_2_index": 115
+  },
+  "usable_rows": 17224,
+  "warn_usable_rows": 0,
+  "quality_score_range": [
+    0.083,
+    1.0
+  ],
+  "splits": {
+    "train": {
+      "start": "2025-01-01T00:00:00+05:30",
+      "end": "2025-09-13T11:00:00+05:30"
+    },
+    "validation": {
+      "start": "2025-09-13T12:00:00+05:30",
+      "end": "2025-11-07T05:00:00+05:30"
+    },
+    "test": {
+      "start": "2025-11-07T06:00:00+05:30",
+      "end": "2025-12-31T23:00:00+05:30"
+    }
+  },
+  "python": "3.11.9",
+  "interpreter": "C:\\Users\\Asus\\Documents\\Research\\smart-agriculture-IT-437\\backend\\.venv\\Scripts\\python.exe",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2"
+  },
+  "code_sha256": {
+    "pipeline.py": "6a27d2863418a9cc4b65adb9a6733fd869968cd24878dc77303ecebea683294c",
+    "run_phase1.py": "ffd4510f18555fcf97f7db65acd29f164d41e466a36f66b5a8216780cb7bb9e2",
+    "test_phase1.py": "f660308cd1649dcd04036ed3ca6e28b6457df273385b48181925861d2cba8f42",
+    "__init__.py": "09274cffda5e7b1895a7513cd3ab5e885358d9cf7e4de315cf92b1f8815a0d63"
+  },
+  "quality_policy": "INVALID/anomalous/imputed rows masked as history; causal split-local forward fill only. All target steps must be unflagged, non-INVALID observations. No target imputation.",
+  "preprocessing_fit": "None: no scaling, learned imputation, training, or fitted preprocessing.",
+  "window_policy": "Inputs and all targets entirely within one node and partition; stride in hours.",
+  "limitations": [
+    "Entirely synthetic; no field accuracy evidence.",
+    "Complete-label filtering can leave node/partition combinations with zero samples.",
+    "Hourly rolling windows overlap; counts are not independent observations.",
+    "Historical gap fills may be stale; masks are saved for Phase 2.",
+    "No growth-stage inputs or verified forecast-weather issue times; external datasets unused."
+  ],
+  "node_validation": {
+    "NODE_01": {
+      "rows": 8760,
+      "start": "2025-01-01T00:00:00+05:30",
+      "end": "2025-12-31T23:00:00+05:30",
+      "zone": "ZONE_A",
+      "status_counts": {
+        "OK": 8615,
+        "WARN": 142,
+        "INVALID": 3
+      },
+      "anomaly_rows": 29,
+      "imputed_rows": 117,
+      "usable_rows": 8615
+    },
+    "NODE_02": {
+      "rows": 8760,
+      "start": "2025-01-01T00:00:00+05:30",
+      "end": "2025-12-31T23:00:00+05:30",
+      "zone": "ZONE_B",
+      "status_counts": {
+        "OK": 8609,
+        "WARN": 148,
+        "INVALID": 3
+      },
+      "anomaly_rows": 35,
+      "imputed_rows": 117,
+      "usable_rows": 8609
+    }
+  },
+  "samples": [
+    {
+      "split": "train",
+      "node": "NODE_01",
+      "rows": 6132,
+      "quality_usable_rows": 6031,
+      "candidate_windows": 5629,
+      "valid_samples": 337,
+      "rejected_windows": 5292,
+      "input_shape": [
+        337,
+        336,
+        3
+      ],
+      "output_shape": [
+        337,
+        168,
+        3
+      ],
+      "window_artifact": "windows_train_NODE_01.npz",
+      "plot": "actual_vs_persistence_train_NODE_01.png"
+    },
+    {
+      "split": "train",
+      "node": "NODE_02",
+      "rows": 6132,
+      "quality_usable_rows": 6025,
+      "candidate_windows": 5629,
+      "valid_samples": 519,
+      "rejected_windows": 5110,
+      "input_shape": [
+        519,
+        336,
+        3
+      ],
+      "output_shape": [
+        519,
+        168,
+        3
+      ],
+      "window_artifact": "windows_train_NODE_02.npz",
+      "plot": "actual_vs_persistence_train_NODE_02.png"
+    },
+    {
+      "split": "validation",
+      "node": "NODE_01",
+      "rows": 1314,
+      "quality_usable_rows": 1291,
+      "candidate_windows": 811,
+      "valid_samples": 0,
+      "rejected_windows": 811,
+      "input_shape": [
+        0,
+        336,
+        3
+      ],
+      "output_shape": [
+        0,
+        168,
+        3
+      ],
+      "window_artifact": "windows_validation_NODE_01.npz",
+      "plot": null
+    },
+    {
+      "split": "validation",
+      "node": "NODE_02",
+      "rows": 1314,
+      "quality_usable_rows": 1293,
+      "candidate_windows": 811,
+      "valid_samples": 347,
+      "rejected_windows": 464,
+      "input_shape": [
+        347,
+        336,
+        3
+      ],
+      "output_shape": [
+        347,
+        168,
+        3
+      ],
+      "window_artifact": "windows_validation_NODE_02.npz",
+      "plot": "actual_vs_persistence_validation_NODE_02.png"
+    },
+    {
+      "split": "test",
+      "node": "NODE_01",
+      "rows": 1314,
+      "quality_usable_rows": 1293,
+      "candidate_windows": 811,
+      "valid_samples": 87,
+      "rejected_windows": 724,
+      "input_shape": [
+        87,
+        336,
+        3
+      ],
+      "output_shape": [
+        87,
+        168,
+        3
+      ],
+      "window_artifact": "windows_test_NODE_01.npz",
+      "plot": "actual_vs_persistence_test_NODE_01.png"
+    },
+    {
+      "split": "test",
+      "node": "NODE_02",
+      "rows": 1314,
+      "quality_usable_rows": 1291,
+      "candidate_windows": 811,
+      "valid_samples": 0,
+      "rejected_windows": 811,
+      "input_shape": [
+        0,
+        336,
+        3
+      ],
+      "output_shape": [
+        0,
+        168,
+        3
+      ],
+      "window_artifact": "windows_test_NODE_02.npz",
+      "plot": null
+    }
+  ]
+}

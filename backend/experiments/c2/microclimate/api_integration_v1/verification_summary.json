@@ -1,0 +1,45 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "status": "verified",
+  "automated_tests": {
+    "existing": 89,
+    "api": 24,
+    "lstm_artifacts": 5,
+    "gru_artifacts": 6,
+    "attention_bilstm_artifacts": 8,
+    "total_passed": 132,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "live_http_checks_passed": 9,
+  "api_vs_saved_output_max_absolute_original_unit_difference": {
+    "lstm_NODE_01": 0.0,
+    "lstm_NODE_02": 0.0,
+    "gru_NODE_01": 0.0,
+    "gru_NODE_02": 0.0,
+    "attention_bilstm_NODE_01": 0.0,
+    "attention_bilstm_NODE_02": 0.0
+  },
+  "comparison_absolute_tolerance": 0.0001,
+  "model_input_shape": [
+    1,
+    336,
+    3
+  ],
+  "model_output_shape": [
+    1,
+    168,
+    3
+  ],
+  "returned_predictions": 168,
+  "protected_preexisting_files_unchanged": 317,
+  "modified_preexisting_files": [
+    "backend/app/c2/microclimate/README.md",
+    "backend/app/main.py"
+  ],
+  "trained": false,
+  "packages_installed": false,
+  "temporary_test_server_stopped": true,
+  "external_audit_location": "C:\\Users\\Asus\\AppData\\Local\\C2APIAudit\\20261021-212932"
+}

@@ -1,0 +1,40 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "transport": "Uvicorn on local TCP, real frozen-model inference",
+  "checks": {
+    "health": "passed",
+    "openapi": "passed",
+    "swagger_ui": "passed",
+    "demo_input": "passed",
+    "forecast_lstm": "passed",
+    "forecast_gru": "passed",
+    "forecast_attention_bilstm": "passed",
+    "validation_422": "passed",
+    "yield_prediction": "passed"
+  },
+  "checks_passed": 9,
+  "failures": 0,
+  "model_vs_cli": {
+    "lstm": {
+      "shape": [
+        168,
+        3
+      ],
+      "max_absolute_original_unit_difference": 0.0
+    },
+    "gru": {
+      "shape": [
+        168,
+        3
+      ],
+      "max_absolute_original_unit_difference": 0.0
+    },
+    "attention_bilstm": {
+      "shape": [
+        168,
+        3
+      ],
+      "max_absolute_original_unit_difference": 0.0
+    }
+  }
+}

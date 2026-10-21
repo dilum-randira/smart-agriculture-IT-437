@@ -1,0 +1,472 @@
+{
+  "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+  "experiment": "phase1_masked_scaled",
+  "source_sha256": "86905c135c6260dcbb0ab686a95abdbdb3fe777ab5123897f311ddd6af6a691e",
+  "splits": {
+    "train": {
+      "start": "2025-01-01T00:00:00+05:30",
+      "end": "2025-09-13T11:00:00+05:30"
+    },
+    "validation": {
+      "start": "2025-09-13T12:00:00+05:30",
+      "end": "2025-11-07T05:00:00+05:30"
+    },
+    "test": {
+      "start": "2025-11-07T06:00:00+05:30",
+      "end": "2025-12-31T23:00:00+05:30"
+    }
+  },
+  "config": {
+    "lookback": 336,
+    "horizon": 168,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "stride": 1
+  },
+  "target_eligibility": {
+    "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+    "analysis_partition": "train only",
+    "nodes": [
+      {
+        "node": "NODE_01",
+        "candidates": 5629,
+        "minimum_valid_hours": 161,
+        "median_valid_hours": 165.0,
+        "maximum_valid_hours": 168,
+        "valid_hours_distribution": {
+          "161": 32,
+          "162": 212,
+          "163": 779,
+          "164": 669,
+          "165": 1594,
+          "166": 1301,
+          "167": 705,
+          "168": 337
+        },
+        "target_hours_required": 160,
+        "meeting_coverage_rule": 5629
+      },
+      {
+        "node": "NODE_02",
+        "candidates": 5629,
+        "minimum_valid_hours": 157,
+        "median_valid_hours": 165.0,
+        "maximum_valid_hours": 168,
+        "valid_hours_distribution": {
+          "157": 16,
+          "158": 22,
+          "159": 83,
+          "160": 108,
+          "161": 193,
+          "162": 417,
+          "163": 446,
+          "164": 682,
+          "165": 1128,
+          "166": 954,
+          "167": 1061,
+          "168": 519
+        },
+        "target_hours_required": 160,
+        "meeting_coverage_rule": 5508
+      }
+    ],
+    "minimum_target_fraction": 0.95,
+    "minimum_valid_hours_per_target": 160,
+    "rationale": "Training medians are 165/168; requiring >=95% (160/168) usable hours retains most training windows while excluding its lower-coverage tail. Fixed before validation/test evaluation; not optimized using forecast errors."
+  },
+  "features": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "targets": [
+    "soil_moisture_avg_index",
+    "air_temperature_c",
+    "relative_humidity_pct"
+  ],
+  "scalers": {
+    "evaluation_label": "Synthetic Data — Prototype Evaluation Only",
+    "method": "per-feature population standardization (ddof=0)",
+    "node_policy": "shared across nodes; each node/timestamp observation weighted once",
+    "input": {
+      "features": [
+        "soil_moisture_avg_index",
+        "air_temperature_c",
+        "relative_humidity_pct"
+      ],
+      "mean": [
+        37.8156857727738,
+        27.779749232343914,
+        81.77078727396793
+      ],
+      "variance": [
+        204.41387323322985,
+        6.8199964400156174,
+        80.64485025873945
+      ],
+      "std": [
+        14.297337977163087,
+        2.611512289845793,
+        8.980247783816404
+      ],
+      "scale": [
+        14.297337977163087,
+        2.611512289845793,
+        8.980247783816404
+      ],
+      "counts": [
+        11724,
+        11724,
+        11724
+      ]
+    },
+    "target": {
+      "features": [
+        "soil_moisture_avg_index",
+        "air_temperature_c",
+        "relative_humidity_pct"
+      ],
+      "mean": [
+        37.999393380739185,
+        27.787227635852865,
+        81.77576507769291
+      ],
+      "variance": [
+        226.3544151442596,
+        6.847613225242756,
+        80.84289905252814
+      ],
+      "std": [
+        15.045079432966102,
+        2.6167944560554917,
+        8.991267933530183
+      ],
+      "scale": [
+        15.045079432966102,
+        2.6167944560554917,
+        8.991267933530183
+      ],
+      "counts": [
+        11391,
+        11391,
+        11391
+      ]
+    },
+    "units": {
+      "soil_moisture_avg_index": "index (not volumetric water content)",
+      "air_temperature_c": "°C",
+      "relative_humidity_pct": "% RH"
+    },
+    "zero_variance_policy": "scale=1 for zero/numerically constant features",
+    "masked_target_placeholder": "float32 0 in standardized space, mask=False; never ground truth"
+  },
+  "fit_pools": {
+    "input": {
+      "rows": 11724,
+      "per_node": {
+        "NODE_01": 5865,
+        "NODE_02": 5859
+      },
+      "start": "2025-01-01T00:00:00+05:30",
+      "end": "2025-09-06T11:00:00+05:30",
+      "artifact": "input_scaler_fit_observations.csv",
+      "artifact_sha256": "a99c5f7deaca0017f09251eecee9769612dd4df662bd7b260afdcd293042ad94"
+    },
+    "target": {
+      "rows": 11391,
+      "per_node": {
+        "NODE_01": 5698,
+        "NODE_02": 5693
+      },
+      "start": "2025-01-15T00:00:00+05:30",
+      "end": "2025-09-13T11:00:00+05:30",
+      "artifact": "target_scaler_fit_observations.csv",
+      "artifact_sha256": "bd11557fa51c386a72884b155bcf40225475eaf44dde552dc69b8b56da137d58"
+    }
+  },
+  "fit_policy": "Separate input/target pools: unique original (node_id,timestamp) rows used by retained training histories/targets; only quality-eligible rows before any forward filling. No flattened-window fitting, validation/test fit, or boundary-crossing target observations.",
+  "mask_policy": "Preserved byte-for-byte array values/dtypes. Future target masks are supervision only.",
+  "transform_policy": "X: standardize existing causal histories. y: select valid cells before arithmetic; masked-out values become finite standardized zero placeholders, always loss-masked.",
+  "inverse_policy": "Predictions use target scaler inverse; actual masked targets return NaN where mask=False. Persistence bridges inverse(input) -> target transform -> inverse(target).",
+  "training": "None. No neural networks or new data integration.",
+  "python": "3.11.9",
+  "interpreter": "C:\\Users\\Asus\\Documents\\Research\\smart-agriculture-IT-437\\backend\\.venv\\Scripts\\python.exe",
+  "numpy": "2.4.6",
+  "pandas": "2.3.3",
+  "inverse_absolute_tolerance": 1e-05,
+  "metric_absolute_tolerance": 1e-05,
+  "code_sha256": {
+    "pipeline.py": "f0b049993680fe00eaa81798520c6a4916e3bdf2bb8a1262197172cf0406b9bc",
+    "run_phase1.py": "40ac5bc03fd9d9c7b19746e5356e5d983e5d4ee8f241833adcb479a579746303",
+    "run_phase1_masked.py": "f434b32530bf36c34a08ebbaf33171cab11272e82b14d88908dafb9a952afa0a",
+    "run_phase1_scaled.py": "b73e6effce8a0918e9881b26c6fdbe4870dc9bf5f60eb1a51ca5dec6354b43bb",
+    "scaling.py": "684770a8eacce9cb09dd9342ff5cd763e64faaad3fba74cd0c6f3039062a0628",
+    "test_phase1.py": "f660308cd1649dcd04036ed3ca6e28b6457df273385b48181925861d2cba8f42",
+    "test_phase1_masked.py": "0ddcf99761ff5683d5ec394b41a555f5a84480ab8b3908e090e64ae64d403ec6",
+    "test_scaling.py": "3eb8309ce8af93bfa3e5a073ee553eca1b9262ff6a64a7e4ba68fdb3ac3453f9",
+    "__init__.py": "09274cffda5e7b1895a7513cd3ab5e885358d9cf7e4de315cf92b1f8815a0d63"
+  },
+  "samples": [
+    {
+      "split": "train",
+      "node": "NODE_01",
+      "window_artifact": "windows_train_NODE_01.npz",
+      "input_shape": [
+        5629,
+        336,
+        3
+      ],
+      "output_shape": [
+        5629,
+        168,
+        3
+      ],
+      "dtype": "float32",
+      "target_mask_shape": [
+        5629,
+        168,
+        3
+      ],
+      "history_mask_shape": [
+        5629,
+        336
+      ],
+      "valid_target_counts_per_feature": [
+        929516,
+        929516,
+        929516
+      ],
+      "valid_history_observations": 1859915,
+      "masked_target_placeholders": 48468,
+      "input_inverse_max_absolute_error": [
+        1.7042777500364537e-06,
+        3.0204579104520235e-07,
+        1.0316744720739734e-06
+      ],
+      "target_inverse_max_absolute_error": [
+        1.7896538082595725e-06,
+        3.0237221437801054e-07,
+        1.0193257438118053e-06
+      ]
+    },
+    {
+      "split": "train",
+      "node": "NODE_02",
+      "window_artifact": "windows_train_NODE_02.npz",
+      "input_shape": [
+        5508,
+        336,
+        3
+      ],
+      "output_shape": [
+        5508,
+        168,
+        3
+      ],
+      "dtype": "float32",
+      "target_mask_shape": [
+        5508,
+        168,
+        3
+      ],
+      "history_mask_shape": [
+        5508,
+        336
+      ],
+      "valid_target_counts_per_feature": [
+        909316,
+        909316,
+        909316
+      ],
+      "valid_history_observations": 1816870,
+      "masked_target_placeholders": 48084,
+      "input_inverse_max_absolute_error": [
+        1.7042777500364537e-06,
+        2.9929123002148117e-07,
+        5.347348803752539e-07
+      ],
+      "target_inverse_max_absolute_error": [
+        1.7896538082595725e-06,
+        3.0076234125431256e-07,
+        5.351389376073712e-07
+      ]
+    },
+    {
+      "split": "validation",
+      "node": "NODE_01",
+      "window_artifact": "windows_validation_NODE_01.npz",
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "dtype": "float32",
+      "target_mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "history_mask_shape": [
+        811,
+        336
+      ],
+      "valid_target_counts_per_feature": [
+        133648,
+        133648,
+        133648
+      ],
+      "valid_history_observations": 267806,
+      "masked_target_placeholders": 7800,
+      "input_inverse_max_absolute_error": [
+        1.70131124832551e-06,
+        3.073895911143154e-07,
+        5.333127148787753e-07
+      ],
+      "target_inverse_max_absolute_error": [
+        1.7896538082595725e-06,
+        3.087031927861972e-07,
+        5.356716172855158e-07
+      ]
+    },
+    {
+      "split": "validation",
+      "node": "NODE_02",
+      "window_artifact": "windows_validation_NODE_02.npz",
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "dtype": "float32",
+      "target_mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "history_mask_shape": [
+        811,
+        336
+      ],
+      "valid_target_counts_per_feature": [
+        134726,
+        134726,
+        134726
+      ],
+      "valid_history_observations": 269531,
+      "masked_target_placeholders": 4566,
+      "input_inverse_max_absolute_error": [
+        1.7042777500364537e-06,
+        3.073895911143154e-07,
+        5.345879401374987e-07
+      ],
+      "target_inverse_max_absolute_error": [
+        1.7869436419459817e-06,
+        3.091342364314187e-07,
+        5.326649841208564e-07
+      ]
+    },
+    {
+      "split": "test",
+      "node": "NODE_01",
+      "window_artifact": "windows_test_NODE_01.npz",
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "dtype": "float32",
+      "target_mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "history_mask_shape": [
+        811,
+        336
+      ],
+      "valid_target_counts_per_feature": [
+        134495,
+        134495,
+        134495
+      ],
+      "valid_history_observations": 267351,
+      "masked_target_placeholders": 5259,
+      "input_inverse_max_absolute_error": [
+        1.70131124832551e-06,
+        2.8953144592946956e-07,
+        6.664728644523166e-07
+      ],
+      "target_inverse_max_absolute_error": [
+        1.7746456251188647e-06,
+        3.091342364314187e-07,
+        9.568159882178406e-07
+      ]
+    },
+    {
+      "split": "test",
+      "node": "NODE_02",
+      "window_artifact": "windows_test_NODE_02.npz",
+      "input_shape": [
+        811,
+        336,
+        3
+      ],
+      "output_shape": [
+        811,
+        168,
+        3
+      ],
+      "dtype": "float32",
+      "target_mask_shape": [
+        811,
+        168,
+        3
+      ],
+      "history_mask_shape": [
+        811,
+        336
+      ],
+      "valid_target_counts_per_feature": [
+        133368,
+        133368,
+        133368
+      ],
+      "valid_history_observations": 267645,
+      "masked_target_placeholders": 8640,
+      "input_inverse_max_absolute_error": [
+        1.7042777500364537e-06,
+        3.073895911143154e-07,
+        5.347348803752539e-07
+      ],
+      "target_inverse_max_absolute_error": [
+        1.7896538082595725e-06,
+        3.075447381206686e-07,
+        5.351389376073712e-07
+      ]
+    }
+  ],
+  "metric_verification": {
+    "cumulative_rows": 54,
+    "lead_rows": 3024,
+    "cumulative_max_MAE_delta": 6.600649449239882e-08,
+    "cumulative_max_RMSE_delta": 8.305138976538728e-08,
+    "lead_max_MAE_delta": 1.7261692275560847e-07,
+    "lead_max_RMSE_delta": 1.6727417451178894e-07
+  },
+  "preserved_file_count": 39
+}

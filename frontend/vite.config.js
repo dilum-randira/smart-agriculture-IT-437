@@ -11,5 +11,16 @@ export default defineConfig({
   build: {
     outDir: "../dist",
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // Keep the optional renderer separate from the farm UI and Three core.
+        // No Three module is imported by the application entry point.
+        manualChunks(id) {
+          const module = id.replace(/\\/g, "/");
+          if (module.includes("/three/build/three.core.js")) return "farm-three-core";
+          if (module.includes("/three/build/three.module.js")) return "farm-webgl";
+        },
+      },
+    },
   },
 });
