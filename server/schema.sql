@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS observations (
+ id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ record_id VARCHAR(128) CHARACTER SET ascii COLLATE ascii_bin NOT NULL UNIQUE,
+ node_id VARCHAR(16) NOT NULL, zone_id VARCHAR(16) NOT NULL,
+ timestamp_utc DATETIME NOT NULL, received_utc DATETIME NOT NULL,
+ raw_json LONGTEXT NOT NULL, cleaned_json LONGTEXT NOT NULL,
+ INDEX idx_node_time(node_id,timestamp_utc), INDEX idx_time(timestamp_utc)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS manual_watering (
+ id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ timestamp_utc DATETIME NOT NULL, zone_id VARCHAR(16) NOT NULL,
+ water_applied_liters DOUBLE NOT NULL, notes VARCHAR(500) NOT NULL,
+ INDEX idx_water_time(timestamp_utc)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS login_attempts (
+ address_hash CHAR(64) CHARACTER SET ascii PRIMARY KEY,
+ attempts INT NOT NULL DEFAULT 0, blocked_until BIGINT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS ingest_locks (
+ node_id VARCHAR(16) PRIMARY KEY
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT IGNORE INTO ingest_locks(node_id) VALUES('NODE_01'),('NODE_02');

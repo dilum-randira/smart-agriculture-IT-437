@@ -1,0 +1,9 @@
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "^(?!(?:index|api)\.php$).+">
+    Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteRule / - [F,L]
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule ^ - [E=HTTP_AUTHORIZATION:%1]

@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nai Miris C1 cleaned observation (1.0.0)",
+  "description": "One C1 observation per node per 15-minute sample; missing values are null",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "timestamp",
+    "node_id",
+    "zone_id",
+    "soil_moisture_1_index",
+    "soil_moisture_2_index",
+    "soil_moisture_avg_index",
+    "soil_temperature_c",
+    "air_temperature_c",
+    "relative_humidity_pct",
+    "light_lux",
+    "rain_detected",
+    "rain_source",
+    "rainfall_mm_24h",
+    "forecast_rain_mm_next_24h",
+    "forecast_air_temp_max_c_next_24h",
+    "soil_moisture_change_1h_index",
+    "air_temperature_avg_24h_c",
+    "vpd_kpa",
+    "quality_score",
+    "is_anomaly",
+    "is_imputed",
+    "imputed_fields",
+    "quality_flags",
+    "record_status",
+    "weather_source",
+    "data_origin"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "record_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC (Z)"
+    },
+    "node_id": {
+      "type": "string",
+      "enum": [
+        "NODE_01",
+        "NODE_02"
+      ]
+    },
+    "zone_id": {
+      "type": "string",
+      "enum": [
+        "ZONE_A",
+        "ZONE_B"
+      ]
+    },
+    "soil_moisture_1_index": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Locally calibrated RELATIVE index, NOT measured volumetric soil-water percentage"
+    },
+    "soil_moisture_2_index": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Locally calibrated RELATIVE index, NOT measured volumetric soil-water percentage"
+    },
+    "soil_moisture_avg_index": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Locally calibrated RELATIVE index, NOT measured volumetric soil-water percentage"
+    },
+    "soil_temperature_c": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "air_temperature_c": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "relative_humidity_pct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "light_lux": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "BH1750 illuminance; NOT PAR, PPFD or DLI"
+    },
+    "rain_detected": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "rain_source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rainfall_mm_24h": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Externally modelled weather rainfall, not measured by ESP32"
+    },
+    "forecast_rain_mm_next_24h": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "forecast_air_temp_max_c_next_24h": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "soil_moisture_change_1h_index": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "air_temperature_avg_24h_c": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "vpd_kpa": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "quality_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Rule-based illustrative completeness score, not physical accuracy"
+    },
+    "is_anomaly": {
+      "type": "boolean"
+    },
+    "is_imputed": {
+      "type": "boolean"
+    },
+    "imputed_fields": {
+      "type": "string"
+    },
+    "quality_flags": {
+      "type": "string"
+    },
+    "record_status": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "WARN",
+        "INVALID"
+      ]
+    },
+    "weather_source": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Provider/model provenance, null when disabled"
+    },
+    "data_origin": {
+      "type": "string",
+      "enum": [
+        "real",
+        "synthetic"
+      ]
+    }
+  }
+}
