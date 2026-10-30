@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.pytest_cache/
+
+# Node / Vite output
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local tooling and editor artifacts
+.DS_Store
+.vscode/
+.idea/
+
+# Large or restricted local research outputs
+__pypackages__/
+*.keras
+*.h5
+*.joblib
+*.pkl
