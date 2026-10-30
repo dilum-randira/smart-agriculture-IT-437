@@ -212,7 +212,7 @@ The **React app runs from `frontend/src/index.html`**, because `frontend/vite.co
 
 ## Team
 
-- Bandara W.V.L
+- Bandara W.V.L.
 - Kumara H.P.D.D.R.H
 - Gayantha W.M.K
 - Kumari U.S.S.S
